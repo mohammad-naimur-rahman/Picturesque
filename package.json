@@ -1,0 +1,13 @@
+{
+  "name": "picturesque",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"yarn --cwd frontend dev\" \"yarn --cwd backend develop\""
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
