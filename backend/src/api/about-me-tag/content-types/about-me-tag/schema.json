@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_me_tags",
+  "info": {
+    "singularName": "about-me-tag",
+    "pluralName": "about-me-tags",
+    "displayName": "About Me Tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    },
+    "tag_description": {
+      "type": "string"
+    }
+  }
+}

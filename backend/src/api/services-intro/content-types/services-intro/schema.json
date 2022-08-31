@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "services_intros",
+  "info": {
+    "singularName": "services-intro",
+    "pluralName": "services-intros",
+    "displayName": "Services Intro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

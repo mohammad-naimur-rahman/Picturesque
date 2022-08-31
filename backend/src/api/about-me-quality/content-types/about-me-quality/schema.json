@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_me_qualities",
+  "info": {
+    "singularName": "about-me-quality",
+    "pluralName": "about-me-qualities",
+    "displayName": "About Me Quality"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
