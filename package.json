@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"yarn --cwd frontend dev\" \"yarn --cwd backend develop\""
+    "dev": "concurrently \"yarn --cwd frontend dev\" \"yarn --cwd backend develop\"",
+    "start-frontend": "yarn --cwd frontend dev",
+    "start-backend": "yarn --cwd backend develop"
   },
   "main": "index.js",
   "license": "MIT",
