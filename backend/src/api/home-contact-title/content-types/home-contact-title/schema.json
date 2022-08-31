@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_contact_titles",
+  "info": {
+    "singularName": "home-contact-title",
+    "pluralName": "home-contact-titles",
+    "displayName": "Home Contact Title"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

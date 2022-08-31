@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_bg_text_3s",
+  "info": {
+    "singularName": "home-bg-text-3",
+    "pluralName": "home-bg-text-3s",
+    "displayName": "Home Bg Text 3"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

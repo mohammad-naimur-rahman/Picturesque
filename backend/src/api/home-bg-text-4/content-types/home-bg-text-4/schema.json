@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_bg_text_4s",
+  "info": {
+    "singularName": "home-bg-text-4",
+    "pluralName": "home-bg-text-4s",
+    "displayName": "Home Bg Text 4"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

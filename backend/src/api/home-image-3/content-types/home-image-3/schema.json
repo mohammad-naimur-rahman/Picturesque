@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_image_3s",
+  "info": {
+    "singularName": "home-image-3",
+    "pluralName": "home-image-3s",
+    "displayName": "Home Image 3"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_titles",
+  "info": {
+    "singularName": "home-title",
+    "pluralName": "home-titles",
+    "displayName": "Home Title",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

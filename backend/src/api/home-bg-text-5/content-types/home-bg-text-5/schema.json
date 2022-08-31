@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_bg_text_5s",
+  "info": {
+    "singularName": "home-bg-text-5",
+    "pluralName": "home-bg-text-5s",
+    "displayName": "Home Bg Text 5"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

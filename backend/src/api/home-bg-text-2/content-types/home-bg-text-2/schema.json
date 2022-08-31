@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_bg_text_2s",
+  "info": {
+    "singularName": "home-bg-text-2",
+    "pluralName": "home-bg-text-2s",
+    "displayName": "Home Bg Text 2"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

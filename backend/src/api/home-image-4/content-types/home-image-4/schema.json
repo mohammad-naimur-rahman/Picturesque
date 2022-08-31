@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_image_4s",
+  "info": {
+    "singularName": "home-image-4",
+    "pluralName": "home-image-4s",
+    "displayName": "Home Image 4"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
