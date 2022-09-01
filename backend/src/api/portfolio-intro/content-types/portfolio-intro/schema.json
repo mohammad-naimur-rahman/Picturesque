@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolio_intros",
+  "info": {
+    "singularName": "portfolio-intro",
+    "pluralName": "portfolio-intros",
+    "displayName": "Portfolio Intro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

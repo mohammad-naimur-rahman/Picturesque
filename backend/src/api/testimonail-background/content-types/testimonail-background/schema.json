@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "testimonail_backgrounds",
+  "info": {
+    "singularName": "testimonail-background",
+    "pluralName": "testimonail-backgrounds",
+    "displayName": "Testimonail Background"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

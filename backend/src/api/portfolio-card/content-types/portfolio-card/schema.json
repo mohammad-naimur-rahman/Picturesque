@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_cards",
+  "info": {
+    "singularName": "portfolio-card",
+    "pluralName": "portfolio-cards",
+    "displayName": "Portfolio Card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "portfolio_types": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::portfolio-type.portfolio-type",
+      "inversedBy": "portfolio_cards"
+    }
+  }
+}
