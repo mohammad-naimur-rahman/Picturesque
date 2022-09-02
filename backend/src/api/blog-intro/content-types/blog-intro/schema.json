@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "blog_intros",
+  "info": {
+    "singularName": "blog-intro",
+    "pluralName": "blog-intros",
+    "displayName": "Blog Intro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "private": true
+    }
+  }
+}
