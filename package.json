@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "concurrently \"yarn --cwd frontend dev\" \"yarn --cwd backend develop\"",
     "start-frontend": "yarn --cwd frontend dev",
-    "start-backend": "yarn --cwd backend develop"
+    "start-backend": "yarn --cwd backend develop",
+    "install-all": "concurrently \"yarn install\" \"yarn --cwd frontend install\" \"yarn --cwd backend install\""
   },
   "main": "index.js",
   "license": "MIT",
