@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_us_map_links",
+  "info": {
+    "singularName": "contact-us-map-link",
+    "pluralName": "contact-us-map-links",
+    "displayName": "Contact Us Map Link"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link": {
+      "type": "text"
+    }
+  }
+}
