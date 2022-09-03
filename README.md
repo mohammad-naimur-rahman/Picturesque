@@ -1,4 +1,4 @@
-# Picturesque Photograhy theme
+# Picturesque Photograhy Theme
 
 #### This is a photograhy fully dynamic website.
 

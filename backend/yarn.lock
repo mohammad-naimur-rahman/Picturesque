@@ -1792,7 +1792,7 @@
     "@strapi/utils" "4.3.6"
     fs-extra "10.0.0"
 
-"@strapi/strapi@4.3.6", "@strapi/strapi@^4.1.9":
+"@strapi/strapi@4.3.6":
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/@strapi/strapi/-/strapi-4.3.6.tgz#c69a147ebf33245011edbe21bb4e06b8a1093221"
   integrity sha512-oF7hMFuNhdccdsUVpJaNNySLKPNsPTyO+ipR3Y6WGDGvNIAOi0M1Jd7zP0nROnWojz3HgsOVf60wuit3b2L7NQ==
@@ -2642,13 +2642,6 @@ axios@0.27.2:
   dependencies:
     follow-redirects "^1.14.9"
     form-data "^4.0.0"
-
-axios@^0.26.1:
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.1.tgz#1ede41c51fcf51bbbd6fd43669caaa4f0495aaa9"
-  integrity sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==
-  dependencies:
-    follow-redirects "^1.14.8"
 
 babel-loader@8.2.5:
   version "8.2.5"
@@ -4856,7 +4849,7 @@ fn.name@1.x.x:
   resolved "https://registry.yarnpkg.com/fn.name/-/fn.name-1.1.0.tgz#26cad8017967aea8731bc42961d04a3d5988accc"
   integrity sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==
 
-follow-redirects@^1.0.0, follow-redirects@^1.14.8, follow-redirects@^1.14.9:
+follow-redirects@^1.0.0, follow-redirects@^1.14.9:
   version "1.15.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.1.tgz#0ca6a452306c9b276e4d3127483e29575e207ad5"
   integrity sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==
@@ -8366,7 +8359,7 @@ react-input-autosize@^3.0.0:
   dependencies:
     prop-types "^15.5.8"
 
-react-intl@5.25.1, react-intl@^5.25.1:
+react-intl@5.25.1:
   version "5.25.1"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-5.25.1.tgz#68a73aefc485c9bf70062381ae7f6f4791680879"
   integrity sha512-pkjdQDvpJROoXLMltkP/5mZb0/XqrqLoPGKUCfbdkP8m6U9xbK40K51Wu+a4aQqTEvEK5lHBk0fWzUV72SJ3Hg==
@@ -9432,15 +9425,6 @@ std-env@^3.0.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.2.1.tgz#00e260ec3901333537125f81282b9296b00d7304"
   integrity sha512-D/uYFWkI/31OrnKmXZqGAGK5GbQRPp/BWA1nuITcc6ICblhhuQUPHS5E2GSCVS7Hwhf4ciq8qsATwBUxv+lI6w==
-
-strapi-plugin-vercel-deploy@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-vercel-deploy/-/strapi-plugin-vercel-deploy-1.3.1.tgz#07103493c0c82ad03dad8f80807df46fd69bdd59"
-  integrity sha512-+XPwoNl2Kk7VjAdcyEGbiMNQHLLPFhtAB6e2UBCglpCfzIYbTPM8WGUW8RQ92p8J9SMCnR+2i16IzPuZglO6hA==
-  dependencies:
-    "@strapi/strapi" "^4.1.9"
-    axios "^0.26.1"
-    react-intl "^5.25.1"
 
 stream-browserify@^3.0.0:
   version "3.0.0"
