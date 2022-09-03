@@ -2,7 +2,7 @@
 
 #### This is a photograhy fully dynamic website.
 
-This is a monorepo application done by _Yarn Workspaces_. For the frontend I've used _Next JS, Tailwind CSS and many other interactive library_ and for the backend, I've used _Strapi CMS_. For database I've chosen _postgreSql_ and for aseet library _Cloudinary_. So, we can say it's a **_JAM Stack_** product.
+This is a monorepo application done by _Yarn Workspaces_. For the frontend I've used _Next JS, Tailwind CSS and many other interactive library_ and for the backend, I've used _Strapi CMS_. For database I've chosen _PostgreSql_ and for aseet library _Cloudinary_. So, we can say it's a **_JAM Stack_** product.
 
 ### Features:
 
