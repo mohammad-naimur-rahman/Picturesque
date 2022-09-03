@@ -22,6 +22,12 @@ Install `yarn` if it's not installed already
 npm i --global yarn
 ```
 
+Clone the repository
+
+```
+git clone https://github.com/mohammad-naimur-rahman/Picturesque.git
+```
+
 Install all the dependencies
 
 ```
