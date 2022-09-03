@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-import styles from './navbar.module.scss'
+import styles from 'styles/components/common/navbar.module.scss'
 
 const Navbar = () => {
   return (
