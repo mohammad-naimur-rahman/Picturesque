@@ -6,6 +6,7 @@ const Navbar = () => {
   return (
     <div>
       <h1 className={classNames(styles.man, 'text-xl')}>This is navbar</h1>
+      <p className='text-man'>THis text will be blue</p>
     </div>
   )
 }
