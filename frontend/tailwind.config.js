@@ -3,7 +3,7 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     colors: {
-      primary: '#0000ff',
+      primary: '#2f2f2f',
       text: '#565656',
       bg: '#232323',
       gray: '#f8f5f5',
