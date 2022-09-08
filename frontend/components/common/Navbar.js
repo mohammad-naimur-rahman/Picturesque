@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import styles from 'styles/components/common/navbar.module.scss'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import ReactTooltip from 'react-tooltip'
 
 const Navbar = () => {
   const router = useRouter()
@@ -12,13 +13,10 @@ const Navbar = () => {
   const [navItems, setnavItems] = useState([])
   useEffect(() => {
     ;(async () => {
-      console.log(API_URL)
       const res = await axios.get(`${API_URL}/social-medias?populate=*`)
       setnavItems(res.data.data)
     })()
   }, [])
-
-  console.log(navItems)
 
   return (
     <nav className='px-7 py-4 bg-primary h-[85px] flex align-middle justify-between text-white'>
@@ -32,7 +30,8 @@ const Navbar = () => {
       />
       <ul className='flex-all'>
         {navItems.map(({ id, attributes }) => (
-          <li key={id} className='mx-2'>
+          <li key={id} className='mx-2' data-for={`nav-item-${id}`} data-tip={attributes.name}>
+            <ReactTooltip id={`nav-item-${id}`} place='bottom' type='dark' effect='solid' />
             <a href={attributes.link} target='_blank' rel='noreferrer'>
               <Image
                 src={attributes.icon.data.attributes.url}

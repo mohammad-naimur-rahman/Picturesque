@@ -5,13 +5,6 @@ import Navbar from './Navbar'
 import PreLoader from './PreLoader'
 
 const Layout = ({ title, meta, children }) => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const preLoader = document.querySelector('#pre-loader')
-      preLoader.classList.remove('flex-all')
-      preLoader.classList.add('hidden')
-    }
-  }, [])
   return (
     <>
       <Head>
