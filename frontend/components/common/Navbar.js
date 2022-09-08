@@ -1,22 +1,49 @@
 import classNames from 'classnames'
+import API_URL from 'config'
 import Image from 'next/image'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from 'styles/components/common/navbar.module.scss'
+import axios from 'axios'
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
+  const router = useRouter()
+
+  const [navItems, setnavItems] = useState([])
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('DOMContentLoaded', () => {
-        console.log('DOM IS READY')
-      })
-    }
+    ;(async () => {
+      console.log(API_URL)
+      const res = await axios.get(`${API_URL}/social-medias?populate=*`)
+      setnavItems(res.data.data)
+    })()
   }, [])
+
+  console.log(navItems)
+
   return (
     <nav className='px-7 py-4 bg-primary h-[85px] flex align-middle justify-between text-white'>
-      <img src='/logo.png' alt='Picturesque' className='h-full' />
-      <ul>
-        <li>fb</li>
-        <li>pinterest</li>
+      <Image
+        src='/logo.png'
+        alt='Picturesque'
+        height='53'
+        width='84'
+        className='h-full cursor-pointer'
+        onClick={() => router.push('/')}
+      />
+      <ul className='flex-all'>
+        {navItems.map(({ id, attributes }) => (
+          <li key={id} className='mx-2'>
+            <a href={attributes.link} target='_blank' rel='noreferrer'>
+              <Image
+                src={attributes.icon.data.attributes.url}
+                alt={attributes.icon.data.attributes.name}
+                height='18'
+                width='18'
+                className='invert'
+              />
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   )

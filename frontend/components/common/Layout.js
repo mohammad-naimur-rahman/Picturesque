@@ -1,9 +1,17 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Navbar from './Navbar'
+import PreLoader from './PreLoader'
 
 const Layout = ({ title, meta, children }) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const preLoader = document.querySelector('#pre-loader')
+      preLoader.classList.remove('flex-all')
+      preLoader.classList.add('hidden')
+    }
+  }, [])
   return (
     <>
       <Head>
@@ -11,6 +19,7 @@ const Layout = ({ title, meta, children }) => {
         {meta}
       </Head>
       <main>
+        <PreLoader />
         <Navbar />
         {children}
       </main>

@@ -7,10 +7,13 @@ const nextConfig = {
       {
         source: '/admin',
         destination: 'https://picturesque-strapi.herokuapp.com/admin',
-        permanent: true,
-      },
+        permanent: true
+      }
     ]
   },
+  images: {
+    domains: ['res.cloudinary.com']
+  }
 }
 
 module.exports = nextConfig
