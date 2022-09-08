@@ -4,7 +4,14 @@ import React from 'react'
 import styles from 'styles/components/common/navbar.module.scss'
 
 const Navbar = () => {
-  return <nav></nav>
+  return (
+    <nav>
+      <ul>
+        <li>fb</li>
+        <li>pinterest</li>
+      </ul>
+    </nav>
+  )
 }
 
 export default Navbar
