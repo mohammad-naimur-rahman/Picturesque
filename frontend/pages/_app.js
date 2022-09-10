@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import '../styles/globals.scss'
+import 'tippy.js/dist/tippy.css'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {

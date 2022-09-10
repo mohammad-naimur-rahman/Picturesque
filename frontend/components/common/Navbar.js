@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import styles from 'styles/components/common/navbar.module.scss'
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import ReactTooltip from 'react-tooltip'
+import Tippy from '@tippyjs/react'
 
 const Navbar = () => {
   const router = useRouter()
@@ -30,17 +30,18 @@ const Navbar = () => {
       />
       <ul className='flex-all'>
         {navItems.map(({ id, attributes }) => (
-          <li key={id} className='mx-2' data-for={`nav-item-${id}`} data-tip={attributes.name}>
-            <ReactTooltip id={`nav-item-${id}`} place='bottom' type='dark' effect='solid' />
-            <a href={attributes.link} target='_blank' rel='noreferrer'>
-              <Image
-                src={attributes.icon.data.attributes.url}
-                alt={attributes.icon.data.attributes.name}
-                height='18'
-                width='18'
-                className='invert'
-              />
-            </a>
+          <li key={id} className='mx-2'>
+            <Tippy content={attributes.name}>
+              <a href={attributes.link} target='_blank' rel='noreferrer'>
+                <Image
+                  src={attributes.icon.data.attributes.url}
+                  alt={attributes.icon.data.attributes.name}
+                  height='18'
+                  width='18'
+                  className='invert'
+                />
+              </a>
+            </Tippy>
           </li>
         ))}
       </ul>
