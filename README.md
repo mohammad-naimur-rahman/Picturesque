@@ -64,6 +64,6 @@ To learn more about yarn workspaces: https://classic.yarnpkg.com/lang/en/docs/wo
 
 Please, give a star ⭐ if you like the project 😊
 
-It's a open source project, so if you want to contribute to it, you're welcome 😍
+It's a open source project, so if you want to contribute to it, you're welcome 😍😊
 
 To get updates such amazing projects, follow me on github, Thanks 🙏
