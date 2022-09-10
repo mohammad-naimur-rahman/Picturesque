@@ -5,3 +5,13 @@
 .flex-all {
   @apply flex items-center justify-center;
 }
+
+.menu-open {
+  right: 0;
+  transition: all 0.8s;
+}
+
+.menu-close {
+  right: -100%;
+  transition: all 0.8s;
+}
