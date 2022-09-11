@@ -22,3 +22,9 @@ $xxl: 'only screen and (min-width:1400px)';
     @content;
   }
 }
+
+@mixin mqh {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}

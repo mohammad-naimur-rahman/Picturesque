@@ -8,6 +8,35 @@ import { useRouter } from 'next/router'
 import Tippy from '@tippyjs/react'
 import { HiMenu } from 'react-icons/hi'
 import navLinks from 'data/components/common/navLinks.json'
+import PropTypes from 'prop-types'
+import { AUTHOR_URL } from 'config/index'
+
+const NavSocialItems = ({ navItems, newClasses }) => {
+  return (
+    <ul className={`items-center justify-center ${newClasses}`}>
+      {navItems.map(({ id, attributes }) => (
+        <li key={id} className='mx-2.5'>
+          <Tippy content={attributes.name}>
+            <a href={attributes.link} target='_blank' rel='noreferrer'>
+              <Image
+                src={attributes.icon.data.attributes.url}
+                alt={attributes.icon.data.attributes.name}
+                height='16'
+                width='16'
+                className='invert'
+              />
+            </a>
+          </Tippy>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+NavSocialItems.propTypes = {
+  newClasses: PropTypes.string,
+  navItems: PropTypes.array
+}
 
 const Navbar = () => {
   const router = useRouter()
@@ -61,23 +90,7 @@ const Navbar = () => {
           onClick={() => router.push('/')}
         />
         <div className='flex-all'>
-          <ul className='flex-all'>
-            {navItems.map(({ id, attributes }) => (
-              <li key={id} className='mx-2.5'>
-                <Tippy content={attributes.name}>
-                  <a href={attributes.link} target='_blank' rel='noreferrer'>
-                    <Image
-                      src={attributes.icon.data.attributes.url}
-                      alt={attributes.icon.data.attributes.name}
-                      height='16'
-                      width='16'
-                      className='invert'
-                    />
-                  </a>
-                </Tippy>
-              </li>
-            ))}
-          </ul>
+          <NavSocialItems navItems={navItems} newClasses='hidden sm:flex' />
           <HiMenu className='text-white w-6 h-6 mb-1 ml-9 mr-4 cursor-pointer' onClick={() => setmenuOpen(true)} />
         </div>
       </nav>
@@ -90,24 +103,27 @@ const Navbar = () => {
         )}
       >
         <div className='flex flex-col text-white text-center font-light justify-between align-center w-full h-full'>
-          <div className='flex align-center justify-between'>
-            <div className='w-10'></div>
-            <Image
-              src='/logo.png'
-              alt='Picturesque'
-              height='53'
-              width='84'
-              className='h-full'
-              onClick={() => router.push('/')}
-            />
-            <Image
-              src='/icons/close.svg'
-              alt='close'
-              height='28'
-              width='28'
-              className={classNames(styles['menu-close-btn'], 'cursor-pointer invert')}
-              onClick={() => setmenuOpen(false)}
-            />
+          <div className='flex flex-col justify-center'>
+            <div className='flex align-center justify-between'>
+              <div className='w-10'></div>
+              <Image
+                src='/logo.png'
+                alt='Picturesque'
+                height='53'
+                width='84'
+                className='h-full'
+                onClick={() => router.push('/')}
+              />
+              <Image
+                src='/icons/close.svg'
+                alt='close'
+                height='28'
+                width='28'
+                className={classNames(styles['menu-close-btn'], 'cursor-pointer invert')}
+                onClick={() => setmenuOpen(false)}
+              />
+            </div>
+            <NavSocialItems navItems={navItems} newClasses='flex sm:hidden mt-5' />
           </div>
           <ul className='flex-col-all'>
             {navLinks?.map(({ id, name, link }) => (
@@ -122,7 +138,7 @@ const Navbar = () => {
           </ul>
           <p>
             Copyright © {new Date().getFullYear()} All rights reserved to{' '}
-            <a href='https://github.com/mohammad-naimur-rahman' target='_blank' rel='noreferrer' className='italic'>
+            <a href={AUTHOR_URL} target='_blank' rel='noreferrer' className='italic'>
               Mohammad Naimur Rahman
             </a>
           </p>

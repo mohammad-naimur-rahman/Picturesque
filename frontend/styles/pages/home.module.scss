@@ -4,11 +4,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  overflow: hidden;
   height: 100vh;
 
   .text-card {
     transform: translateY(20vh);
     transition: transform 0.7s;
+
+    @include mqh {
+      transform: translateY(0);
+    }
   }
 
   &:hover :is(.text-card, .text-card h5) {
