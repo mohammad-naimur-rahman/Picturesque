@@ -6,7 +6,7 @@
 
 .menu-close {
   right: -100%;
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .menu-close-btn {
@@ -19,6 +19,7 @@
 
 .nav-menu {
   width: 100%;
+  box-shadow: 0 40px rgb(0 0 0 / 20%);
 
   @include mq('500px') {
     width: 440px;

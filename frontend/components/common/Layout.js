@@ -1,8 +1,9 @@
 import Head from 'next/head'
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Navbar from './Navbar'
 import PreLoader from './PreLoader'
+import { ScrollContainer } from 'react-nice-scroll'
 
 const Layout = ({ title, meta, children }) => {
   return (
@@ -14,7 +15,9 @@ const Layout = ({ title, meta, children }) => {
       <main>
         <PreLoader />
         <Navbar />
-        {children}
+        <ScrollContainer>
+          <div id='root-container'>{children}</div>
+        </ScrollContainer>
       </main>
     </>
   )

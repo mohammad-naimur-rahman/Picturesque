@@ -1,14 +1,13 @@
+import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import API_URL from 'config'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
 import styles from 'styles/components/common/navbar.module.scss'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import Tippy from '@tippyjs/react'
 import { HiMenu } from 'react-icons/hi'
 import navLinks from 'data/components/common/navLinks.json'
-import Link from 'next/link'
 
 const Navbar = () => {
   const router = useRouter()
@@ -25,20 +24,34 @@ const Navbar = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const nav = document.querySelector('.nav')
+      const rootContainer = document.getElementById('root-container')
       const toggleNavBg = () => {
-        window.scrollY === 0 ? nav.classList.remove('bg-bg') : nav.classList.add('bg-bg')
+        console.log(rootContainer.scrollY)
+        rootContainer.scrollY === 0 ? nav.classList.remove('bg-bg') : nav.classList.add('bg-bg')
       }
-      window.addEventListener('scroll', toggleNavBg)
+      rootContainer.addEventListener('scroll', toggleNavBg)
 
+      window.addEventListener('scroll', () => {
+        console.log('CLIE')
+      })
       return () => {
-        window.removeEventListener('scroll', toggleNavBg)
+        rootContainer.removeEventListener('scroll', toggleNavBg)
       }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () => {
+        console.log('CLIE')
+      })
+      console.log('ASFAS')
     }
   }, [])
 
   return (
     <>
-      <nav className='nav px-7 py-4 h-[85px] flex align-middle justify-between text-white fixed top-0 left-0 w-full'>
+      <nav className='nav px-7 py-4 h-[85px] flex align-middle justify-between text-white fixed top-0 left-0 w-full z-30 bg-bg'>
         <Image
           src='/logo.png'
           alt='Picturesque'
@@ -73,7 +86,7 @@ const Navbar = () => {
         className={classNames(
           menuOpen ? styles['menu-open'] : styles['menu-close'],
           styles['nav-menu'],
-          'fixed h-[100vh] bg-bg top-0 z-30 px-5 py-12'
+          'fixed h-[100vh] bg-bg top-0 z-40 px-5 py-12'
         )}
       >
         <div className='flex flex-col text-white text-center font-light justify-between align-center w-full h-full'>
@@ -109,7 +122,7 @@ const Navbar = () => {
           </ul>
           <p>
             Copyright © {new Date().getFullYear()} All rights reserved to{' '}
-            <a href='https://github.com/mohammad-naimur-rahman' className='italic'>
+            <a href='https://github.com/mohammad-naimur-rahman' target='_blank' rel='noreferrer' className='italic'>
               Mohammad Naimur Rahman
             </a>
           </p>

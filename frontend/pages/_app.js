@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import '../styles/globals.scss'
 import 'tippy.js/dist/tippy.css'
+import 'react-nice-scroll/dist/styles.css'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
