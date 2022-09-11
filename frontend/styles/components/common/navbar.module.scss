@@ -1,1 +1,47 @@
 @import '../../theme.module';
+.menu-open {
+  right: 0;
+  transition: all 0.8s;
+}
+
+.menu-close {
+  right: -100%;
+  transition: all 2s;
+}
+
+.menu-close-btn {
+  transition: 0.7s;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
+
+.nav-menu {
+  width: 100%;
+
+  @include mq('500px') {
+    width: 440px;
+  }
+}
+
+.nav-link {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background-color: $text;
+    transition: all 0.4s;
+  }
+
+  &:hover::after {
+    width: 70px;
+    background-color: $white;
+  }
+}

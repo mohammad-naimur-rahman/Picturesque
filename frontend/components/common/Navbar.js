@@ -7,7 +7,8 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import Tippy from '@tippyjs/react'
 import { HiMenu } from 'react-icons/hi'
-import { BiX } from 'react-icons/bi'
+import navLinks from 'data/components/common/navLinks.json'
+import Link from 'next/link'
 
 const Navbar = () => {
   const router = useRouter()
@@ -70,21 +71,48 @@ const Navbar = () => {
       <div
         id='menu'
         className={classNames(
-          menuOpen ? 'menu-open' : 'menu-close',
-          'w-[440px] fixed h-[100vh] bg-bg top-0 z-30 px-5 py-12'
+          menuOpen ? styles['menu-open'] : styles['menu-close'],
+          styles['nav-menu'],
+          'fixed h-[100vh] bg-bg top-0 z-30 px-5 py-12'
         )}
       >
-        <div className='flex align-center justify-between'>
-          <div className='w-10'></div>
-          <Image
-            src='/logo.png'
-            alt='Picturesque'
-            height='53'
-            width='84'
-            className='h-full'
-            onClick={() => router.push('/')}
-          />
-          <BiX className='text-white w-10 h-10 cursor-pointer' onClick={() => setmenuOpen(false)} />
+        <div className='flex flex-col text-white text-center font-light justify-between align-center w-full h-full'>
+          <div className='flex align-center justify-between'>
+            <div className='w-10'></div>
+            <Image
+              src='/logo.png'
+              alt='Picturesque'
+              height='53'
+              width='84'
+              className='h-full'
+              onClick={() => router.push('/')}
+            />
+            <Image
+              src='/icons/close.svg'
+              alt='close'
+              height='28'
+              width='28'
+              className={classNames(styles['menu-close-btn'], 'cursor-pointer invert')}
+              onClick={() => setmenuOpen(false)}
+            />
+          </div>
+          <ul className='flex-col-all'>
+            {navLinks?.map(({ id, name, link }) => (
+              <li
+                key={id}
+                className={classNames(styles['nav-link'], 'text-lg p-3 inline-block cursor-pointer')}
+                onClick={() => router.push(link)}
+              >
+                {name}
+              </li>
+            ))}
+          </ul>
+          <p>
+            Copyright © {new Date().getFullYear()} All rights reserved to{' '}
+            <a href='https://github.com/mohammad-naimur-rahman' className='italic'>
+              Mohammad Naimur Rahman
+            </a>
+          </p>
         </div>
       </div>
     </>
