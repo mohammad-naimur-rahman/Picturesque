@@ -1,0 +1,29 @@
+@import '../theme.module';
+.slider-card {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  height: 100vh;
+
+  .text-card {
+    transform: translateY(20vh);
+    transition: transform 0.7s;
+  }
+
+  &:hover :is(.text-card, .text-card h5) {
+    transform: translateY(0);
+  }
+
+  &_border-line {
+    width: 120px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: $grid-middle;
+  }
+
+  .text-card h5 {
+    transform: translateY(100%);
+    transition: transform 0.7s;
+  }
+}

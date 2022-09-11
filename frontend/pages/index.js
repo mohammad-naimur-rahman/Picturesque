@@ -1,20 +1,26 @@
+import classNames from 'classnames'
 import Layout from 'components/common/Layout'
 import axiosClient from 'hooks/axaiosClient'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
-//var $ = require('jquery')
-if (typeof window !== 'undefined') {
-  window.$ = window.jQuery = require('jquery')
-}
+import { useEffect } from 'react'
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
   ssr: false
 })
+import Div100vh from 'react-div-100vh'
+import styles from 'styles/pages/home.module.scss'
 
 const Home = ({ slides }) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.$ = window.jQuery = require('jquery')
+    }
+  }, [])
+
   const { data: slidesData } = { ...slides }
   const options = {
     loop: true,
-    dots: false,
+    dots: true,
     autoplay: true,
     items: 4,
     margin: 0,
@@ -37,48 +43,30 @@ const Home = ({ slides }) => {
   }
   return (
     <Layout>
-      <OwlCarousel className='owl-theme' {...options}>
-        {slidesData.map(({ id, attributes }) => (
-          <div className='item border-2 h-[100vh]' key={id}>
-            <h4>{id}</h4>
-          </div>
+      <OwlCarousel className='owl-theme home-slider' {...options}>
+        {slidesData?.map(({ id, attributes }) => (
+          <Div100vh key={id}>
+            <div
+              className={classNames(styles['slider-card'], 'slider-card')}
+              style={{
+                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.35)), url(${attributes?.image?.data.attributes.url})`
+              }}
+            >
+              <div className='flex items-end justify-center h-full'>
+                <div
+                  className={classNames(
+                    styles['text-card'],
+                    'flex flex-col align-center justify-start text-center text-white font-light px-3 sm:px-10'
+                  )}
+                >
+                  <div className={styles['slider-card_border-line']} />
+                  <h3 className='text-2xl sm:text-3xl text-left mt-6'>{attributes?.title}</h3>
+                  <h5 className='text-lg sm:text-xl mt-10 h-[20vh]'>{attributes?.description}</h5>
+                </div>
+              </div>
+            </div>
+          </Div100vh>
         ))}
-        {/* <div className='item border-2 h-[100vh]'>
-          <h4>1</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>2</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>3</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>4</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>5</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>6</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>7</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>8</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>9</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>10</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>11</h4>
-        </div>
-        <div className='item border-2 h-[100vh]'>
-          <h4>12</h4>
-        </div> */}
       </OwlCarousel>
     </Layout>
   )

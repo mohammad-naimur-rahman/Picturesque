@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './theme.module.scss';
+
+:root {
+  --app-height: 100%;
+}
 
 .flex-all {
   @apply flex items-center justify-center;
@@ -18,4 +23,29 @@
 .scrollbar-thumb {
   width: 5px !important;
   background-color: #151515 !important;
+}
+
+.home-slider {
+  .owl-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+
+    @media #{$sm} {
+      left: 50px;
+    }
+
+    .owl-dot span {
+      width: 10px !important;
+      height: 10px !important;
+      border: 1px solid $white !important;
+      border-radius: 50% !important;
+      display: inline-block !important;
+      background-color: transparent !important;
+    }
+
+    .owl-dot.active span {
+      background-color: $white !important;
+    }
+  }
 }

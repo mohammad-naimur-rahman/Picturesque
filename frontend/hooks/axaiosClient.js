@@ -3,7 +3,13 @@ import API_URL from 'config/index'
 
 const axiosClient = async (url, populate = true) => {
   try {
-    const res = await axios.get(`${API_URL}/${url}?populate=${populate}`)
+    let fetchURL = ''
+    if (populate) {
+      fetchURL = `${API_URL}/${url}?populate=*`
+    } else {
+      fetchURL = `${API_URL}/${url}`
+    }
+    const res = await axios.get(fetchURL)
     return res.data
   } catch (err) {
     console.log(err)
