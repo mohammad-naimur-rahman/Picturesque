@@ -1,5 +1,7 @@
 import Layout from 'components/common/Layout'
+import axiosClient from 'hooks/axaiosClient'
 import dynamic from 'next/dynamic'
+import PropTypes from 'prop-types'
 //var $ = require('jquery')
 if (typeof window !== 'undefined') {
   window.$ = window.jQuery = require('jquery')
@@ -8,7 +10,8 @@ const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
   ssr: false
 })
 
-export default function Home() {
+const Home = ({ slides }) => {
+  const { data: slidesData } = { ...slides }
   const options = {
     loop: true,
     dots: false,
@@ -35,7 +38,12 @@ export default function Home() {
   return (
     <Layout>
       <OwlCarousel className='owl-theme' {...options}>
-        <div className='item border-2 h-[100vh]'>
+        {slidesData.map(({ id, attributes }) => (
+          <div className='item border-2 h-[100vh]' key={id}>
+            <h4>{id}</h4>
+          </div>
+        ))}
+        {/* <div className='item border-2 h-[100vh]'>
           <h4>1</h4>
         </div>
         <div className='item border-2 h-[100vh]'>
@@ -70,8 +78,24 @@ export default function Home() {
         </div>
         <div className='item border-2 h-[100vh]'>
           <h4>12</h4>
-        </div>
+        </div> */}
       </OwlCarousel>
     </Layout>
   )
+}
+
+export default Home
+
+Home.propTypes = {
+  slides: PropTypes.object
+}
+
+export async function getStaticProps() {
+  const slides = await axiosClient('homepage-sliders')
+  return {
+    props: {
+      slides
+    },
+    revalidate: 10
+  }
 }
