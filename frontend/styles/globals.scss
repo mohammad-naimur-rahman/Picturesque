@@ -11,11 +11,9 @@
 
 html {
   min-height: calc(100vh - calc(100vh - 100%));
-}
-
-html {
   font-family: $font-primary;
 }
+
 .flex-all {
   @apply flex items-center justify-center;
 }
@@ -39,7 +37,7 @@ body.loaded #pre-loader {
 }
 
 .home-slider {
-  @include mfhf;
+  //@include mfhf;
 
   .owl-dots {
     position: absolute;

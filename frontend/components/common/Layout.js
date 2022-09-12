@@ -3,11 +3,23 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Navbar from './Navbar'
 import PreLoader from './PreLoader'
-import { ScrollContainer } from 'react-nice-scroll'
 import GridLines from './GridLines'
 import ScrollToTop from 'react-scroll-to-top'
 
 const Layout = ({ title, meta, children }) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      var timer = null
+      window.onscroll = () => {
+        if (timer !== null) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(function () {
+          console.log('STOPPED SCROLLING')
+        }, 500)
+      }
+    }
+  }, [])
   return (
     <>
       <Head>
@@ -19,9 +31,7 @@ const Layout = ({ title, meta, children }) => {
         <PreLoader />
         <ScrollToTop smooth />
         <Navbar />
-        {/* <ScrollContainer> */}
         <div id='root-container'>{children}</div>
-        {/* </ScrollContainer> */}
       </main>
     </>
   )

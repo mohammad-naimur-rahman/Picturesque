@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import '../styles/globals.scss'
 import 'tippy.js/dist/tippy.css'
-import 'react-nice-scroll/dist/styles.css'
 import 'owl.carousel/dist/assets/owl.carousel.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
 

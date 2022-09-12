@@ -18,17 +18,6 @@ const Home = ({ slides, title, bgText1, image1, image2 }) => {
     }
   }, [])
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const documentHeight = () => {
-        const doc = document.documentElement
-        doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
-      }
-      window.addEventListener('resize', documentHeight)
-      documentHeight()
-    }
-  }, [])
-
   const { data: slidesData } = { ...slides }
   const options = {
     loop: true,

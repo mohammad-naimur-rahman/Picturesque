@@ -23,8 +23,8 @@
 }
 
 .nav-menu {
+  height: 100%;
   width: 100%;
-  @include mfhf;
   box-shadow: 0 40px rgb(0 0 0 / 20%);
 
   @include mq('500px') {
