@@ -30,3 +30,12 @@ $xxl: 'only screen and (min-width:1400px)';
     @content;
   }
 }
+
+@mixin mfhf {
+  height: 100vh;
+
+  @media (max-width: 845px) {
+    height: 100vh;
+    height: var(--app-height);
+  }
+}

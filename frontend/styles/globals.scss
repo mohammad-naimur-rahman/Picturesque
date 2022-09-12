@@ -9,9 +9,10 @@
   --app-height: 100%;
 }
 
-// html {
-//   min-height: calc(100vh - calc(100vh - 100%));
-// }
+html {
+  min-height: calc(100vh - calc(100vh - 100%));
+}
+
 html {
   font-family: $font-primary;
 }
@@ -38,6 +39,8 @@ body.loaded #pre-loader {
 }
 
 .home-slider {
+  @include mfhf;
+
   .owl-dots {
     position: absolute;
     bottom: 10px;

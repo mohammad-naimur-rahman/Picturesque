@@ -1,4 +1,9 @@
 @import '../../theme.module';
+
+.home-nav {
+  transition: all 0.3s;
+}
+
 .menu-open {
   right: 0;
   transition: all 0.8s;
@@ -19,6 +24,7 @@
 
 .nav-menu {
   width: 100%;
+  @include mfhf;
   box-shadow: 0 40px rgb(0 0 0 / 20%);
 
   @include mq('500px') {

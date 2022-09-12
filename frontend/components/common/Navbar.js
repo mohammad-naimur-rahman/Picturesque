@@ -53,25 +53,24 @@ const Navbar = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const nav = document.querySelector('.nav')
-      const rootContainer = document.getElementById('root-container')
       const toggleNavBg = () => {
-        console.log(rootContainer.scrollY)
-        rootContainer.scrollY === 0 ? nav.classList.remove('bg-bg') : nav.classList.add('bg-bg')
+        window.scrollY === 0 ? nav.classList.remove('bg-bg') : nav.classList.add('bg-bg')
       }
-      rootContainer.addEventListener('scroll', toggleNavBg)
-
-      window.addEventListener('scroll', () => {
-        console.log('CLIE')
-      })
+      window.addEventListener('scroll', toggleNavBg)
       return () => {
-        rootContainer.removeEventListener('scroll', toggleNavBg)
+        window.removeEventListener('scroll', toggleNavBg)
       }
     }
   }, [])
 
   return (
     <>
-      <nav className='nav px-7 py-4 h-[85px] flex align-middle justify-between text-white fixed top-0 left-0 w-full z-30 bg-bg'>
+      <nav
+        className={classNames(
+          styles['home-nav'],
+          'nav px-7 py-4 h-[85px] flex align-middle justify-between text-white fixed top-0 left-0 w-full z-30'
+        )}
+      >
         <Image
           src='/logo.png'
           alt='Picturesque'
@@ -90,7 +89,7 @@ const Navbar = () => {
         className={classNames(
           menuOpen ? styles['menu-open'] : styles['menu-close'],
           styles['nav-menu'],
-          'fixed h-[100vh] bg-bg top-0 z-40 px-5 py-12'
+          'fixed bg-bg top-0 z-40 px-5 py-12'
         )}
       >
         <div className='flex flex-col text-white text-center font-light justify-between align-center w-full h-full'>

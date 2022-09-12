@@ -3,7 +3,6 @@ import React from 'react'
 import styles from 'styles/pages/home.module.scss'
 
 const HomePart1 = ({ title, bgText1, image1, image2 }) => {
-  console.log(title)
   return (
     <main className={styles['home-1']}>
       <div className='container'>

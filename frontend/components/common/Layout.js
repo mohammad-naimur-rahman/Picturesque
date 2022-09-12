@@ -8,27 +8,20 @@ import GridLines from './GridLines'
 import ScrollToTop from 'react-scroll-to-top'
 
 const Layout = ({ title, meta, children }) => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () => {
-        console.log('CLIE')
-      })
-    }
-  }, [])
   return (
     <>
       <Head>
         <title>{title}</title>
         {meta}
       </Head>
-      <main>
+      <main className='relative'>
         <GridLines />
         <PreLoader />
         <ScrollToTop smooth />
         <Navbar />
-        <ScrollContainer>
-          <div id='root-container'>{children}</div>
-        </ScrollContainer>
+        {/* <ScrollContainer> */}
+        <div id='root-container'>{children}</div>
+        {/* </ScrollContainer> */}
       </main>
     </>
   )
