@@ -69,15 +69,6 @@ const Navbar = () => {
     }
   }, [])
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () => {
-        console.log('CLIE')
-      })
-      console.log('ASFAS')
-    }
-  }, [])
-
   return (
     <>
       <nav className='nav px-7 py-4 h-[85px] flex align-middle justify-between text-white fixed top-0 left-0 w-full z-30 bg-bg'>

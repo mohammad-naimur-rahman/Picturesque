@@ -11,7 +11,7 @@
     transform: translateY(20vh);
     transition: transform 0.7s;
 
-    @include mqh {
+    @include mqm {
       transform: translateY(0);
     }
   }

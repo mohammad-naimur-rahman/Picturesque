@@ -1,11 +1,19 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Navbar from './Navbar'
 import PreLoader from './PreLoader'
 import { ScrollContainer } from 'react-nice-scroll'
 
 const Layout = ({ title, meta, children }) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () => {
+        console.log('CLIE')
+      })
+      console.log('ASFAS')
+    }
+  }, [])
   return (
     <>
       <Head>

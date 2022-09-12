@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/eslint-plugin-next": "^12.3.0",
     "@tippyjs/react": "^4.2.6",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "jquery": "3.6.0",
     "next": "12.2.5",
     "prop-types": "^15.8.1",

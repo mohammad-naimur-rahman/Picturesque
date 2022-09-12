@@ -15,6 +15,10 @@
   @apply flex-all flex-col;
 }
 
+body.loaded #pre-loader {
+  display: none !important;
+}
+
 .scrollbar-track {
   width: 5px !important;
   margin-right: px !important;

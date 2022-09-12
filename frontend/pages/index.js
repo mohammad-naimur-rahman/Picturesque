@@ -68,6 +68,22 @@ const Home = ({ slides }) => {
           </Div100vh>
         ))}
       </OwlCarousel>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam numquam officiis pariatur voluptatibus rerum,
+        aliquam sequi quisquam cupiditate explicabo saepe repellendus incidunt. Enim, asperiores nemo. Dolor similique
+        eius mollitia laboriosam facilis vitae ea sapiente, nulla iste ratione laborum! Assumenda praesentium maiores
+        itaque aliquam. Sit quasi, exercitationem reprehenderit et voluptates facilis, delectus vero hic consectetur
+        numquam at esse saepe suscipit ad minima libero iure ipsa fugit consequatur consequuntur dicta laboriosam quae
+        fuga facere? Dignissimos eos nostrum perferendis maiores veniam saepe iste voluptate ducimus impedit, quod
+        nesciunt amet ullam labore adipisci dolorum fuga eligendi, earum quis assumenda iure? Officia repudiandae quam
+        voluptatum, dolor itaque ratione non eum corrupti eligendi, iure aut totam cupiditate dicta temporibus nisi
+        aliquam harum veritatis amet rerum dolorum fuga facilis tempore ut. Vitae quisquam perferendis eveniet dolorem
+        mollitia nam, nesciunt magnam voluptas similique obcaecati sequi, voluptatibus, saepe dolores. Consequatur
+        beatae quos tempora magni ab? Voluptatem totam velit porro repudiandae alias esse numquam, voluptate itaque,
+        blanditiis vero accusamus, est tenetur quod consequuntur quae impedit assumenda rerum vel incidunt magnam
+        tempore magni nemo sit dolores. Mollitia quasi, veniam molestiae saepe tenetur inventore nisi nostrum
+        blanditiis, quis maiores quos voluptate alias amet nesciunt hic ullam quam sunt ratione. Ullam, cum adipisci!
+      </h1>
     </Layout>
   )
 }
