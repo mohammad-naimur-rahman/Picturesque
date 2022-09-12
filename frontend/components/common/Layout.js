@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Navbar from './Navbar'
 import PreLoader from './PreLoader'
 import { ScrollContainer } from 'react-nice-scroll'
+import GridLines from './GridLines'
 
 const Layout = ({ title, meta, children }) => {
   useEffect(() => {
@@ -11,7 +12,6 @@ const Layout = ({ title, meta, children }) => {
       window.addEventListener('scroll', () => {
         console.log('CLIE')
       })
-      console.log('ASFAS')
     }
   }, [])
   return (
@@ -21,6 +21,7 @@ const Layout = ({ title, meta, children }) => {
         {meta}
       </Head>
       <main>
+        <GridLines />
         <PreLoader />
         <Navbar />
         <ScrollContainer>

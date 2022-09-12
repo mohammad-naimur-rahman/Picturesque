@@ -1,0 +1,24 @@
+@import '../../theme.module';
+
+.grid-container {
+  @apply absolute inset-0 w-full h-full -z-10;
+
+  @for $i from 1 through 8 {
+    & > div:nth-child(#{$i}) {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      left: $i * 12.5%;
+      background-color: $grid;
+
+      @if ($i == 4) {
+        background-color: $grid-middle;
+      }
+
+      @if ($i == 8) {
+        display: none;
+      }
+    }
+  }
+}
