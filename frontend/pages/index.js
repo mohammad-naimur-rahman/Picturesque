@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import Layout from 'components/common/Layout'
+import HomePart1 from 'components/pages/Home/HomePart1'
 import axiosClient from 'hooks/axaiosClient'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
@@ -10,7 +11,7 @@ const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
 import Div100vh from 'react-div-100vh'
 import styles from 'styles/pages/home.module.scss'
 
-const Home = ({ slides }) => {
+const Home = ({ slides, title, bgText1, image1, image2 }) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.$ = window.jQuery = require('jquery')
@@ -68,22 +69,7 @@ const Home = ({ slides }) => {
           </Div100vh>
         ))}
       </OwlCarousel>
-      <h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam numquam officiis pariatur voluptatibus rerum,
-        aliquam sequi quisquam cupiditate explicabo saepe repellendus incidunt. Enim, asperiores nemo. Dolor similique
-        eius mollitia laboriosam facilis vitae ea sapiente, nulla iste ratione laborum! Assumenda praesentium maiores
-        itaque aliquam. Sit quasi, exercitationem reprehenderit et voluptates facilis, delectus vero hic consectetur
-        numquam at esse saepe suscipit ad minima libero iure ipsa fugit consequatur consequuntur dicta laboriosam quae
-        fuga facere? Dignissimos eos nostrum perferendis maiores veniam saepe iste voluptate ducimus impedit, quod
-        nesciunt amet ullam labore adipisci dolorum fuga eligendi, earum quis assumenda iure? Officia repudiandae quam
-        voluptatum, dolor itaque ratione non eum corrupti eligendi, iure aut totam cupiditate dicta temporibus nisi
-        aliquam harum veritatis amet rerum dolorum fuga facilis tempore ut. Vitae quisquam perferendis eveniet dolorem
-        mollitia nam, nesciunt magnam voluptas similique obcaecati sequi, voluptatibus, saepe dolores. Consequatur
-        beatae quos tempora magni ab? Voluptatem totam velit porro repudiandae alias esse numquam, voluptate itaque,
-        blanditiis vero accusamus, est tenetur quod consequuntur quae impedit assumenda rerum vel incidunt magnam
-        tempore magni nemo sit dolores. Mollitia quasi, veniam molestiae saepe tenetur inventore nisi nostrum
-        blanditiis, quis maiores quos voluptate alias amet nesciunt hic ullam quam sunt ratione. Ullam, cum adipisci!
-      </h1>
+      <HomePart1 title={title} bgText1={bgText1} image1={image1} image2={image2} />
     </Layout>
   )
 }
@@ -91,14 +77,26 @@ const Home = ({ slides }) => {
 export default Home
 
 Home.propTypes = {
-  slides: PropTypes.object
+  slides: PropTypes.object,
+  title: PropTypes.object,
+  bgText1: PropTypes.object,
+  image1: PropTypes.object,
+  image2: PropTypes.object
 }
 
 export async function getStaticProps() {
   const slides = await axiosClient('homepage-sliders')
+  const title = await axiosClient('home-title')
+  const bgText1 = await axiosClient('home-bg-text-1')
+  const image1 = await axiosClient('home-image-1')
+  const image2 = await axiosClient('home-image-2')
   return {
     props: {
-      slides
+      slides,
+      title,
+      bgText1,
+      image1,
+      image2
     },
     revalidate: 10
   }

@@ -2,6 +2,16 @@
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '5rem',
+        xl: '8rem',
+        '2xl': '10rem'
+      }
+    },
     colors: {
       primary: '#2f2f2f',
       text: '#565656',

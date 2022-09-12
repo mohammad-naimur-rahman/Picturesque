@@ -5,6 +5,7 @@ import Navbar from './Navbar'
 import PreLoader from './PreLoader'
 import { ScrollContainer } from 'react-nice-scroll'
 import GridLines from './GridLines'
+import ScrollToTop from 'react-scroll-to-top'
 
 const Layout = ({ title, meta, children }) => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const Layout = ({ title, meta, children }) => {
       <main>
         <GridLines />
         <PreLoader />
+        <ScrollToTop smooth />
         <Navbar />
         <ScrollContainer>
           <div id='root-container'>{children}</div>

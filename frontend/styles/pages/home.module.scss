@@ -32,3 +32,13 @@
     transition: transform 0.7s;
   }
 }
+
+.home-1 {
+  .home-title {
+    @apply font-light md:font-thin text-center py-20 text-[55px];
+
+    span {
+      @apply font-normal;
+    }
+  }
+}
