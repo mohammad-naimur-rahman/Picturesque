@@ -44,80 +44,106 @@
   }
 
   .home-container-fluid {
+    @apply relative;
+  }
+
+  .home-container {
+    @apply container relative;
+  }
+
+  .home-img-card {
+    z-index: 3;
+    flex-basis: 40%;
+
+    h5 {
+      font-weight: 500;
+      @apply mt-5;
+    }
+
+    h3 {
+      @apply text-2xl font-light mt-3;
+    }
+  }
+
+  .big-text {
+    color: #f0f0f0;
+    font-size: 230px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  // Fluid Containers
+  .home-container-fluid-1 {
     margin-top: 200px;
-    position: relative;
+  }
 
-    .big-text {
-      color: #f0f0f0;
-      font-size: 230px;
-      position: absolute;
-      z-index: 2;
+  .home-container-fluid-3 {
+    margin-top: -200px;
+  }
 
-      &:nth-of-type(1) {
-        top: -350px;
-        left: 0;
-      }
-    }
+  // Big Texts
+  .big-text-1 {
+    top: -350px;
+    left: 0;
+  }
 
-    .home-dot-img-1 {
-      @apply absolute;
-      top: -250px;
-      left: 0;
-    }
+  .big-text-2 {
+    top: -150px;
+    right: 0;
+  }
 
-    .home-dot-img-2 {
-      @apply absolute;
-      top: 20px;
-      right: 0;
-    }
+  .big-text-3 {
+    bottom: 0;
+    left: 0;
+  }
 
-    .home-dot-img-3 {
-      @apply absolute;
-      top: 20px;
-      left: 0;
-    }
+  // Dot Images
+  .home-dot-img-1 {
+    @apply absolute;
+    top: -250px;
+    left: 0;
+  }
 
-    .home-container {
-      @apply container relative;
-    }
+  .home-dot-img-2 {
+    @apply absolute;
+    top: 20px;
+    right: 0;
+  }
 
-    .home-img-card {
-      z-index: 3;
-      flex-basis: 40%;
+  .home-dot-img-3 {
+    @apply absolute;
+    top: 0;
+    left: 0;
+    rotate: 90deg;
+  }
 
-      h5 {
-        font-weight: 500;
-        @apply mt-5;
-      }
+  .home-dot-img-4 {
+    @apply absolute;
+    top: calc(100%);
+    right: 0;
+    transform-origin: top right;
+    rotate: 90deg;
+  }
 
-      h3 {
-        @apply text-2xl font-light mt-3;
-      }
+  // Image Cards
+  .home-img-card-1 {
+    flex-basis: 47%;
+    margin-top: -120px;
+    @apply ml-3;
+  }
 
-      &:nth-of-type(1) {
-        flex-basis: 47%;
-        margin-top: -120px;
-        @apply ml-3;
-      }
+  .home-img-card-2 {
+    flex-basis: 38%;
+    @apply mr-3;
+  }
 
-      &:nth-of-type(2) {
-        flex-basis: 38%;
-        @apply mr-3;
-      }
-    }
+  .home-img-card-3 {
+    flex-basis: 85%;
+    @apply ml-3 mt-20;
+  }
 
-    .home-img-card-3 {
-      flex-basis: 80%;
-      @apply ml-3;
-
-      h5 {
-        font-weight: 500;
-        @apply mt-5;
-      }
-
-      h3 {
-        @apply text-2xl font-light mt-3;
-      }
-    }
+  .home-img-card-4 {
+    flex-basis: 50%;
+    @apply mr-3 ml-auto;
   }
 }
