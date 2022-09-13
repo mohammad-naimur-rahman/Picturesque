@@ -8,6 +8,7 @@
   ],
   "plugins": ["react"],
   "rules": {
-    "react/prop-types": ["error"]
+    "react/prop-types": ["error"],
+    "@next/next/no-img-element": "off"
   }
 }

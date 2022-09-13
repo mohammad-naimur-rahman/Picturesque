@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Navbar from './Navbar'
 import PreLoader from './PreLoader'
@@ -7,19 +7,20 @@ import GridLines from './GridLines'
 import ScrollToTop from 'react-scroll-to-top'
 
 const Layout = ({ title, meta, children }) => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      var timer = null
-      window.onscroll = () => {
-        if (timer !== null) {
-          clearTimeout(timer)
-        }
-        timer = setTimeout(function () {
-          console.log('STOPPED SCROLLING')
-        }, 500)
-      }
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     var timer = null
+  //     window.onscroll = () => {
+  //       document.body.classList.remove('hidden-scrollbar')
+  //       if (timer !== null) {
+  //         clearTimeout(timer)
+  //       }
+  //       timer = setTimeout(function () {
+  //         document.body.classList.add('hidden-scrollbar')
+  //       }, 500)
+  //     }
+  //   }
+  // }, [])
   return (
     <>
       <Head>
