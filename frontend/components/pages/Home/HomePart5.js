@@ -9,7 +9,7 @@ const HomePart5 = ({ image6, image7 }) => {
     <div className={classNames(styles['home-container-fluid'], styles['home-container-fluid-5'])}>
       <div className={styles['home-container']}>
         <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-6']} />
-        <div className='flex justify-start'>
+        <div className='flex justify-end'>
           <div className={classNames(styles['home-img-card'], styles['home-img-card-6'])}>
             <img
               src={image6.data.attributes.image.data.attributes.url}

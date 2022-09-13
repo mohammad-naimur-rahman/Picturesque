@@ -55,6 +55,10 @@
     z-index: 3;
     flex-basis: 40%;
 
+    img {
+      width: 100%;
+    }
+
     h5 {
       font-weight: 500;
       @apply mt-5;
@@ -83,6 +87,10 @@
 
   .home-container-fluid-4 {
     margin-top: -200px;
+  }
+
+  .home-container-fluid-5 {
+    margin-top: -300px;
   }
 
   // Big Texts
@@ -144,7 +152,7 @@
     @apply absolute;
     top: 0;
     right: 0;
-    scale: 0.9;
+    scale: 0.8;
   }
 
   // Image Cards
@@ -172,5 +180,15 @@
   .home-img-card-5 {
     flex-basis: 45%;
     @apply ml-3 mr-auto;
+  }
+
+  .home-img-card-6 {
+    flex-basis: 30%;
+    @apply ml-auto mr-8;
+  }
+
+  .home-img-card-7 {
+    flex-basis: 30%;
+    @apply ml-3 mt-16;
   }
 }
