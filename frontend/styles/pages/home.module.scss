@@ -81,6 +81,10 @@
     margin-top: -200px;
   }
 
+  .home-container-fluid-4 {
+    margin-top: -200px;
+  }
+
   // Big Texts
   .big-text-1 {
     top: -350px;
@@ -95,6 +99,11 @@
   .big-text-3 {
     bottom: 0;
     left: 0;
+  }
+
+  .big-text-4 {
+    top: 0;
+    right: 0;
   }
 
   // Dot Images
@@ -119,10 +128,23 @@
 
   .home-dot-img-4 {
     @apply absolute;
-    top: calc(100%);
+    top: 100%;
     right: 0;
     transform-origin: top right;
     rotate: 90deg;
+  }
+
+  .home-dot-img-5 {
+    @apply absolute;
+    top: -100px;
+    left: 0;
+  }
+
+  .home-dot-img-6 {
+    @apply absolute;
+    top: 0;
+    right: 0;
+    scale: 0.9;
   }
 
   // Image Cards
@@ -145,5 +167,10 @@
   .home-img-card-4 {
     flex-basis: 50%;
     @apply mr-3 ml-auto;
+  }
+
+  .home-img-card-5 {
+    flex-basis: 45%;
+    @apply ml-3 mr-auto;
   }
 }

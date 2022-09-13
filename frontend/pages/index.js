@@ -4,6 +4,7 @@ import HomePart1 from 'components/pages/Home/HomePart1'
 import HomePart2 from 'components/pages/Home/HomePart2'
 import HomePart3 from 'components/pages/Home/HomePart3'
 import HomePart4 from 'components/pages/Home/HomePart4'
+import HomePart5 from 'components/pages/Home/HomePart5'
 import axiosClient from 'hooks/axaiosClient'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
@@ -92,6 +93,7 @@ const Home = ({
         <HomePart2 bgText2={bgText2} image3={image3} />
         <HomePart3 bgText3={bgText3} image4={image4} />
         <HomePart4 bgText4={bgText4} image5={image5} />
+        <HomePart5 image6={image6} image7={image7} />
       </main>
     </Layout>
   )

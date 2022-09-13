@@ -14,6 +14,11 @@ html {
   font-family: $font-primary;
 }
 
+// img {
+//   width: 100% !important;
+//   display: block;
+// }
+
 .flex-all {
   @apply flex items-center justify-center;
 }
