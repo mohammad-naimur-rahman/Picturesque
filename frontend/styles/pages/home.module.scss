@@ -59,9 +59,21 @@
       }
     }
 
-    .home-dot-img {
+    .home-dot-img-1 {
       @apply absolute;
       top: -250px;
+      left: 0;
+    }
+
+    .home-dot-img-2 {
+      @apply absolute;
+      top: 20px;
+      right: 0;
+    }
+
+    .home-dot-img-3 {
+      @apply absolute;
+      top: 20px;
       left: 0;
     }
 
@@ -91,6 +103,20 @@
       &:nth-of-type(2) {
         flex-basis: 38%;
         @apply mr-3;
+      }
+    }
+
+    .home-img-card-3 {
+      flex-basis: 80%;
+      @apply ml-3;
+
+      h5 {
+        font-weight: 500;
+        @apply mt-5;
+      }
+
+      h3 {
+        @apply text-2xl font-light mt-3;
       }
     }
   }

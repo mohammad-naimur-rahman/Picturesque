@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import Layout from 'components/common/Layout'
 import HomePart1 from 'components/pages/Home/HomePart1'
+import HomePart2 from 'components/pages/Home/HomePart2'
 import axiosClient from 'hooks/axaiosClient'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
@@ -11,7 +12,7 @@ const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
 import Div100vh from 'react-div-100vh'
 import styles from 'styles/pages/home.module.scss'
 
-const Home = ({ slides, title, bgText1, image1, image2 }) => {
+const Home = ({ slides, title, bgText1, bgText2, image1, image2, image3, image4, image5, image6, image7 }) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.$ = window.jQuery = require('jquery')
@@ -69,7 +70,10 @@ const Home = ({ slides, title, bgText1, image1, image2 }) => {
           </Div100vh>
         ))}
       </OwlCarousel>
-      <HomePart1 title={title} bgText1={bgText1} image1={image1} image2={image2} />
+      <main className={styles['home']}>
+        <HomePart1 title={title} bgText1={bgText1} image1={image1} image2={image2} />
+        <HomePart2 bgText2={bgText2} image3={image3} />
+      </main>
     </Layout>
   )
 }
@@ -80,23 +84,41 @@ Home.propTypes = {
   slides: PropTypes.object,
   title: PropTypes.object,
   bgText1: PropTypes.object,
+  bgText2: PropTypes.object,
   image1: PropTypes.object,
-  image2: PropTypes.object
+  image2: PropTypes.object,
+  image3: PropTypes.object,
+  image4: PropTypes.object,
+  image5: PropTypes.object,
+  image6: PropTypes.object,
+  image7: PropTypes.object
 }
 
 export async function getStaticProps() {
   const slides = await axiosClient('homepage-sliders')
   const title = await axiosClient('home-title')
   const bgText1 = await axiosClient('home-bg-text-1')
+  const bgText2 = await axiosClient('home-bg-text-2')
   const image1 = await axiosClient('home-image-1')
   const image2 = await axiosClient('home-image-2')
+  const image3 = await axiosClient('home-image-3')
+  const image4 = await axiosClient('home-image-4')
+  const image5 = await axiosClient('home-image-5')
+  const image6 = await axiosClient('home-image-6')
+  const image7 = await axiosClient('home-image-7')
   return {
     props: {
       slides,
       title,
       bgText1,
+      bgText2,
       image1,
-      image2
+      image2,
+      image3,
+      image4,
+      image5,
+      image6,
+      image7
     },
     revalidate: 10
   }

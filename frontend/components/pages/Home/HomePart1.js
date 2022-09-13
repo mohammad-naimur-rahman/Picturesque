@@ -5,14 +5,15 @@ import getDate from 'utils/getDate'
 
 const HomePart1 = ({ title, bgText1, image1, image2 }) => {
   return (
-    <main className={styles['home']}>
+    <>
       <div className='container'>
         <h1 dangerouslySetInnerHTML={{ __html: title.data.attributes.title }} className={styles['home-title']} />
       </div>
       <div className={styles['home-container-fluid']}>
         <p className={styles['big-text']}>{bgText1.data.attributes.title}</p>
         <div className={styles['home-container']}>
-          <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img']} />
+          <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-1']} />
+          <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-2']} />
           <div className='flex justify-between'>
             <div className={styles['home-img-card']}>
               <img
@@ -33,7 +34,7 @@ const HomePart1 = ({ title, bgText1, image1, image2 }) => {
           </div>
         </div>
       </div>
-    </main>
+    </>
   )
 }
 
