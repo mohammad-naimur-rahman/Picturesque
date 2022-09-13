@@ -59,21 +59,38 @@
       }
     }
 
+    .home-dot-img {
+      @apply absolute;
+      top: -250px;
+      left: 0;
+    }
+
     .home-container {
-      @apply container;
+      @apply container relative;
     }
 
     .home-img-card {
       z-index: 3;
       flex-basis: 40%;
 
+      h5 {
+        font-weight: 500;
+        @apply mt-5;
+      }
+
+      h3 {
+        @apply text-2xl font-light mt-3;
+      }
+
       &:nth-of-type(1) {
         flex-basis: 47%;
         margin-top: -120px;
+        @apply ml-3;
       }
 
       &:nth-of-type(2) {
         flex-basis: 38%;
+        @apply mr-3;
       }
     }
   }

@@ -1,9 +1,9 @@
 import propTypes from 'prop-types'
 import React from 'react'
 import styles from 'styles/pages/home.module.scss'
+import getDate from 'utils/getDate'
 
 const HomePart1 = ({ title, bgText1, image1, image2 }) => {
-  console.log({ bgText1, image1, image2 })
   return (
     <main className={styles['home']}>
       <div className='container'>
@@ -12,13 +12,14 @@ const HomePart1 = ({ title, bgText1, image1, image2 }) => {
       <div className={styles['home-container-fluid']}>
         <p className={styles['big-text']}>{bgText1.data.attributes.title}</p>
         <div className={styles['home-container']}>
+          <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img']} />
           <div className='flex justify-between'>
             <div className={styles['home-img-card']}>
               <img
                 src={image1.data.attributes.image.data.attributes.url}
                 alt={image1.data.attributes.image.data.attributes.name}
               />
-              <h5>{image1.data.attributes.date}</h5>
+              <h5>{getDate(image1.data.attributes.date)}</h5>
               <h3>{image1.data.attributes.title}</h3>
             </div>
             <div className={styles['home-img-card']}>
@@ -26,7 +27,7 @@ const HomePart1 = ({ title, bgText1, image1, image2 }) => {
                 src={image2.data.attributes.image.data.attributes.url}
                 alt={image2.data.attributes.image.data.attributes.name}
               />
-              <h5>{image2.data.attributes.date}</h5>
+              <h5>{getDate(image2.data.attributes.date)}</h5>
               <h3>{image2.data.attributes.title}</h3>
             </div>
           </div>

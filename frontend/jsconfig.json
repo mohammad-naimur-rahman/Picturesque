@@ -5,8 +5,10 @@
       "components/*": ["components/*"],
       "styles/*": ["styles/*"],
       "config/*": ["config/*"],
+      "hooks/*": ["hooks/*"],
+      "data/*": ["data/*"],
       "helpers/*": ["helpers/*"],
-      "data/*": ["data/*"]
+      "utils/*": ["utils/*"]
     }
   }
 }
