@@ -9,43 +9,43 @@
 // White buttons
 .btn-white {
   border: 1px solid $white;
-  background-color: $black;
+  background-color: $primary;
   color: $white;
 
   &:hover {
     background-color: $white;
-    color: $black;
+    color: $primary;
   }
 }
 
 .btn-white-solid {
   border: 1px solid $white;
-  background-color: $black;
+  background-color: $primary;
   color: $white;
 }
 
 .btn-white-inverted {
-  border: 1px solid $black;
+  border: 1px solid $primary;
   background-color: $white;
-  color: $black;
+  color: $primary;
 
   &:hover {
     border: 1px solid $white;
-    background-color: $black;
+    background-color: $primary;
     color: $white;
   }
 }
 
 .btn-white-solid-inverted {
-  border: 1px solid $black;
+  border: 1px solid $primary;
   background-color: $white;
-  color: $black;
+  color: $primary;
 }
 
 .btn-white-solid-edge-inverted {
   border: 1px solid $white;
   background-color: $white;
-  color: $black;
+  color: $primary;
 
   &::after {
     content: '';
@@ -61,43 +61,43 @@
 
 // Black Buttons
 .btn-black {
-  border: 1px solid $black;
+  border: 1px solid $primary;
   background-color: $white;
-  color: $black;
+  color: $primary;
 
   &:hover {
-    background-color: $black;
+    background-color: $primary;
     color: $white;
   }
 }
 
 .btn-black-solid {
-  border: 1px solid $black;
+  border: 1px solid $primary;
   background-color: $white;
-  color: $black;
+  color: $primary;
 }
 
 .btn-black-inverted {
-  border: 1px solid $black;
-  background-color: $black;
+  border: 1px solid $primary;
+  background-color: $primary;
   color: $white;
 
   &:hover {
-    border: 1px solid $black;
+    border: 1px solid $primary;
     background-color: $white;
-    color: $black;
+    color: $primary;
   }
 }
 
 .btn-black-solid-inverted {
-  border: 1px solid $black;
-  background-color: $black;
+  border: 1px solid $primary;
+  background-color: $primary;
   color: $white;
 }
 
 .btn-black-solid-edge-inverted {
-  border: 1px solid $black;
-  background-color: $black;
+  border: 1px solid $primary;
+  background-color: $primary;
   color: $white;
 
   &::after {
@@ -108,6 +108,6 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    border: 1px solid $black;
+    border: 1px solid $primary;
   }
 }

@@ -11,20 +11,32 @@ html {
   font-family: $font-primary;
 }
 
-.flex-all {
-  @apply flex items-center justify-center;
-}
-
-.flex-col-all {
-  @apply flex-all flex-col;
-}
-
 body {
   overflow: overlay;
 }
 
 body.loaded #pre-loader {
   display: none !important;
+}
+
+p,
+pre,
+li,
+span,
+option,
+input,
+select,
+textarea {
+  @apply text-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-primary;
 }
 
 ::-webkit-scrollbar {
@@ -82,6 +94,14 @@ body.loaded #pre-loader {
     width: 0;
     visibility: hidden;
   }
+}
+
+.flex-all {
+  @apply flex items-center justify-center;
+}
+
+.flex-col-all {
+  @apply flex-all flex-col;
 }
 
 .scroll-to-top {

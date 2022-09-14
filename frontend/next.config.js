@@ -17,6 +17,11 @@ const nextConfig = {
       {
         source: '/admin',
         destination: 'https://picturesque-strapi.herokuapp.com/admin',
+        permanent: false
+      },
+      {
+        source: '/home',
+        destination: '/',
         permanent: true
       }
     ]

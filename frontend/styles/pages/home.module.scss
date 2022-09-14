@@ -39,7 +39,7 @@
 
 .home {
   .home-title {
-    @apply font-light md:font-extralight text-center py-10 md:py-20 text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px];
+    @apply font-light md:font-extralight text-center py-10 md:py-20 text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px] text-primary;
     z-index: 4;
 
     span {
@@ -65,7 +65,7 @@
 
     h5 {
       font-weight: 500;
-      @apply mt-5;
+      @apply mt-5 text-text text-base;
     }
 
     h3 {

@@ -6,7 +6,6 @@ import styles from 'styles/components/common/navbar.module.scss'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import Tippy from '@tippyjs/react'
-import { HiMenu } from 'react-icons/hi'
 import navLinks from 'data/components/common/navLinks.json'
 import PropTypes from 'prop-types'
 import { AUTHOR_URL } from 'config/index'
@@ -64,24 +63,22 @@ const Navbar = () => {
   }, [])
 
   return (
-    <>
+    <header>
       <nav
         className={classNames(
           styles['home-nav'],
-          'nav px-7 py-4 h-[85px] flex align-middle justify-between text-white fixed top-0 left-0 w-full z-30'
+          'nav px-7 py-4 h-[60px] md:h-[75px] lg:h-[85px] flex align-middle justify-between text-white fixed top-0 left-0 w-full z-30'
         )}
       >
-        <Image
-          src='/logo.png'
-          alt='Picturesque'
-          height='53'
-          width='84'
-          className='h-full cursor-pointer'
-          onClick={() => router.push('/')}
-        />
+        <img src='/logo.png' alt='Picturesque' className='h-full cursor-pointer' onClick={() => router.push('/')} />
         <div className='flex-all'>
           <NavSocialItems navItems={navItems} newClasses='hidden sm:flex' />
-          <HiMenu className='text-white w-6 h-6 mb-1 ml-9 mr-4 cursor-pointer' onClick={() => setmenuOpen(true)} />
+          <img
+            src='/icons/bars.svg'
+            alt='bars'
+            className='w-6 h-6 cursor-pointer mb-1 ml-9 mr-0 md:mr-4'
+            onClick={() => setmenuOpen(true)}
+          />
         </div>
       </nav>
       <div
@@ -134,7 +131,7 @@ const Navbar = () => {
           </p>
         </div>
       </div>
-    </>
+    </header>
   )
 }
 

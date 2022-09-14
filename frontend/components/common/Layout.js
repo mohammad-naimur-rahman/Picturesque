@@ -25,7 +25,7 @@ const Layout = ({ title, meta, children }) => {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title ? title + ' | Picturesque' : 'Picturesque'}</title>
         {meta}
       </Head>
       <main className='relative'>
