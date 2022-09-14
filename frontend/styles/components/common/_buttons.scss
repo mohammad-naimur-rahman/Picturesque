@@ -1,0 +1,113 @@
+@import '../../theme.module';
+
+.btn {
+  letter-spacing: 1px;
+  transition: background-color 0.5s;
+  @apply shadow min-w-[180px] h-[66px] uppercase text-[14px] relative m-2;
+}
+
+// White buttons
+.btn-white {
+  border: 1px solid $white;
+  background-color: $black;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $black;
+  }
+}
+
+.btn-white-solid {
+  border: 1px solid $white;
+  background-color: $black;
+  color: $white;
+}
+
+.btn-white-inverted {
+  border: 1px solid $black;
+  background-color: $white;
+  color: $black;
+
+  &:hover {
+    border: 1px solid $white;
+    background-color: $black;
+    color: $white;
+  }
+}
+
+.btn-white-solid-inverted {
+  border: 1px solid $black;
+  background-color: $white;
+  color: $black;
+}
+
+.btn-white-solid-edge-inverted {
+  border: 1px solid $white;
+  background-color: $white;
+  color: $black;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border: 1px solid $white;
+  }
+}
+
+// Black Buttons
+.btn-black {
+  border: 1px solid $black;
+  background-color: $white;
+  color: $black;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+.btn-black-solid {
+  border: 1px solid $black;
+  background-color: $white;
+  color: $black;
+}
+
+.btn-black-inverted {
+  border: 1px solid $black;
+  background-color: $black;
+  color: $white;
+
+  &:hover {
+    border: 1px solid $black;
+    background-color: $white;
+    color: $black;
+  }
+}
+
+.btn-black-solid-inverted {
+  border: 1px solid $black;
+  background-color: $black;
+  color: $white;
+}
+
+.btn-black-solid-edge-inverted {
+  border: 1px solid $black;
+  background-color: $black;
+  color: $white;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border: 1px solid $black;
+  }
+}

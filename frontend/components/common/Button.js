@@ -12,35 +12,17 @@ const Button = ({ children, white = false, edge = false, solid = false, inverted
       case !white && solid && edge && inverted:
         setbtnClassName('btn-black-solid-edge-inverted')
         break
-      case white && solid && edge:
-        setbtnClassName('btn-white-solid-edge')
-        break
-      case !white && solid && edge:
-        setbtnClassName('btn-black-solid-edge')
-        break
       case white && solid && inverted:
         setbtnClassName('btn-white-solid-inverted')
         break
       case !white && solid && inverted:
         setbtnClassName('btn-black-solid-inverted')
         break
-      case white && edge && inverted:
-        setbtnClassName('btn-white-edge-inverted')
-        break
-      case !white && edge && inverted:
-        setbtnClassName('btn-black-edge-inverted')
-        break
       case white && solid:
         setbtnClassName('btn-white-solid')
         break
       case !white && solid:
         setbtnClassName('btn-black-solid')
-        break
-      case white && edge:
-        setbtnClassName('btn-white-edge')
-        break
-      case !white && edge:
-        setbtnClassName('btn-black-edge')
         break
       case white && inverted:
         setbtnClassName('btn-white-inverted')
