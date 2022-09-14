@@ -1,38 +1,32 @@
+import classNames from 'classnames'
 import Button from 'components/common/Button'
+import Link from 'next/link'
+import PropTypes from 'prop-types'
 import React from 'react'
+import styles from 'styles/pages/home.module.scss'
 
-const HomeContactIntro = () => {
+const HomeContactIntro = ({ bgText5, contactTitle }) => {
   return (
-    <div className='container my-20 flex gap-5'>
-      <div className='bg-black p-5 border text-center flex flex-col'>
-        <Button white>Click Me</Button>
-        <Button white solid>
-          Click Me
-        </Button>
-        <Button white inverted>
-          Click Me
-        </Button>
-        <Button white solid inverted>
-          Click Me
-        </Button>
-        <Button white edge inverted solid>
-          Click Me
-        </Button>
+    <div className={styles['home-container-fluid']}>
+      <p className={classNames(styles['big-text'], styles['big-text-5'])}>{bgText5.data.attributes.title}</p>
+      <div className='container text-center py-14 z-10'>
+        <h1 className='text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px] font-extralight'>
+          {contactTitle.data.attributes.title}
+        </h1>
+        <h2 className='text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px] font-light mt-8'>
+          {contactTitle.data.attributes.description}
+        </h2>
+        <Link href='/contact'>
+          <Button className='my-20'>Contact Us</Button>
+        </Link>
       </div>
-      <div className='p-5 text-center border flex flex-col'>
-        <Button>Click Me</Button>
-        <Button solid>Click Me</Button>
-        <Button inverted>Click Me</Button>
-        <Button solid inverted>
-          Click Me
-        </Button>
-        <Button edge inverted solid>
-          Click Me
-        </Button>
-      </div>
-      {/* <p>https://www.npmjs.com/package/simplebar-react</p> */}
     </div>
   )
 }
 
 export default HomeContactIntro
+
+HomeContactIntro.propTypes = {
+  bgText5: PropTypes.object,
+  contactTitle: PropTypes.object
+}

@@ -30,7 +30,8 @@ const Home = ({
   image4,
   image5,
   image6,
-  image7
+  image7,
+  contactTitle
 }) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -51,7 +52,7 @@ const Home = ({
       0: {
         items: 1
       },
-      576: {
+      600: {
         items: 2
       },
       992: {
@@ -95,7 +96,7 @@ const Home = ({
         <HomePart3 bgText3={bgText3} image4={image4} />
         <HomePart4 bgText4={bgText4} image5={image5} />
         <HomePart5 image6={image6} image7={image7} />
-        <HomeContactIntro />
+        <HomeContactIntro bgText5={bgText5} contactTitle={contactTitle} />
       </main>
     </Layout>
   )
@@ -117,7 +118,8 @@ Home.propTypes = {
   image4: PropTypes.object,
   image5: PropTypes.object,
   image6: PropTypes.object,
-  image7: PropTypes.object
+  image7: PropTypes.object,
+  contactTitle: PropTypes.object
 }
 
 export async function getStaticProps() {
@@ -135,6 +137,7 @@ export async function getStaticProps() {
   const image5 = await axiosClient('home-image-5')
   const image6 = await axiosClient('home-image-6')
   const image7 = await axiosClient('home-image-7')
+  const contactTitle = await axiosClient('home-contact-title')
   return {
     props: {
       slides,
@@ -150,7 +153,8 @@ export async function getStaticProps() {
       image4,
       image5,
       image6,
-      image7
+      image7,
+      contactTitle
     },
     revalidate: 10
   }

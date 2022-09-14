@@ -15,7 +15,7 @@ const HomePart1 = ({ title, bgText1, image1, image2 }) => {
         <div className={styles['home-container']}>
           <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-1']} />
           <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-2']} />
-          <div className='flex justify-between'>
+          <div className='flex flex-col md:flex-row justify-between'>
             <div className={classNames(styles['home-img-card'], styles['home-img-card-1'])}>
               <img
                 src={image1.data.attributes.image.data.attributes.url}

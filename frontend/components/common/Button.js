@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
-const Button = ({ children, white = false, edge = false, solid = false, inverted = false, ...rest }) => {
+const Button = ({ children, white = false, edge = false, solid = false, inverted = false, className, ...rest }) => {
   const [btnClassName, setbtnClassName] = useState('')
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Button = ({ children, white = false, edge = false, solid = false, inverted
   }, [white, solid, edge, inverted])
 
   return (
-    <button {...rest} className={`btn ${btnClassName}`}>
+    <button {...rest} className={`btn ${className} ${btnClassName}`}>
       {children}
     </button>
   )
@@ -55,5 +55,6 @@ Button.propTypes = {
   white: PropTypes.bool,
   edge: PropTypes.bool,
   solid: PropTypes.bool,
-  inverted: PropTypes.bool
+  inverted: PropTypes.bool,
+  className: PropTypes.string
 }

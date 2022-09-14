@@ -30,12 +30,16 @@
   .text-card h5 {
     transform: translateY(100%);
     transition: transform 0.7s;
+
+    @include mqm {
+      transform: translateY(0);
+    }
   }
 }
 
 .home {
   .home-title {
-    @apply font-light md:font-thin text-center py-20 text-[55px];
+    @apply font-light md:font-extralight text-center py-10 md:py-20 text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px];
     z-index: 4;
 
     span {
@@ -71,14 +75,13 @@
 
   .big-text {
     color: #f0f0f0;
-    font-size: 230px;
-    position: absolute;
-    z-index: 2;
+    z-index: -1;
+    @apply font-light absolute text-[70px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[200px] xxl:text-[230px];
   }
 
   // Fluid Containers
   .home-container-fluid-1 {
-    margin-top: 200px;
+    @apply mt-[20px] md:mt-[50px] lg:mt-[150px] xl:mt-[180px] xxl:mt-[200px];
   }
 
   .home-container-fluid-3 {
@@ -95,8 +98,7 @@
 
   // Big Texts
   .big-text-1 {
-    top: -350px;
-    left: 0;
+    @apply left-0 top-[-100px] md:top-[-200px] xl:top-[-350px];
   }
 
   .big-text-2 {
@@ -114,21 +116,23 @@
     right: 0;
   }
 
-  // Dot Images
-  .home-dot-img-1 {
-    @apply absolute;
-    top: -250px;
+  .big-text-5 {
+    top: 0;
     left: 0;
   }
 
+  // Dot Images
+  .home-dot-img-1 {
+    @apply absolute left-0 top-[-100px] md:top-[-200px] xl:top-[-250px] max-w-[50%];
+  }
+
   .home-dot-img-2 {
-    @apply absolute;
-    top: 20px;
-    right: 0;
+    @apply absolute right-0 top-[200px] max-w-[50%];
   }
 
   .home-dot-img-3 {
     @apply absolute;
+    max-width: 50%;
     top: 0;
     left: 0;
     rotate: 90deg;
@@ -136,6 +140,7 @@
 
   .home-dot-img-4 {
     @apply absolute;
+    max-width: 50%;
     top: 100%;
     right: 0;
     transform-origin: top right;
@@ -144,12 +149,14 @@
 
   .home-dot-img-5 {
     @apply absolute;
+    max-width: 50%;
     top: -100px;
     left: 0;
   }
 
   .home-dot-img-6 {
     @apply absolute;
+    max-width: 50%;
     top: 0;
     right: 0;
     scale: 0.8;
@@ -158,13 +165,12 @@
   // Image Cards
   .home-img-card-1 {
     flex-basis: 47%;
-    margin-top: -120px;
-    @apply ml-3;
+    @apply ml-0 md:ml-3 mt-0 md:mt-[-120px] mb-10 md:mb-0;
   }
 
   .home-img-card-2 {
     flex-basis: 38%;
-    @apply mr-3;
+    @apply mr-0 md:mr-3;
   }
 
   .home-img-card-3 {
