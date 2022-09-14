@@ -134,20 +134,9 @@ body.loaded #pre-loader {
   transition: background-color 0.5s;
 }
 
-.btn-black {
-  background-color: $white;
-  border: 1px solid $black;
-  color: $black;
-
-  &:hover {
-    background-color: $black;
-    color: $white;
-  }
-}
-
 .btn-white {
-  background-color: $black;
   border: 1px solid $white;
+  background-color: $black;
   color: $white;
 
   &:hover {
@@ -156,35 +145,8 @@ body.loaded #pre-loader {
   }
 }
 
-.btn-edge {
-  @apply relative;
-
-  &::after {
-    content: '';
-    @apply absolute w-full h-full;
-    bottom: -6px;
-    right: -6px;
-    z-index: -1;
-    background-color: transparent;
-    border: 1px solid currentColor;
-    transition: none;
-
-    :is(.btn-solid) {
-      background-color: inherit !important;
-      color: inherit !important;
-      transition: none;
-    }
-  }
-
-  &:hover::after {
-    @apply invert;
-  }
-}
-
-.btn-solid {
-  &:hover {
-    background-color: inherit !important;
-    color: inherit !important;
-    transition: none;
-  }
+.btn-white-solid {
+  border: 1px solid $white;
+  background-color: $black;
+  color: $white;
 }
