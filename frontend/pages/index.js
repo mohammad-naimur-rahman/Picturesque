@@ -82,8 +82,8 @@ const Home = ({
                   )}
                 >
                   <div className={styles['slider-card_border-line']} />
-                  <h3 className='text-2xl sm:text-3xl text-left mt-6'>{attributes?.title}</h3>
-                  <h5 className='text-lg sm:text-xl mt-10 h-[20vh]'>{attributes?.description}</h5>
+                  <h3 className='text-2xl sm:text-3xl text-left mt-6 text-gray'>{attributes?.title}</h3>
+                  <h5 className='text-lg sm:text-xl mt-10 h-[20vh] text-gray'>{attributes?.description}</h5>
                 </div>
               </div>
             </div>
