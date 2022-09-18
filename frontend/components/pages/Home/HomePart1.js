@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import Img from 'components/common/Img'
 import propTypes from 'prop-types'
 import React from 'react'
 import styles from 'styles/pages/home.module.scss'
@@ -17,10 +18,14 @@ const HomePart1 = ({ title, bgText1, image1, image2 }) => {
           <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-2']} />
           <div className='flex flex-col md:flex-row justify-between'>
             <div className={classNames(styles['home-img-card'], styles['home-img-card-1'])}>
-              <img
+              <Img
                 src={image1.data.attributes.image.data.attributes.url}
                 alt={image1.data.attributes.image.data.attributes.name}
               />
+              {/* <img
+                src={image1.data.attributes.image.data.attributes.url}
+                alt={image1.data.attributes.image.data.attributes.name}
+              /> */}
               <h5>{getDate(image1.data.attributes.date)}</h5>
               <h3>{image1.data.attributes.title}</h3>
             </div>

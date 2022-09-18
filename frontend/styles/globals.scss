@@ -39,6 +39,21 @@ h6 {
   @apply text-primary;
 }
 
+.image-container {
+  width: 100%;
+
+  > div {
+    position: unset !important;
+  }
+
+  .image {
+    object-fit: cover;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   margin-right: 1px;
