@@ -9,6 +9,7 @@ import Tippy from '@tippyjs/react'
 import navLinks from 'data/components/common/navLinks.json'
 import PropTypes from 'prop-types'
 import { AUTHOR_URL } from 'config/index'
+import Img from './Img'
 
 const NavSocialItems = ({ navItems, newClasses }) => {
   return (
@@ -70,7 +71,7 @@ const Navbar = () => {
           'nav px-7 py-4 h-[60px] md:h-[75px] lg:h-[85px] flex align-middle justify-between text-white fixed top-0 left-0 w-full z-30'
         )}
       >
-        <img src='/logo.png' alt='Picturesque' className='h-full cursor-pointer' onClick={() => router.push('/')} />
+        <Img src='/logo.png' alt='Picturesque' className='h-full cursor-pointer' onClick={() => router.push('/')} />
         <div className='flex-all'>
           <NavSocialItems navItems={navItems} newClasses='hidden sm:flex' />
           <img

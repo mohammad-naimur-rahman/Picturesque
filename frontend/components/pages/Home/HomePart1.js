@@ -14,23 +14,19 @@ const HomePart1 = ({ title, bgText1, image1, image2 }) => {
       <div className={classNames(styles['home-container-fluid'], styles['home-container-fluid-1'])}>
         <p className={classNames(styles['big-text'], styles['big-text-1'])}>{bgText1.data.attributes.title}</p>
         <div className={styles['home-container']}>
-          <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-1']} />
-          <img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-2']} />
+          <Img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-1']} />
+          <Img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-2']} />
           <div className='flex flex-col md:flex-row justify-between'>
             <div className={classNames(styles['home-img-card'], styles['home-img-card-1'])}>
               <Img
                 src={image1.data.attributes.image.data.attributes.url}
                 alt={image1.data.attributes.image.data.attributes.name}
               />
-              {/* <img
-                src={image1.data.attributes.image.data.attributes.url}
-                alt={image1.data.attributes.image.data.attributes.name}
-              /> */}
               <h5>{getDate(image1.data.attributes.date)}</h5>
               <h3>{image1.data.attributes.title}</h3>
             </div>
             <div className={classNames(styles['home-img-card'], styles['home-img-card-2'])}>
-              <img
+              <Img
                 src={image2.data.attributes.image.data.attributes.url}
                 alt={image2.data.attributes.image.data.attributes.name}
               />
