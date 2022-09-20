@@ -1,13 +1,17 @@
 import Head from 'next/head'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Navbar from './Navbar'
-import PreLoader from './PreLoader'
 import GridLines from './GridLines'
 import ScrollToTop from 'react-scroll-to-top'
 import Footer from './Footer'
+import dynamic from 'next/dynamic'
+const PreLoader = dynamic(() => import('./PreLoader'), {
+  ssr: false
+})
 
 const Layout = ({ title, meta, children }) => {
+  const [loadState, setloadState] = useState(false)
   useEffect(() => {
     if (typeof window !== 'undefined') {
       let timer = null
@@ -22,6 +26,15 @@ const Layout = ({ title, meta, children }) => {
       }
     }
   }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setloadState(true)
+      if (loadState) {
+        document.querySelector('body').classList.add('loaded')
+      }
+    }
+  }, [loadState])
   return (
     <>
       <Head>
@@ -30,7 +43,7 @@ const Layout = ({ title, meta, children }) => {
       </Head>
       <main className='relative'>
         <GridLines />
-        <PreLoader />
+        {!loadState ? <PreLoader /> : null}
         <ScrollToTop smooth />
         <Navbar />
         <div id='root-container'>{children}</div>
