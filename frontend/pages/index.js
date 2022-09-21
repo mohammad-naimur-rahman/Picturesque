@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import Layout from 'components/common/Layout'
 import HomeContactIntro from 'components/pages/Home/HomeContactIntro'
 import HomePart1 from 'components/pages/Home/HomePart1'
@@ -6,156 +5,38 @@ import HomePart2 from 'components/pages/Home/HomePart2'
 import HomePart3 from 'components/pages/Home/HomePart3'
 import HomePart4 from 'components/pages/Home/HomePart4'
 import HomePart5 from 'components/pages/Home/HomePart5'
-import { axiosGetter } from 'utils/axiosUtils'
-import dynamic from 'next/dynamic'
-import PropTypes from 'prop-types'
-import { useEffect } from 'react'
-const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
-  ssr: false
-})
-import Div100vh from 'react-div-100vh'
 import styles from 'styles/pages/home.module.scss'
+import { useQuery } from '@tanstack/react-query'
+import HomeSlider from 'components/pages/Home/HomeSlider'
 
-const Home = ({
-  slides,
-  title,
-  bgText1,
-  bgText2,
-  bgText3,
-  bgText4,
-  bgText5,
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  contactTitle
-}) => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.$ = window.jQuery = require('jquery')
-    }
-  }, [])
-
-  const { data: slidesData } = { ...slides }
-  const options = {
-    loop: true,
-    dots: true,
-    autoplay: true,
-    items: 4,
-    margin: 0,
-    autoplayTimeout: 5000,
-    smartSpeed: 1000,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 2
-      },
-      992: {
-        items: 3
-      },
-      1600: {
-        items: 4
-      }
-    }
-  }
+const Home = () => {
+  const { data: title } = useQuery(['home-title'])
+  const { data: bgText1 } = useQuery(['home-bg-text-1'])
+  const { data: bgText2 } = useQuery(['home-bg-text-2'])
+  const { data: bgText3 } = useQuery(['home-bg-text-3'])
+  const { data: bgText4 } = useQuery(['home-bg-text-4'])
+  const { data: bgText5 } = useQuery(['home-bg-text-5'])
+  const { data: image1 } = useQuery(['home-image-1'])
+  const { data: image2 } = useQuery(['home-image-2'])
+  const { data: image3 } = useQuery(['home-image-3'])
+  const { data: image4 } = useQuery(['home-image-4'])
+  const { data: image5 } = useQuery(['home-image-5'])
+  const { data: image6 } = useQuery(['home-image-6'])
+  const { data: image7 } = useQuery(['home-image-7'])
+  const { data: contactTitle } = useQuery(['home-contact-title'])
   return (
     <Layout>
-      <OwlCarousel className='owl-theme home-slider' {...options}>
-        {slidesData?.map(({ id, attributes }) => (
-          <Div100vh key={id}>
-            <div
-              className={classNames(styles['slider-card'], 'slider-card')}
-              style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.35)), url(${attributes?.image?.data.attributes.url})`
-              }}
-            >
-              <div className='flex items-end justify-center h-full'>
-                <div
-                  className={classNames(
-                    styles['text-card'],
-                    'flex flex-col align-center justify-start text-center text-white font-light px-3 sm:px-10'
-                  )}
-                >
-                  <div className={styles['slider-card_border-line']} />
-                  <h3 className='text-2xl sm:text-3xl text-left mt-6 text-gray'>{attributes?.title}</h3>
-                  <h5 className='text-lg sm:text-xl mt-10 h-[20vh] text-gray'>{attributes?.description}</h5>
-                </div>
-              </div>
-            </div>
-          </Div100vh>
-        ))}
-      </OwlCarousel>
-      <main className={styles['home']}>
+      <HomeSlider />
+      <section className={styles['home']}>
         <HomePart1 title={title} bgText1={bgText1} image1={image1} image2={image2} />
         <HomePart2 bgText2={bgText2} image3={image3} />
         <HomePart3 bgText3={bgText3} image4={image4} />
         <HomePart4 bgText4={bgText4} image5={image5} />
         <HomePart5 image6={image6} image7={image7} />
         <HomeContactIntro bgText5={bgText5} contactTitle={contactTitle} />
-      </main>
+      </section>
     </Layout>
   )
 }
 
 export default Home
-
-Home.propTypes = {
-  slides: PropTypes.object,
-  title: PropTypes.object,
-  bgText1: PropTypes.object,
-  bgText2: PropTypes.object,
-  bgText3: PropTypes.object,
-  bgText4: PropTypes.object,
-  bgText5: PropTypes.object,
-  image1: PropTypes.object,
-  image2: PropTypes.object,
-  image3: PropTypes.object,
-  image4: PropTypes.object,
-  image5: PropTypes.object,
-  image6: PropTypes.object,
-  image7: PropTypes.object,
-  contactTitle: PropTypes.object
-}
-
-export async function getStaticProps() {
-  const slides = await axiosGetter('homepage-sliders')
-  const title = await axiosGetter('home-title')
-  const bgText1 = await axiosGetter('home-bg-text-1')
-  const bgText2 = await axiosGetter('home-bg-text-2')
-  const bgText3 = await axiosGetter('home-bg-text-3')
-  const bgText4 = await axiosGetter('home-bg-text-4')
-  const bgText5 = await axiosGetter('home-bg-text-5')
-  const image1 = await axiosGetter('home-image-1')
-  const image2 = await axiosGetter('home-image-2')
-  const image3 = await axiosGetter('home-image-3')
-  const image4 = await axiosGetter('home-image-4')
-  const image5 = await axiosGetter('home-image-5')
-  const image6 = await axiosGetter('home-image-6')
-  const image7 = await axiosGetter('home-image-7')
-  const contactTitle = await axiosGetter('home-contact-title')
-  return {
-    props: {
-      slides,
-      title,
-      bgText1,
-      bgText2,
-      bgText3,
-      bgText4,
-      bgText5,
-      image1,
-      image2,
-      image3,
-      image4,
-      image5,
-      image6,
-      image7,
-      contactTitle
-    },
-    revalidate: 10
-  }
-}
