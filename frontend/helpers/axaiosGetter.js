@@ -1,7 +1,7 @@
 import axios from 'axios'
 import API_URL from 'config/index'
 
-const axiosClient = async (url, populate = true) => {
+const axiosGetter = async (url, populate = true) => {
   try {
     let fetchURL = ''
     if (populate) {
@@ -17,4 +17,4 @@ const axiosClient = async (url, populate = true) => {
   }
 }
 
-export default axiosClient
+export default axiosGetter

@@ -6,7 +6,7 @@ import HomePart2 from 'components/pages/Home/HomePart2'
 import HomePart3 from 'components/pages/Home/HomePart3'
 import HomePart4 from 'components/pages/Home/HomePart4'
 import HomePart5 from 'components/pages/Home/HomePart5'
-import axiosClient from 'helpers/axaiosClient'
+import axiosGetter from 'helpers/axaiosGetter'
 import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types'
 import { useEffect } from 'react'
@@ -123,21 +123,21 @@ Home.propTypes = {
 }
 
 export async function getStaticProps() {
-  const slides = await axiosClient('homepage-sliders')
-  const title = await axiosClient('home-title')
-  const bgText1 = await axiosClient('home-bg-text-1')
-  const bgText2 = await axiosClient('home-bg-text-2')
-  const bgText3 = await axiosClient('home-bg-text-3')
-  const bgText4 = await axiosClient('home-bg-text-4')
-  const bgText5 = await axiosClient('home-bg-text-5')
-  const image1 = await axiosClient('home-image-1')
-  const image2 = await axiosClient('home-image-2')
-  const image3 = await axiosClient('home-image-3')
-  const image4 = await axiosClient('home-image-4')
-  const image5 = await axiosClient('home-image-5')
-  const image6 = await axiosClient('home-image-6')
-  const image7 = await axiosClient('home-image-7')
-  const contactTitle = await axiosClient('home-contact-title')
+  const slides = await axiosGetter('homepage-sliders')
+  const title = await axiosGetter('home-title')
+  const bgText1 = await axiosGetter('home-bg-text-1')
+  const bgText2 = await axiosGetter('home-bg-text-2')
+  const bgText3 = await axiosGetter('home-bg-text-3')
+  const bgText4 = await axiosGetter('home-bg-text-4')
+  const bgText5 = await axiosGetter('home-bg-text-5')
+  const image1 = await axiosGetter('home-image-1')
+  const image2 = await axiosGetter('home-image-2')
+  const image3 = await axiosGetter('home-image-3')
+  const image4 = await axiosGetter('home-image-4')
+  const image5 = await axiosGetter('home-image-5')
+  const image6 = await axiosGetter('home-image-6')
+  const image7 = await axiosGetter('home-image-7')
+  const contactTitle = await axiosGetter('home-contact-title')
   return {
     props: {
       slides,
