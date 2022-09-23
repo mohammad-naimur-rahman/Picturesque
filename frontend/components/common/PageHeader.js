@@ -1,40 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Div100vh from 'react-div-100vh'
-import styles from 'styles/components/common/page-header.module.scss'
 import Img from './Img'
 import Button from './Button'
 
 const PageHeader = ({ introTitle, introDesc, introImg }) => {
   return (
-    <Div100vh>
-      <header className='min-h-screen'>
-        <main className='flex h-full'>
-          <section className='basis-1/2'>
-            <Img
-              src={introImg?.url}
-              alt={introImg?.name}
-              sizes='100vw'
-              width='600'
-              height='600'
-              className='!w-full !h-full object-cover'
-            />
-          </section>
-          <section className='basis-1/2 bg-bg'>
-            <div className='flex flex-col justify-center h-full px-24 text-gray mt-16'>
-              <span className='w-32 h-[1px] bg-gray'></span>
-              <h1 className='text-gray text-5xl my-6 font-light leading-normal'>{introTitle}</h1>
-              <p className='text-gray text-lg mb-10 font-thin leading-relaxed'>{introDesc}</p>
-              <div>
-                <Button white className='inline-block'>
-                  Contact Me
-                </Button>
-              </div>
+    <header className='min-h-screen'>
+      <main className='flex flex-col lg:flex-row h-full min-h-screen'>
+        <section className='basis-full lg:basis-1/2 max-h-[50vh] lg:max-h-screen'>
+          <Img
+            src={introImg?.url}
+            alt={introImg?.name}
+            sizes='100vw'
+            width='600'
+            height='600'
+            className='!w-full !h-[50vh] lg:!h-full object-cover'
+          />
+        </section>
+        <section className='basis-full lg:basis-1/2 min-h-[50vh] lg:min-h-screen bg-bg'>
+          <div className='flex flex-col justify-center min-h-[50vh] lg:min-h-screen h-full px-5 md:px-10 xl:px-16 xxl:px-24 py-12 text-gray'>
+            <span className='w-32 h-[1px] bg-gray mt-0 lg:mt-16'></span>
+            <h1 className='text-gray text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl my-4 lg:my-6 font-light leading-normal'>
+              {introTitle}
+            </h1>
+            <p className='text-gray text-base xl:text-lg mb-6 lg:mb-10 font-thin leading-relaxed'>{introDesc}</p>
+            <div>
+              <Button white className='inline-block'>
+                Contact Me
+              </Button>
             </div>
-          </section>
-        </main>
-      </header>
-    </Div100vh>
+          </div>
+        </section>
+      </main>
+    </header>
   )
 }
 

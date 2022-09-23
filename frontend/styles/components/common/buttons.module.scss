@@ -3,7 +3,7 @@
 .btn {
   letter-spacing: 1px;
   transition: background-color 0.5s;
-  @apply shadow min-w-[180px] h-[66px] uppercase text-[14px] relative;
+  @apply shadow min-w-[160px] lg:min-w-[180px] h-[58px] lg:h-[66px] uppercase text-[14px] relative;
 }
 
 // White buttons
