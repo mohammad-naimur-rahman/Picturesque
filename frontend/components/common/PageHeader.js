@@ -17,8 +17,8 @@ const PageHeader = ({ introTitle, introDesc, introImg }) => {
             className='!w-full !h-[50vh] lg:!h-full object-cover'
           />
         </section>
-        <section className='basis-full lg:basis-1/2 min-h-[50vh] lg:min-h-screen bg-bg'>
-          <div className='flex flex-col justify-center min-h-[50vh] lg:min-h-screen h-full px-5 md:px-10 xl:px-16 xxl:px-24 py-12 text-gray'>
+        <section className='basis-full lg:basis-1/2 min-h-[50vh] lg:min-h-screen bg-bg relative z-10'>
+          <div className='flex flex-col justify-center min-h-[50vh] lg:min-h-screen h-full px-5 md:px-10 xl:px-16 xxl:px-24 py-12 text-gray z-10'>
             <span className='w-32 h-[1px] bg-gray mt-0 lg:mt-16'></span>
             <h1 className='text-gray text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl my-4 lg:my-6 font-light leading-normal'>
               {introTitle}
@@ -30,6 +30,7 @@ const PageHeader = ({ introTitle, introDesc, introImg }) => {
               </Button>
             </div>
           </div>
+          <Img src='/backgrounds/dots.png' alt='dots' className='absolute -right-32 bottom-20 z-[1] opacity-10' />
         </section>
       </main>
     </header>
