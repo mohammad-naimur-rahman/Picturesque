@@ -1,8 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import classNames from 'classnames'
-import SliderSkeleton from 'components/common/SliderSkeleton'
 import dynamic from 'next/dynamic'
-import React from 'react'
 import Div100vh from 'react-div-100vh'
 import { axiosQGetter } from 'utils/queryUtils'
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
