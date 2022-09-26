@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import dynamic from 'next/dynamic'
+import { useQuery } from '@tanstack/react-query'
+import { axiosQGetter } from 'utils/queryUtils'
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
   ssr: false
 })
 
-const Testimonials = ({ bg, data, isLoading }) => {
+const Testimonials = ({ bg }) => {
+  const { data, isLoading } = useQuery(['testimonials'], async () => await axiosQGetter('testimonials'), {
+    suspense: false
+  })
   const {
     data: {
       attributes: {
@@ -56,15 +61,18 @@ const Testimonials = ({ bg, data, isLoading }) => {
         <div className='min-h-[55vh] -ml-0 md:-ml-20 lg:-ml-60 xl:-ml-80 w-full md:w-3/4 bg-opacity-0 md:bg-opacity-100 bg-white p-8 lg:p-14 pl-20 lg:pl-40 shadow-none md:shadow-xl flex flex-col justify-center'>
           <div className='dark-line'></div>
           <h1 className='text-4xl lg:text-5xl font-normal md:font-thin mt-6 lg:mt-10 mb-10 lg:mb-16'>Testimonials</h1>
-          <OwlCarousel className='owl-theme testimonial-slider' {...options}>
-            {isLoading && <p>Loading...</p>}
-            {testimonialsArr?.map(({ id, attributes: { testimonial, name } }) => (
-              <div key={id}>
-                <p className='italic font-normal md:font-light text-lg mb-5'>{testimonial}</p>
-                <h3 className='font-medium md:font-normal'>{name}</h3>
-              </div>
-            ))}
-          </OwlCarousel>
+          {isLoading ? (
+            <p className='italic font-light text-lg'>Loading...</p>
+          ) : (
+            <OwlCarousel className='owl-theme testimonial-slider' {...options}>
+              {testimonialsArr?.map(({ id, attributes: { testimonial, name } }) => (
+                <div key={id}>
+                  <p className='italic font-normal md:font-light text-lg mb-5'>{testimonial}</p>
+                  <h3 className='font-medium md:font-normal'>{name}</h3>
+                </div>
+              ))}
+            </OwlCarousel>
+          )}
         </div>
       </div>
     </div>
