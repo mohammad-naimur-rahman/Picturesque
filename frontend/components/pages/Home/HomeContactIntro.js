@@ -1,14 +1,12 @@
-import classNames from 'classnames'
 import Button from 'components/common/Button'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from 'styles/pages/home.module.scss'
 
-const HomeContactIntro = ({ bgText5, contactTitle }) => {
+const HomeContactIntro = ({ contactTitle }) => {
   return (
     <div className={styles['home-container-fluid']}>
-      <p className={classNames(styles['big-text'], styles['big-text-5'])}>{bgText5.data.attributes.title}</p>
       <div className='container text-center py-8 md:py-14 z-10'>
         <h1 className='text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px] font-light md:font-extralight text-primary'>
           {contactTitle.data.attributes.title}
@@ -27,6 +25,5 @@ const HomeContactIntro = ({ bgText5, contactTitle }) => {
 export default HomeContactIntro
 
 HomeContactIntro.propTypes = {
-  bgText5: PropTypes.object,
   contactTitle: PropTypes.object
 }

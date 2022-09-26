@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import GridLines from 'components/common/GridLines'
 import Layout from 'components/common/Layout'
 import PageHeader from 'components/common/PageHeader'
+import HomeContactIntro from 'components/pages/Home/HomeContactIntro'
 import ServicesCardsContainer from 'components/pages/Services/ServicesCardsContainer'
 import Statistics from 'components/pages/Services/Statistics'
 import Testimonials from 'components/pages/Services/Testimonials'
@@ -12,6 +13,7 @@ const ServicesPage = () => {
   const { data: cards } = useQuery(['services-cards'])
   const { data: bg } = useQuery(['testimonail-background'])
   const { data: statistics } = useQuery(['statistics'])
+  const { data: contactTitle } = useQuery(['home-contact-title'])
   const {
     data: {
       attributes: {
@@ -30,6 +32,7 @@ const ServicesPage = () => {
       <ServicesCardsContainer data={cards} />
       <Testimonials bg={bg} />
       <Statistics data={statistics} />
+      <HomeContactIntro contactTitle={contactTitle} />
     </Layout>
   )
 }

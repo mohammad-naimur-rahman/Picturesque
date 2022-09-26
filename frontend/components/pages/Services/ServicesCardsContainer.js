@@ -19,7 +19,7 @@ const ServicesCardsContainer = ({ data }) => {
               description
             }
           }) => (
-            <div key={id} className='basis-full md:basis-1/2 xl:basis-1/3 p-5'>
+            <div key={id} className='basis-full md:basis-1/2 xl:basis-1/3 p-5 lg:p-7'>
               <img src={url} alt={name} className='w-12 h-auto' />
               <h2 className='text-3xl font-light mt-5 mb-8'>{title}</h2>
               <p className='font-light'>{description}</p>
