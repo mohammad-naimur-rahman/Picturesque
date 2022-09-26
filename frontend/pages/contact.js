@@ -10,6 +10,7 @@ import React from 'react'
 const ContactPage = () => {
   const { data: introData } = useQuery(['contact-us-intro'])
   const { data: contactTitle } = useQuery(['contact-us-form-intro'])
+  const { data: link } = useQuery(['contact-us-map-link'])
   const {
     data: {
       attributes: {
@@ -27,7 +28,7 @@ const ContactPage = () => {
       <PageHeader introTitle={introTitle} introDesc={introDesc} introImg={introImg} />
       <HomeContactIntro contactTitle={contactTitle} showLink={false} />
       <ContactForm />
-      <ContactMap />
+      <ContactMap link={link} />
     </Layout>
   )
 }

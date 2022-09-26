@@ -24,12 +24,13 @@
     "react-countup": "^6.3.1",
     "react-div-100vh": "^0.7.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.36.1",
+    "react-hot-toast": "^2.4.0",
     "react-icons": "^4.4.0",
     "react-owl-carousel": "2.3.3",
     "react-scroll-to-top": "^3.0.0",
     "react-smooth-scrolling": "^1.0.2",
-    "sass": "^1.54.8",
-    "toastify": "^2.0.1"
+    "sass": "^1.54.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",

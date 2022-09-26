@@ -19,7 +19,6 @@ const AboutMe2nd = ({ data: datas, tags }) => {
     }
   } = { ...datas }
   const { data: tagsArr } = { ...tags }
-  console.log(tagsArr)
   return (
     <section className='flex flex-col md:flex-row min-h-screen'>
       <div className='basis-full md:basis-1/2 md:order-1 order-0'>
