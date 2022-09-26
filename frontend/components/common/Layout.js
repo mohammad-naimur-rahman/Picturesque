@@ -2,7 +2,6 @@ import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Navbar from './Navbar'
-import GridLines from './GridLines'
 import ScrollToTop from 'react-scroll-to-top'
 import Footer from './Footer'
 import dynamic from 'next/dynamic'
@@ -42,7 +41,6 @@ const Layout = ({ title, meta, children }) => {
         {meta}
       </Head>
       <main className='relative'>
-        <GridLines />
         {!loadState ? <PreLoader /> : null}
         <ScrollToTop smooth />
         <Navbar />

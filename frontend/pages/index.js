@@ -8,6 +8,7 @@ import HomePart5 from 'components/pages/Home/HomePart5'
 import styles from 'styles/pages/home.module.scss'
 import { useQuery } from '@tanstack/react-query'
 import HomeSlider from 'components/pages/Home/HomeSlider'
+import GridLines from 'components/common/GridLines'
 
 const Home = () => {
   const { data: title } = useQuery(['home-title'])
@@ -26,6 +27,7 @@ const Home = () => {
   const { data: contactTitle } = useQuery(['home-contact-title'])
   return (
     <Layout>
+      <GridLines />
       <HomeSlider />
       <section className={styles['home']}>
         <HomePart1 title={title} bgText1={bgText1} image1={image1} image2={image2} />

@@ -205,3 +205,51 @@ h6 {
     transform: rotate(-360deg);
   }
 }
+
+.dark-line {
+  @apply w-32 h-[1px] bg-bg mt-0 lg:mt-16;
+}
+
+.light-line {
+  @apply w-32 h-[1px] bg-gray mt-0 lg:mt-16;
+}
+
+.big-text {
+  color: #f0f0f0;
+  z-index: -1;
+  @apply font-light absolute text-[70px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[200px] xxl:text-[230px];
+}
+
+.about-me {
+  .accordion {
+    border: none;
+    max-width: 100%;
+
+    @media #{$md} {
+      max-width: 600px;
+    }
+  }
+
+  .accordion__button {
+    border: 1px solid $primary;
+    margin-bottom: 10px;
+    background-color: $primary;
+    color: $gray;
+    padding: 15px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    &:hover {
+      border: 1px solid $primary;
+      background-color: $primary;
+      color: $gray;
+    }
+  }
+
+  .accordion__panel {
+    margin-top: -10px;
+    padding: 15px;
+    @apply font-light;
+  }
+}

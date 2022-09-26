@@ -19,7 +19,7 @@ const PageHeader = ({ introTitle, introDesc, introImg }) => {
         </section>
         <section className='basis-full lg:basis-1/2 min-h-[50vh] lg:min-h-screen bg-bg relative z-10 overflow-hidden'>
           <div className='flex flex-col justify-center min-h-[50vh] lg:min-h-screen h-full px-5 md:px-10 xl:px-16 xxl:px-24 py-12 text-gray z-10'>
-            <span className='w-32 h-[1px] bg-gray mt-0 lg:mt-16'></span>
+            <span className='light-line'></span>
             <h1 className='text-gray text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl my-4 lg:my-6 font-light leading-normal'>
               {introTitle}
             </h1>
