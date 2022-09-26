@@ -1,17 +1,9 @@
 import Img from 'components/common/Img'
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel
-} from 'react-accessible-accordion'
-import { map } from 'jquery'
 import Tippy from '@tippyjs/react'
 
-const AboutMe2nd = ({ data: datas, qualities, tags }) => {
+const AboutMe2nd = ({ data: datas, tags }) => {
   const {
     data: {
       attributes: {

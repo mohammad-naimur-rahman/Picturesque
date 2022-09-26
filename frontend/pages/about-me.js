@@ -27,7 +27,7 @@ const AboutMePage = () => {
     <Layout title='About Me'>
       <PageHeader introTitle={introTitle} introDesc={introDesc} introImg={introImg} />
       <AboutMe1st data={aboutMe1} qualities={qualities} />
-      <AboutMe2nd data={aboutMe2} qualities={qualities} tags={tags} />
+      <AboutMe2nd data={aboutMe2} tags={tags} />
     </Layout>
   )
 }
