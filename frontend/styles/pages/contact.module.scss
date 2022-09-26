@@ -1,0 +1,12 @@
+@import '../theme.module';
+
+.input {
+  @apply placeholder:italic placeholder:font-light placeholder:text-sm placeholder:text-text p-5 text-primary font-light text-sm italic w-full;
+  border-bottom: 1px solid #c0c0c0;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid #c0c0c0;
+  }
+}
