@@ -29,7 +29,7 @@ const AboutMe1st = ({ data: datas, qualities }) => {
     <section className='flex flex-col md:flex-row min-h-screen'>
       <div className='basis-1/2 relative h-full flex-all min-h-auto md:min-h-screen md:order-0 order-1'>
         <span className='big-text top-10 left-0'>{bg_text}</span>
-        <div className='bg-white p-5 lg:p-10 xl:p-16 translate-x-0 md:translate-x-12 lg:translate-x-20 xl:translate-x-32 about-me'>
+        <div className='bg-white p-5 lg:p-10 xl:p-16 translate-x-0 md:translate-x-12 lg:translate-x-20 xl:translate-x-32 about-me shadow-lg'>
           <div className='dark-line'></div>
           <h1 className='text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl my-4 lg:my-8 font-light leading-normal'>
             {title}

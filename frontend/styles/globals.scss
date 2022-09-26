@@ -253,3 +253,30 @@ h6 {
     @apply font-light;
   }
 }
+
+.testimonial-slider {
+  .owl-dots {
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    left: -100px;
+    rotate: 90deg;
+
+    // @media #{$sm} {
+    //   left: 50px;
+    // }
+
+    .owl-dot span {
+      width: 10px !important;
+      height: 10px !important;
+      border: 1px solid $black !important;
+      border-radius: 50% !important;
+      display: inline-block !important;
+      background-color: transparent !important;
+    }
+
+    .owl-dot.active span {
+      background-color: $black !important;
+    }
+  }
+}
