@@ -11,7 +11,7 @@ const ContactMap = ({ link }) => {
     <div className='container my-5 lg:my-10'>
       <iframe
         src={linkAttr}
-        height='450'
+        height='550'
         style={{ border: 'none', width: '100%' }}
         allowFullScreen={true}
         loading='lazy'
