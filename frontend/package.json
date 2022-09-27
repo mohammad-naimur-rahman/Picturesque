@@ -27,6 +27,7 @@
     "react-hook-form": "^7.36.1",
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.4.0",
+    "react-masonry-css": "^1.0.16",
     "react-owl-carousel": "2.3.3",
     "react-scroll-to-top": "^3.0.0",
     "react-smooth-scrolling": "^1.0.2",

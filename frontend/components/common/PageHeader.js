@@ -25,7 +25,7 @@ const PageHeader = ({ introTitle, introDesc, introImg, extra = false }) => {
           >
             {extra ? <div></div> : null}
             <div>
-              <span className='light-line'></span>
+              <div className='light-line'></div>
               <h1 className='text-gray text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl my-4 lg:my-6 font-light leading-normal'>
                 {introTitle}
               </h1>
@@ -51,5 +51,5 @@ PageHeader.propTypes = {
   introTitle: PropTypes.string,
   introDesc: PropTypes.string,
   introImg: PropTypes.object,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.bool])
+  extra: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.bool])
 }
