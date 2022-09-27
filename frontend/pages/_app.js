@@ -6,6 +6,7 @@ import 'tippy.js/dist/tippy.css'
 import 'owl.carousel/dist/assets/owl.carousel.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
 import 'react-accessible-accordion/dist/fancy-example.css'
+import ErrorBoundary from 'utils/ErrorBoundary'
 
 const defaultQueryFn = async ({ queryKey }) => {
   const { data } = await axios.get(`${API_URL}/${queryKey[0]}?populate=*`)
@@ -23,11 +24,13 @@ const queryClient = new QueryClient({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
-        <Component {...pageProps} />
-      </Hydrate>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <Component {...pageProps} />
+        </Hydrate>
+      </QueryClientProvider>
+    </ErrorBoundary>
   )
 }
 
