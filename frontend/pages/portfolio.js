@@ -23,7 +23,7 @@ const PortfolioPage = () => {
   return (
     <Layout title='Portfolio'>
       <GridLines />
-      <PageHeader introTitle={introTitle} introDesc={introDesc} introImg={introImg} />
+      <PageHeader introTitle={introTitle} introDesc={introDesc} introImg={introImg} extra={<p>loading..</p>} />
       <PortfollioGrid cards={cards} types={types} />
     </Layout>
   )
