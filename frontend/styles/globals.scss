@@ -276,3 +276,17 @@ h6 {
     }
   }
 }
+
+.show-on-mount {
+  opacity: 1;
+  animation: show 0.5s linear;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
