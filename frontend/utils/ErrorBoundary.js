@@ -13,7 +13,7 @@ class ErrorBoundary extends React.Component {
     console.log({ error, errorInfo })
   }
   render() {
-    if (this.state.hasError) {
+    if (this.state.hasError && process.env.NODE_ENV === 'production') {
       return (
         <div className='flex-col-all w-full min-h-screen'>
           <h2 className='text-red text-4xl mb-4'>Oops, there is an error!</h2>
