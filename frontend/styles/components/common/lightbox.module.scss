@@ -1,0 +1,12 @@
+.lightbox {
+  animation: show 0.3s linear;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

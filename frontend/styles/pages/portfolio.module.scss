@@ -1,0 +1,12 @@
+.show-on-mount {
+  animation: show 0.3s linear;
+}
+
+@keyframes show {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,4 +1,5 @@
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import ErrorBoundary from 'utils/ErrorBoundary'
 import API_URL from 'config'
 import axios from 'axios'
 import '../styles/globals.scss'
@@ -6,7 +7,6 @@ import 'tippy.js/dist/tippy.css'
 import 'owl.carousel/dist/assets/owl.carousel.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
 import 'react-accessible-accordion/dist/fancy-example.css'
-import ErrorBoundary from 'utils/ErrorBoundary'
 
 const defaultQueryFn = async ({ queryKey }) => {
   const { data } = await axios.get(`${API_URL}/${queryKey[0]}?populate=*`)

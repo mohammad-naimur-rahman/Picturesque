@@ -4,10 +4,6 @@ import PropTypes from 'prop-types'
 import Navbar from './Navbar'
 import ScrollToTop from 'react-scroll-to-top'
 import Footer from './Footer'
-import dynamic from 'next/dynamic'
-const PreLoader = dynamic(() => import('./PreLoader'), {
-  ssr: false
-})
 
 const Layout = ({ title, meta, children }) => {
   const [loadState, setloadState] = useState(false)
@@ -41,7 +37,6 @@ const Layout = ({ title, meta, children }) => {
         {meta}
       </Head>
       <main className='relative'>
-        {!loadState ? <PreLoader /> : null}
         <ScrollToTop smooth />
         <Navbar />
         <div id='root-container'>{children}</div>

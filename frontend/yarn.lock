@@ -1843,11 +1843,6 @@ react-scroll-to-top@^3.0.0:
   resolved "https://registry.yarnpkg.com/react-scroll-to-top/-/react-scroll-to-top-3.0.0.tgz#002984419d4d10fdb5654c9e3dd3341f81209a60"
   integrity sha512-I/k45Ujai097du59tHBbzGxN7Lyc6K8Uc3IChq6HMXaBfB8N/rrfm055T5Yv0DWfVpf6pOFaBmhD3LOfH5unGw==
 
-react-smooth-scrolling@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-smooth-scrolling/-/react-smooth-scrolling-1.0.2.tgz#6ce393c336412b8f2328e456c64fc2f49a2b77c7"
-  integrity sha512-AAkPQDLeVtLL92E0iyE86oj7ASSKE5L0mIqSeT19FXHT13/N+9Yxpf1VFKhN49BDJ60zE35nru0VjbDpmbDXNA==
-
 react@16.14.0:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
