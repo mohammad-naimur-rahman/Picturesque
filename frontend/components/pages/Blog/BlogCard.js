@@ -24,14 +24,17 @@ const BlogCard = ({ data }) => {
   } = { ...data }
   const { month, day, year } = getDate(createdAt, true)
   return (
-    <section className='w-full px-10 relative mt-5'>
-      <div className='absolute -top-5 left-16 bg-black text-gray px-3 py-4 text-center'>
+    <section className='w-full px-0 lg:px-10 relative mt-5'>
+      <div className='absolute -top-5 left-6 lg:left-16 bg-black text-gray px-2 md:px-3 py-2 md:py-4 text-center'>
         <p className='text-gray py-1 font-extralight'>{month}</p>
         <p className='text-gray py-1 font-extralight'>{day}</p>
         <p className='text-gray py-1 font-extralight'>&apos;{year.toString().slice(2, 4)}</p>
       </div>
       <Img src={url} name={name} className='!w-full aspect-half object-cover shadow-lg' />
-      <h2 onClick={() => router.push(`/blogs/${slug}`)} className='cursor-pointer text-3xl font-light mt-14'>
+      <h2
+        onClick={() => router.push(`/blogs/${slug}`)}
+        className='cursor-pointer text-3xl font-light mt-14 hover:text-hover'
+      >
         {title}
       </h2>
       <div className='flex mb-12'>

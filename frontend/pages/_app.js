@@ -9,7 +9,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css'
 import 'react-accessible-accordion/dist/fancy-example.css'
 
 const defaultQueryFn = async ({ queryKey }) => {
-  const { data } = await axios.get(`${API_URL}/${queryKey[0]}?populate=*`)
+  const { data } = await axios.get(`${API_URL}/${queryKey[0]}?populate=*${queryKey[1] ? '&' + queryKey[1] : ''}`)
   return data
 }
 
