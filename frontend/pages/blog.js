@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import Button from 'components/common/Button'
 import GridLines from 'components/common/GridLines'
 import Layout from 'components/common/Layout'
 import PageHeader from 'components/common/PageHeader'
@@ -19,6 +20,9 @@ const BlogPage = () => {
         introImg={{ url: blogIntroImg, name: 'blog-intro-image' }}
       />
       <BlogPosts posts={posts} />
+      <div className='block w-full text-center'>
+        <Button>Load More</Button>
+      </div>
     </Layout>
   )
 }

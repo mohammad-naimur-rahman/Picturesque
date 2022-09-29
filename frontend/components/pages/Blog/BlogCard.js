@@ -1,11 +1,56 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Img from 'components/common/Img'
+import { useRouter } from 'next/router'
+import getDate from 'utils/getDate'
+import { BLOG_SHORT_DESC_LENGTH } from 'config/index'
 
 const BlogCard = ({ data }) => {
+  const router = useRouter()
+  const {
+    attributes: {
+      createdAt,
+      slug,
+      title,
+      short_description,
+      blog_categories: { data: categoryArr },
+      blog_comments: { data: commentArr },
+      cover_image: {
+        data: {
+          attributes: { name, url }
+        }
+      }
+    }
+  } = { ...data }
+  const { month, day, year } = getDate(createdAt, true)
   return (
-    <div>
-      <p>mans</p>
-    </div>
+    <section className='w-full px-10 relative mt-5'>
+      <div className='absolute -top-5 left-16 bg-black text-gray px-3 py-4 text-center'>
+        <p className='text-gray py-1 font-extralight'>{month}</p>
+        <p className='text-gray py-1 font-extralight'>{day}</p>
+        <p className='text-gray py-1 font-extralight'>&apos;{year.toString().slice(2, 4)}</p>
+      </div>
+      <Img src={url} name={name} className='!w-full aspect-half object-cover shadow-lg' />
+      <h2 onClick={() => router.push(`/blogs/${slug}`)} className='cursor-pointer text-3xl font-light mt-14'>
+        {title}
+      </h2>
+      <div className='flex mb-12'>
+        {categoryArr?.map(({ id, attributes: { category } }) => (
+          <p key={id} className='font-normal mt-2 mr-1'>
+            {category}{' '}
+          </p>
+        ))}
+        <p className='font-normal mt-2'>
+          {' '}
+          | {commentArr.length} {commentArr.length > 1 ? 'comments' : 'comment'}
+        </p>
+      </div>
+      <p className='mb-20 font-light'>
+        {short_description.length > BLOG_SHORT_DESC_LENGTH
+          ? short_description.slice(0, BLOG_SHORT_DESC_LENGTH) + '...'
+          : short_description}
+      </p>
+    </section>
   )
 }
 
