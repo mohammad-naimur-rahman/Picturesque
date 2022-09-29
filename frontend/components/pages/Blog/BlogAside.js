@@ -8,7 +8,6 @@ import Img from 'components/common/Img'
 const BlogAside = ({ categories, latestPosts }) => {
   const { data: catsArr } = { ...categories }
   const { data: posts } = { ...latestPosts }
-  console.log(posts)
   return (
     <aside className='w-full sm:w-96'>
       <div className='flex-all'>

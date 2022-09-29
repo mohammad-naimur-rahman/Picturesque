@@ -4,7 +4,7 @@ import Img from './Img'
 import Button from './Button'
 import { useRouter } from 'next/router'
 
-const PageHeader = ({ introTitle, introDesc, introImg, extra = false }) => {
+const PageHeader = ({ introTitle, introDesc, introImg, extra = false, showButton = true }) => {
   const router = useRouter()
   return (
     <header className='min-h-screen'>
@@ -33,9 +33,11 @@ const PageHeader = ({ introTitle, introDesc, introImg, extra = false }) => {
               </h1>
               <p className='text-gray text-base xl:text-lg mb-6 lg:mb-10 font-thin leading-relaxed'>{introDesc}</p>
               <div>
-                <Button white className='inline-block' onClick={() => router.push('/contact')}>
-                  Contact Me
-                </Button>
+                {showButton && (
+                  <Button white className='inline-block' onClick={() => router.push('/contact')}>
+                    Contact Me
+                  </Button>
+                )}
               </div>
             </div>
             {extra ? extra : null}
@@ -53,5 +55,6 @@ PageHeader.propTypes = {
   introTitle: PropTypes.string,
   introDesc: PropTypes.string,
   introImg: PropTypes.object,
+  showButton: PropTypes.bool,
   extra: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.bool])
 }
