@@ -2,8 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from './Img'
 import Button from './Button'
+import { useRouter } from 'next/router'
 
 const PageHeader = ({ introTitle, introDesc, introImg, extra = false }) => {
+  const router = useRouter()
   return (
     <header className='min-h-screen'>
       <main className='flex flex-col lg:flex-row h-full min-h-screen'>
@@ -31,7 +33,7 @@ const PageHeader = ({ introTitle, introDesc, introImg, extra = false }) => {
               </h1>
               <p className='text-gray text-base xl:text-lg mb-6 lg:mb-10 font-thin leading-relaxed'>{introDesc}</p>
               <div>
-                <Button white className='inline-block'>
+                <Button white className='inline-block' onClick={() => router.push('/contact')}>
                   Contact Me
                 </Button>
               </div>
