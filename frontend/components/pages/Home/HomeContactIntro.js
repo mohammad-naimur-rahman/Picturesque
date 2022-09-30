@@ -8,26 +8,30 @@ import styles from 'styles/pages/home.module.scss'
 
 const HomeContactIntro = ({ bgText5, contactTitle, showLink = true }) => {
   return (
-    <AnimationOnScroll animateIn='animate__fadeInUp'>
-      <div className={styles['home-container-fluid']}>
-        {bgText5 ? (
-          <p className={classNames(styles['big-text'], styles['big-text-5'])}>{bgText5.data.attributes.title}</p>
-        ) : null}
-        <div className='container text-center py-8 md:py-14 z-10'>
+    <div className={styles['home-container-fluid']}>
+      {bgText5 ? (
+        <p className={classNames(styles['big-text'], styles['big-text-5'])}>{bgText5.data.attributes.title}</p>
+      ) : null}
+      <div className='container text-center py-8 md:py-14 z-10'>
+        <AnimationOnScroll animateIn='animate__fadeInUp'>
           <h1 className='text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px] font-light md:font-extralight text-primary'>
             {contactTitle.data.attributes.title}
           </h1>
+        </AnimationOnScroll>
+        <AnimationOnScroll animateIn='animate__fadeInUp' delay={200}>
           <h2 className='text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px] font-light mt-4 md:mt-8 text-primary'>
             {contactTitle.data.attributes.description}
           </h2>
-          {showLink ? (
+        </AnimationOnScroll>
+        {showLink ? (
+          <AnimationOnScroll animateIn='animate__fadeInUp' delay={400}>
             <Link href='/contact'>
               <Button className='my-8 md:my-10 lg:my-20'>Contact Us</Button>
             </Link>
-          ) : null}
-        </div>
+          </AnimationOnScroll>
+        ) : null}
       </div>
-    </AnimationOnScroll>
+    </div>
   )
 }
 

@@ -4,6 +4,7 @@ import { BsSearch } from 'react-icons/bs'
 import { AsideElement, AsideHeading } from './AsideComponents'
 import getDate, { months, prevMonth } from 'utils/getDate'
 import Img from 'components/common/Img'
+import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const BlogAside = ({ categories, latestPosts }) => {
   const { data: catsArr } = { ...categories }
@@ -24,39 +25,49 @@ const BlogAside = ({ categories, latestPosts }) => {
       <AsideElement>
         {months[prevMonth().getMonth()]} {prevMonth().getFullYear()}
       </AsideElement>
-      <AsideElement>
+      <AsideElement delay={150}>
         {months[prevMonth(2).getMonth()]} {prevMonth().getFullYear()}
       </AsideElement>
-      <AsideElement>
+      <AsideElement delay={300}>
         {months[prevMonth(3).getMonth()]} {prevMonth().getFullYear()}
       </AsideElement>
-      <AsideElement>
+      <AsideElement delay={450}>
         {months[prevMonth(4).getMonth()]} {prevMonth().getFullYear()}
       </AsideElement>
       <AsideHeading>Categories</AsideHeading>
-      {catsArr?.map(({ id, attributes: { category } }) => (
-        <AsideElement key={id}>{category}</AsideElement>
+      {catsArr?.map(({ id, attributes: { category } }, i) => (
+        <AsideElement key={id} delay={i * 150}>
+          {category}
+        </AsideElement>
       ))}
       <AsideHeading>Latest Blogs</AsideHeading>
       {posts?.map(
-        ({
-          id,
-          attributes: {
-            title,
-            createdAt,
-            cover_image: {
-              data: {
-                attributes: {
-                  formats: {
-                    thumbnail: { url, name }
+        (
+          {
+            id,
+            attributes: {
+              title,
+              createdAt,
+              cover_image: {
+                data: {
+                  attributes: {
+                    formats: {
+                      thumbnail: { url, name }
+                    }
                   }
                 }
-              }
-            },
-            blog_categories: { data: cats }
-          }
-        }) => (
-          <div key={id} className='flex items-center my-6 cursor-pointer'>
+              },
+              blog_categories: { data: cats }
+            }
+          },
+          i
+        ) => (
+          <AnimationOnScroll
+            key={id}
+            className='flex items-center my-6 cursor-pointer'
+            animateIn='animate__fadeInRight'
+            delay={i * 200}
+          >
             <Img src={url} alt={name} sizes='10vw' className='!w-16 !h-16 aspect-square object-cover' />
             <div className='ml-3'>
               <p className='font-light text-sm'>{title}</p>
@@ -64,7 +75,7 @@ const BlogAside = ({ categories, latestPosts }) => {
                 {cats[0].attributes.category} / {getDate(createdAt)}
               </p>
             </div>
-          </div>
+          </AnimationOnScroll>
         )
       )}
     </aside>

@@ -77,7 +77,7 @@ const ContactForm = () => {
           {errors.message && <p className='text-red italic text-sm mt-2'>Message is required</p>}
         </div>
         <div className='flex-all'>
-          <Button solid edge inverted type='submit' className='mt-8'>
+          <Button solid inverted edge type='submit' className='mt-8'>
             Send Message
           </Button>
         </div>

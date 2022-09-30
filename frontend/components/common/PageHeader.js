@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Img from './Img'
 import Button from './Button'
 import { useRouter } from 'next/router'
-import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const PageHeader = ({ introTitle, introDesc, introImg, extra = false, showButton = true }) => {
   const router = useRouter()
@@ -27,7 +26,7 @@ const PageHeader = ({ introTitle, introDesc, introImg, extra = false, showButton
             } min-h-[50vh] lg:min-h-screen h-full px-5 md:px-10 xl:px-16 xxl:px-24 py-12 text-gray z-10`}
           >
             {extra ? <div></div> : null}
-            <AnimationOnScroll animateIn='animate__fadeInRight'>
+            <div className='animate__animated animate__fadeInRight'>
               <div className='light-line'></div>
               <h1 className='text-gray text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl my-4 lg:my-6 font-light leading-normal'>
                 {introTitle}
@@ -40,7 +39,7 @@ const PageHeader = ({ introTitle, introDesc, introImg, extra = false, showButton
                   </Button>
                 )}
               </div>
-            </AnimationOnScroll>
+            </div>
             {extra ? extra : null}
           </div>
           <Img src='/backgrounds/dots.png' alt='dots' className='absolute -right-32 bottom-20 z-[1] opacity-10' />

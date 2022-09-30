@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Masonry from 'react-masonry-css'
 import getDate from 'utils/getDate'
-import classNames from 'classnames'
-import styles from 'styles/pages/portfolio.module.scss'
 import LightBox from 'components/common/LightBox'
+import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const PortfollioGrid = ({ cards }) => {
   const [lightboxSrc, setlightboxSrc] = useState('')
@@ -43,7 +42,7 @@ const PortfollioGrid = ({ cards }) => {
                 }
               }
             }) => (
-              <div className={classNames(styles['show-on-mount'], 'p-3 show-on-mount')} key={id}>
+              <div className='p-3 animate__animated animate__fadeInUp' key={id}>
                 <img
                   src={url}
                   alt={name}

@@ -8,44 +8,44 @@
 
 // White buttons
 .btn-white {
-  border: 1px solid $white;
-  background-color: $primary;
-  color: $white;
+  border: 1px solid $white !important;
+  background-color: $primary !important;
+  color: $white !important;
 
   &:hover {
-    background-color: $white;
-    color: $primary;
+    background-color: $white !important;
+    color: $primary !important;
   }
 }
 
 .btn-white-solid {
-  border: 1px solid $white;
-  background-color: $primary;
-  color: $white;
+  border: 1px solid $white !important;
+  background-color: $primary !important;
+  color: $white !important;
 }
 
 .btn-white-inverted {
-  border: 1px solid $primary;
-  background-color: $white;
-  color: $primary;
+  border: 1px solid $primary !important;
+  background-color: $white !important;
+  color: $primary !important;
 
   &:hover {
-    border: 1px solid $white;
-    background-color: $primary;
-    color: $white;
+    border: 1px solid $white !important;
+    background-color: $primary !important;
+    color: $white !important;
   }
 }
 
 .btn-white-solid-inverted {
-  border: 1px solid $primary;
-  background-color: $white;
-  color: $primary;
+  border: 1px solid $primary !important;
+  background-color: $white !important;
+  color: $primary !important;
 }
 
 .btn-white-solid-edge-inverted {
-  border: 1px solid $white;
-  background-color: $white;
-  color: $primary;
+  border: 1px solid $white !important;
+  background-color: $white !important;
+  color: $primary !important;
 
   &::after {
     content: '';
@@ -55,50 +55,50 @@
     width: 100%;
     height: 100%;
     z-index: 0;
-    border: 1px solid $white;
+    border: 1px solid $white !important;
   }
 }
 
 // Black Buttons
 .btn-black {
-  border: 1px solid $primary;
-  background-color: $white;
-  color: $primary;
+  border: 1px solid $primary !important;
+  background-color: $white !important;
+  color: $primary !important;
 
   &:hover {
-    background-color: $primary;
-    color: $white;
+    background-color: $primary !important;
+    color: $white !important;
   }
 }
 
 .btn-black-solid {
-  border: 1px solid $primary;
-  background-color: $white;
-  color: $primary;
+  border: 1px solid $primary !important;
+  background-color: $white !important;
+  color: $primary !important;
 }
 
 .btn-black-inverted {
-  border: 1px solid $primary;
-  background-color: $primary;
-  color: $white;
+  border: 1px solid $primary !important;
+  background-color: $primary !important;
+  color: $white !important;
 
   &:hover {
-    border: 1px solid $primary;
-    background-color: $white;
-    color: $primary;
+    border: 1px solid $primary !important;
+    background-color: $white !important;
+    color: $primary !important;
   }
 }
 
 .btn-black-solid-inverted {
-  border: 1px solid $primary;
-  background-color: $primary;
-  color: $white;
+  border: 1px solid $primary !important;
+  background-color: $primary !important;
+  color: $white !important;
 }
 
 .btn-black-solid-edge-inverted {
-  border: 1px solid $primary;
-  background-color: $primary;
-  color: $white;
+  border: 1px solid $primary !important;
+  background-color: $primary !important;
+  color: $white !important;
 
   &::after {
     content: '';
