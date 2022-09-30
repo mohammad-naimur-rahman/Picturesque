@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Masonry from 'react-masonry-css'
 import getDate from 'utils/getDate'
 import LightBox from 'components/common/LightBox'
-import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const PortfollioGrid = ({ cards }) => {
   const [lightboxSrc, setlightboxSrc] = useState('')
