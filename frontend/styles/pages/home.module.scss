@@ -50,15 +50,15 @@
   }
 
   .home-container-fluid {
-    @apply relative;
+    @apply relative isolate;
   }
 
   .home-container {
-    @apply container relative;
+    @apply container relative isolate z-20;
   }
 
   .home-img-card {
-    z-index: 3;
+    z-index: 30;
     flex-basis: 40%;
 
     img {
@@ -77,7 +77,7 @@
 
   .big-text {
     color: #f0f0f0;
-    z-index: -1;
+    z-index: -10;
     @apply font-light absolute text-[70px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[200px] xxl:text-[230px];
   }
 
@@ -104,7 +104,7 @@
   }
 
   .big-text-2 {
-    @apply right-0 top-[-100px] md:top-[-50px] lg:top-[-80px] xl:top-[-150px];
+    @apply right-0 top-[-100px] md:top-[-50px] lg:top-[-80px] xl:top-[-100px];
   }
 
   .big-text-3 {
@@ -112,7 +112,7 @@
   }
 
   .big-text-4 {
-    @apply top-[-100px] md:top-0 right-0;
+    @apply top-[250px] md:top-[50px] right-0;
   }
 
   .big-text-5 {

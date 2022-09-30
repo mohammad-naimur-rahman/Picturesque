@@ -4,6 +4,7 @@ import styles from 'styles/pages/home.module.scss'
 import getDate from 'utils/getDate'
 import classNames from 'classnames'
 import Img from 'components/common/Img'
+import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const HomePart5 = ({ image6, image7 }) => {
   return (
@@ -11,22 +12,26 @@ const HomePart5 = ({ image6, image7 }) => {
       <div className={styles['home-container']}>
         <Img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-6']} />
         <div className='flex flex-col md:flex-row justify-center md:justify-end'>
-          <div className={classNames(styles['home-img-card'], styles['home-img-card-6'])}>
-            <Img
-              src={image6.data.attributes.image.data.attributes.url}
-              alt={image6.data.attributes.image.data.attributes.name}
-            />
-            <h5>{getDate(image6.data.attributes.date)}</h5>
-            <h3>{image6.data.attributes.title}</h3>
-          </div>
-          <div className={classNames(styles['home-img-card'], styles['home-img-card-7'])}>
-            <Img
-              src={image7.data.attributes.image.data.attributes.url}
-              alt={image7.data.attributes.image.data.attributes.name}
-            />
-            <h5>{getDate(image7.data.attributes.date)}</h5>
-            <h3>{image7.data.attributes.title}</h3>
-          </div>
+          <AnimationOnScroll animateIn='animate__fadeIn'>
+            <div className={classNames(styles['home-img-card'], styles['home-img-card-6'])}>
+              <Img
+                src={image6.data.attributes.image.data.attributes.url}
+                alt={image6.data.attributes.image.data.attributes.name}
+              />
+              <h5>{getDate(image6.data.attributes.date)}</h5>
+              <h3>{image6.data.attributes.title}</h3>
+            </div>
+          </AnimationOnScroll>
+          <AnimationOnScroll animateIn='animate__fadeIn'>
+            <div className={classNames(styles['home-img-card'], styles['home-img-card-7'])}>
+              <Img
+                src={image7.data.attributes.image.data.attributes.url}
+                alt={image7.data.attributes.image.data.attributes.name}
+              />
+              <h5>{getDate(image7.data.attributes.date)}</h5>
+              <h3>{image7.data.attributes.title}</h3>
+            </div>
+          </AnimationOnScroll>
         </div>
       </div>
     </div>

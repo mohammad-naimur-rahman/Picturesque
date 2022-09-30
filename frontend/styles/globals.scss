@@ -5,9 +5,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
 
+//FIXME: investigate why font is not applying on production
 html {
   min-height: calc(100vh - calc(100vh - 100%));
-  font-family: $font-primary;
+  // font-family: $font-primary;
 }
 
 body {
