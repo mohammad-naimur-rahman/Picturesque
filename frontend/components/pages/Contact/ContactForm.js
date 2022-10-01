@@ -28,7 +28,7 @@ const ContactForm = () => {
     }
   }
   return (
-    <div className='container contact-form'>
+    <div className='container'>
       <Toaster position='top-center' />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='flex flex-col md:flex-row'>

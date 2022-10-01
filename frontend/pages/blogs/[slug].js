@@ -5,6 +5,7 @@ import GridLines from 'components/common/GridLines'
 import Layout from 'components/common/Layout'
 import PageHeader from 'components/common/PageHeader'
 import PreLoader from 'components/common/PreLoader'
+import CommentForm from 'components/pages/BlogDetails/CommentForm'
 import { useRouter } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
@@ -47,13 +48,15 @@ const BlogDetailsPage = () => {
             introImg={blogArr[0]?.attributes?.cover_image?.data?.attributes}
             showButton={false}
           />
-          <div className='px-2 md:px-5 lg:px-8'>
-            <div className={classNames(styles['blog-details'], 'max-w-[900px] mx-auto py-16')}>
+          <div className='px-2 md:px-5 lg:px-8 max-w-[900px] mx-auto'>
+            <div className={classNames(styles['blog-details'], 'py-16')}>
               <ReactMarkdown>{blogArr[0]?.attributes?.post}</ReactMarkdown>
             </div>
-            <div className='w-full flex-all my-5'>
+            <CommentForm id={blogArr[0]?.id} />
+            <div className='w-full flex-col-all mt-16 mb-8'>
+              <h2 className='text-4xl pb-5'>Liked this blog?</h2>
               <Button solid inverted edge onClick={() => push('/blog')}>
-                Read More Blogs
+                Read More
               </Button>
             </div>
           </div>
