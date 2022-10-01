@@ -19,7 +19,7 @@ const HomeContactIntro = ({ bgText5, contactTitle, showLink = true }) => {
           </h1>
         </AnimationOnScroll>
         <AnimationOnScroll animateIn='animate__fadeInUp' delay={200}>
-          <h2 className='text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px] font-light mt-4 md:mt-8 text-primary'>
+          <h2 className='text-[30px] md:text-[45px] lg:text-[50px] xl:text-[55px] font-regular mt-4 md:mt-8 text-primary'>
             {contactTitle.data.attributes.description}
           </h2>
         </AnimationOnScroll>

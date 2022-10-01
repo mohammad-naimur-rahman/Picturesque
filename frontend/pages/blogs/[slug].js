@@ -18,6 +18,23 @@ const BlogDetailsPage = () => {
   const {
     data: { data: blogArr }
   } = useQuery(['blog-posts', `filters[slug]=${slug}`])
+  console.log(blogArr.length)
+  if (blogArr.length === 0) {
+    return (
+      <Layout title='The blog you searched for not found!'>
+        <GridLines />
+        <div className='w-full h-screen flex-col-all'>
+          <h2 className='text-4xl mb-10'>The Blog you searched for not found!</h2>
+          <div className='flex-all gap-5'>
+            <Button inverted onClick={() => push('/blog')}>
+              Read More Blogs
+            </Button>
+            <Button onClick={() => push('/')}>Go Home</Button>
+          </div>
+        </div>
+      </Layout>
+    )
+  }
   return (
     <Layout title={blogArr[0]?.attributes?.title || 'Loading...'}>
       <GridLines />

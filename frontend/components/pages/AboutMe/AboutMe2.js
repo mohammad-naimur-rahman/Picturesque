@@ -39,11 +39,11 @@ const AboutMe2nd = ({ data: datas, tags }) => {
           <AnimationOnScroll animateIn='animate__fadeInUp' delay={400}>
             <p className='text-base xl:text-lg mb-6 lg:mb-10 font-light leading-relaxed'>{description}</p>
           </AnimationOnScroll>
-          <div className='flex flex-wrap gap-2 pt-3'>
+          <div className='flex flex-wrap gap-2 pt-2'>
             {tagsArr.map(({ id, attributes }, i) => (
               <AnimationOnScroll animateIn='animate__fadeInUp' delay={600 + i * 200} key={id}>
                 <Tippy content={attributes.tag_description} placement='bottom'>
-                  <span className='cursor-pointer bg-primary text-gray px-5 py-2 rounded-md text-xs uppercase'>
+                  <span className='cursor-pointer bg-primary text-gray px-5 py-3 my-2 rounded-md text-xs uppercase'>
                     {attributes.tag}
                   </span>
                 </Tippy>
