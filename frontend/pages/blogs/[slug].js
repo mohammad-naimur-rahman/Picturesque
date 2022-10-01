@@ -6,6 +6,7 @@ import Layout from 'components/common/Layout'
 import PageHeader from 'components/common/PageHeader'
 import PreLoader from 'components/common/PreLoader'
 import CommentForm from 'components/pages/BlogDetails/CommentForm'
+import Comments from 'components/pages/BlogDetails/Comments'
 import { useRouter } from 'next/router'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
@@ -52,7 +53,8 @@ const BlogDetailsPage = () => {
             <div className={classNames(styles['blog-details'], 'py-16')}>
               <ReactMarkdown>{blogArr[0]?.attributes?.post}</ReactMarkdown>
             </div>
-            <CommentForm id={blogArr[0]?.id} />
+            <Comments data={blogArr[0]?.attributes?.blog_comments} />
+            <CommentForm id={blogArr[0]} />
             <div className='w-full flex-col-all mt-16 mb-8'>
               <h2 className='text-4xl pb-5'>Liked this blog?</h2>
               <Button solid inverted edge onClick={() => push('/blog')}>

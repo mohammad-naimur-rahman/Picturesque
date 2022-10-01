@@ -13,13 +13,13 @@ const CommentForm = ({ id }) => {
     reset,
     formState: { errors }
   } = useForm()
-  const onSubmit = async data => {
+  const onSubmit = async formData => {
     reset()
     try {
       const res = await fetch(`${API_URL}/blog-comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ data, blog_post: id })
+        body: JSON.stringify({ data: { ...formData, blog_post: id } })
       })
       if (res.status === 200) {
         toast.success('Comment Posted Successfully!')
