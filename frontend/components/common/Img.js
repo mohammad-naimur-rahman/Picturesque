@@ -21,7 +21,7 @@ const Img = ({ src, alt, width = '500', height = '500', sizes = '50vw', classNam
 export default Img
 
 Img.propTypes = {
-  src: PropTypes.string,
+  src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   alt: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
