@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import CountUp from 'react-countup'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
+import { Waypoint } from 'react-waypoint'
 
 const Statistics = ({ data }) => {
+  const [viewPortEntered, setViewPortEntered] = useState(false)
+
+  const onVWEnter = () => {
+    setViewPortEntered(true)
+  }
   const { data: statisticsArr } = { ...data }
   return (
     <div className='container py-10 lg:py-16 xl:py-24'>
@@ -32,7 +38,9 @@ const Statistics = ({ data }) => {
             >
               <img src={url} alt={name} className='w-20 h-auto inline-block opacity-80' />
               <h2 className='text-4xl lg:text-5xl font-light text-black pt-5 pb-6'>
-                <CountUp end={value} className='text-primary' />
+                <Waypoint onEnter={onVWEnter}>
+                  {viewPortEntered && <CountUp end={value} className='text-primary' />}
+                </Waypoint>
               </h2>
               <h3 className='font-light text-primary'>{title}</h3>
             </AnimationOnScroll>

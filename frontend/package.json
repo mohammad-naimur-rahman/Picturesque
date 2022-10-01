@@ -33,6 +33,7 @@
     "react-masonry-css": "^1.0.16",
     "react-owl-carousel": "2.3.3",
     "react-scroll-to-top": "^3.0.0",
+    "react-waypoint": "^10.3.0",
     "sass": "^1.54.8"
   },
   "devDependencies": {
