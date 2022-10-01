@@ -4,9 +4,11 @@ import PropTypes from 'prop-types'
 import Navbar from './Navbar'
 import ScrollToTop from 'react-scroll-to-top'
 import Footer from './Footer'
+import PreLoader from './PreLoader'
 
 const Layout = ({ title, meta, children }) => {
   const [loadState, setloadState] = useState(false)
+  const [showPreLoader, setshowPreLoader] = useState(true)
   useEffect(() => {
     if (typeof window !== 'undefined') {
       let timer = null
@@ -37,8 +39,9 @@ const Layout = ({ title, meta, children }) => {
         {meta}
       </Head>
       <main className='relative'>
+        {showPreLoader && <PreLoader />}
         <ScrollToTop smooth />
-        <Navbar />
+        <Navbar setshowPreLoader={setshowPreLoader} />
         <div id='root-container'>{children}</div>
         <Footer />
       </main>

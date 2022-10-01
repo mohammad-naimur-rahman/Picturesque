@@ -18,7 +18,6 @@ const BlogDetailsPage = () => {
   const {
     data: { data: blogArr }
   } = useQuery(['blog-posts', `filters[slug]=${slug}`])
-  console.log(blogArr.length)
   if (blogArr.length === 0) {
     return (
       <Layout title='The blog you searched for not found!'>

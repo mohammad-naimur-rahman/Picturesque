@@ -38,17 +38,23 @@ NavSocialItems.propTypes = {
   navItems: PropTypes.array
 }
 
-const Navbar = () => {
+const Navbar = ({ setshowPreLoader }) => {
   const router = useRouter()
 
   const [menuOpen, setmenuOpen] = useState(false)
   const [navItems, setnavItems] = useState([])
   useEffect(() => {
     ;(async () => {
-      const res = await axios.get(`${API_URL}/social-medias?populate=*`)
-      setnavItems(res.data.data)
+      setshowPreLoader(true)
+      try {
+        const res = await axios.get(`${API_URL}/social-medias?populate=*`)
+        setnavItems(res.data.data)
+        setshowPreLoader(false)
+      } catch (e) {
+        setshowPreLoader(false)
+      }
     })()
-  }, [])
+  }, [setshowPreLoader])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -137,3 +143,7 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+Navbar.propTypes = {
+  setshowPreLoader: PropTypes.func
+}

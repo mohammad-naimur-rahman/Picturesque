@@ -32,7 +32,7 @@ const LightBox = ({ toggler, onClose, src }) => {
           className={classNames(
             { hidden: !toggler },
             styles.lightbox,
-            'fixed inset-0 w-100 h-screen bg-bg bg-opacity-70 z-50'
+            'fixed inset-0 w-100 h-screen bg-bg bg-opacity-80 z-50'
           )}
         >
           <div className='absolute right-2 lg:right-6 top-2 lg:top-6 flex-all'>
@@ -52,7 +52,7 @@ const LightBox = ({ toggler, onClose, src }) => {
             />
           </div>
           <div className='flex-all w-full h-full'>
-            <img src={src} alt={src} className='p-12 max-h-full max-w-full mx-auto' />
+            <img src={src} alt={src} className='p-2 md:p-5 lg:p-8 xl:p-10 xxl:p-12 max-h-full max-w-full mx-auto' />
           </div>
         </div>
       )}
