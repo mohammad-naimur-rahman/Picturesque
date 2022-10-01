@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Img from './Img'
 import Button from './Button'
 import { useRouter } from 'next/router'
+import { scroller } from 'react-scroll'
 
 const PageHeader = ({ introTitle, introDesc, introImg, extra = false, showButton = true }) => {
   const router = useRouter()
@@ -34,7 +35,21 @@ const PageHeader = ({ introTitle, introDesc, introImg, extra = false, showButton
               <p className='text-gray text-base xl:text-lg mb-6 lg:mb-10 font-thin leading-relaxed'>{introDesc}</p>
               <div>
                 {showButton && (
-                  <Button white className='inline-block' onClick={() => router.push('/contact')}>
+                  <Button
+                    white
+                    className='inline-block'
+                    onClick={() => {
+                      if (router.pathname === '/contact') {
+                        scroller.scrollTo('contact-intro', {
+                          duration: 800,
+                          delay: 0,
+                          smooth: 'easeInOutQuart'
+                        })
+                      } else {
+                        router.push('/contact')
+                      }
+                    }}
+                  >
                     Contact Me
                   </Button>
                 )}

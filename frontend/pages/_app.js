@@ -8,6 +8,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
 import 'react-accessible-accordion/dist/fancy-example.css'
 import 'animate.css/animate.min.css'
+import NextNProgress from 'nextjs-progressbar'
 
 const defaultQueryFn = async ({ queryKey }) => {
   const { data } = await axios.get(`${API_URL}/${queryKey[0]}?populate=*${queryKey[1] ? '&' + queryKey[1] : ''}`)
@@ -25,13 +26,16 @@ const queryClient = new QueryClient({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps.dehydratedState}>
-          <Component {...pageProps} />
-        </Hydrate>
-      </QueryClientProvider>
-    </ErrorBoundary>
+    <>
+      <ErrorBoundary>
+        <QueryClientProvider client={queryClient}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <NextNProgress />
+            <Component {...pageProps} />
+          </Hydrate>
+        </QueryClientProvider>
+      </ErrorBoundary>
+    </>
   )
 }
 

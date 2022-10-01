@@ -39,7 +39,7 @@ const Statistics = ({ data }) => {
               <img src={url} alt={name} className='w-20 h-auto inline-block opacity-80' />
               <h2 className='text-4xl lg:text-5xl font-light text-black pt-5 pb-6'>
                 <Waypoint onEnter={onVWEnter}>
-                  {viewPortEntered && <CountUp end={value} className='text-primary' />}
+                  {viewPortEntered ? <CountUp end={value} className='text-primary' /> : null}
                 </Waypoint>
               </h2>
               <h3 className='font-light text-primary'>{title}</h3>

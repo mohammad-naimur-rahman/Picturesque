@@ -8,7 +8,7 @@ import styles from 'styles/pages/home.module.scss'
 
 const HomeContactIntro = ({ bgText5, contactTitle, showLink = true }) => {
   return (
-    <div className={styles['home-container-fluid']}>
+    <div className={(styles['home-container-fluid'], 'contact-intro')}>
       {bgText5 ? (
         <p className={classNames(styles['big-text'], styles['big-text-5'])}>{bgText5.data.attributes.title}</p>
       ) : null}
