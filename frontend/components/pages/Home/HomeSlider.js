@@ -7,16 +7,11 @@ const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
   ssr: false
 })
 import styles from 'styles/pages/home.module.scss'
-import PreLoader from 'components/common/PreLoader'
 
 const HomeSlider = () => {
-  const { data: slides, isLoading } = useQuery(
-    ['homepage-sliders'],
-    async () => await axiosQGetter('homepage-sliders'),
-    {
-      suspense: false
-    }
-  )
+  const { data: slides } = useQuery(['homepage-sliders'], async () => await axiosQGetter('homepage-sliders'), {
+    suspense: false
+  })
   const { data: slidesData } = { ...slides }
   const options = {
     loop: true,
@@ -42,37 +37,31 @@ const HomeSlider = () => {
     }
   }
   return (
-    <>
-      {isLoading ? (
-        <PreLoader />
-      ) : (
-        <OwlCarousel className='owl-theme home-slider' {...options}>
-          {slidesData?.map(({ id, attributes }) => (
-            <Div100vh key={id}>
+    <OwlCarousel className='owl-theme home-slider' {...options}>
+      {slidesData?.map(({ id, attributes }) => (
+        <Div100vh key={id}>
+          <div
+            className={classNames(styles['slider-card'], 'slider-card')}
+            style={{
+              backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.35)), url(${attributes?.image?.data.attributes.url})`
+            }}
+          >
+            <div className='flex items-end justify-center h-full'>
               <div
-                className={classNames(styles['slider-card'], 'slider-card')}
-                style={{
-                  backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.35)), url(${attributes?.image?.data.attributes.url})`
-                }}
+                className={classNames(
+                  styles['text-card'],
+                  'flex flex-col align-center justify-start text-center text-white font-light px-3 sm:px-10'
+                )}
               >
-                <div className='flex items-end justify-center h-full'>
-                  <div
-                    className={classNames(
-                      styles['text-card'],
-                      'flex flex-col align-center justify-start text-center text-white font-light px-3 sm:px-10'
-                    )}
-                  >
-                    <div className={styles['slider-card_border-line']} />
-                    <h3 className='text-2xl sm:text-3xl text-left mt-6 text-gray'>{attributes?.title}</h3>
-                    <h5 className='text-lg sm:text-xl mt-10 h-[20vh] text-gray'>{attributes?.description}</h5>
-                  </div>
-                </div>
+                <div className={styles['slider-card_border-line']} />
+                <h3 className='text-2xl sm:text-3xl text-left mt-6 text-gray'>{attributes?.title}</h3>
+                <h5 className='text-lg sm:text-xl mt-10 h-[20vh] text-gray'>{attributes?.description}</h5>
               </div>
-            </Div100vh>
-          ))}
-        </OwlCarousel>
-      )}
-    </>
+            </div>
+          </div>
+        </Div100vh>
+      ))}
+    </OwlCarousel>
   )
 }
 
