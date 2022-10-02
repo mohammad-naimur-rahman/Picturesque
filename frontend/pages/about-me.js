@@ -1,8 +1,8 @@
-import { useQuery } from '@tanstack/react-query'
 import Layout from 'components/common/Layout'
 import PageHeader from 'components/common/PageHeader'
 import AboutMe1st from 'components/pages/AboutMe/AboutMe1st'
 import AboutMe2nd from 'components/pages/AboutMe/AboutMe2'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { axiosQGetter } from 'utils/queryUtils'
 
@@ -30,9 +30,18 @@ const AboutMePage = ({ introData, socials, aboutMe1, aboutMe2, qualities, tags }
 
 export default AboutMePage
 
+AboutMePage.propTypes = {
+  introData: PropTypes.object,
+  socials: PropTypes.object,
+  aboutMe1: PropTypes.object,
+  aboutMe2: PropTypes.object,
+  qualities: PropTypes.object,
+  tags: PropTypes.object
+}
+
 export async function getStaticProps() {
-  const { data: introData } = await axiosQGetter('about-me-intro')
   const { data: socials } = await axiosQGetter('social-medias')
+  const { data: introData } = await axiosQGetter('about-me-intro')
   const { data: aboutMe1 } = await axiosQGetter('about-me-part-1')
   const { data: aboutMe2 } = await axiosQGetter('about-me-part-2')
   const { data: qualities } = await axiosQGetter('about-me-qualities')

@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
 import styles from 'styles/pages/contact.module.scss'
 
-const CommentForm = ({ id }) => {
+const CommentForm = ({ post }) => {
   const {
     register,
     handleSubmit,
@@ -19,7 +19,7 @@ const CommentForm = ({ id }) => {
       const res = await fetch(`${API_URL}/blog-comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ data: { ...formData, blog_post: id } })
+        body: JSON.stringify({ data: { ...formData, blog_post: post } })
       })
       if (res.status === 200) {
         toast.success('Comment Posted Successfully!')
@@ -70,5 +70,5 @@ const CommentForm = ({ id }) => {
 export default CommentForm
 
 CommentForm.propTypes = {
-  id: PropTypes.number
+  post: PropTypes.object
 }

@@ -1,19 +1,15 @@
-import { useQuery } from '@tanstack/react-query'
 import GridLines from 'components/common/GridLines'
 import Layout from 'components/common/Layout'
 import PageHeader from 'components/common/PageHeader'
 import HomeContactIntro from 'components/pages/Home/HomeContactIntro'
 import ServicesCardsContainer from 'components/pages/Services/ServicesCardsContainer'
 import Statistics from 'components/pages/Services/Statistics'
-import Testimonials from 'components/pages/Services/Testimonials'
+//import Testimonials from 'components/pages/Services/Testimonials'
 import React from 'react'
+import { axiosQGetter } from 'utils/queryUtils'
+import PropTypes from 'prop-types'
 
-const ServicesPage = () => {
-  const { data: introData } = useQuery(['services-intro'])
-  const { data: cards } = useQuery(['services-cards'])
-  const { data: bg } = useQuery(['testimonail-background'])
-  const { data: statistics } = useQuery(['statistics'])
-  const { data: contactTitle } = useQuery(['home-contact-title'])
+const ServicesPage = ({ socials, introData, cards, statistics, contactTitle }) => {
   const {
     data: {
       attributes: {
@@ -26,11 +22,11 @@ const ServicesPage = () => {
     }
   } = { ...introData }
   return (
-    <Layout title='Services'>
+    <Layout title='Services' socials={socials}>
       <GridLines />
       <PageHeader introTitle={introTitle} introDesc={introDesc} introImg={introImg} />
       <ServicesCardsContainer data={cards} />
-      <Testimonials bg={bg} />
+      {/* <Testimonials bg={bg} /> */}
       <Statistics data={statistics} />
       <HomeContactIntro contactTitle={contactTitle} />
     </Layout>
@@ -38,3 +34,32 @@ const ServicesPage = () => {
 }
 
 export default ServicesPage
+
+ServicesPage.propTypes = {
+  socials: PropTypes.object,
+  introData: PropTypes.object,
+  bg: PropTypes.object,
+  cards: PropTypes.object,
+  statistics: PropTypes.object,
+  contactTitle: PropTypes.object
+}
+
+export async function getStaticProps() {
+  const { data: socials } = await axiosQGetter('social-medias')
+  const { data: introData } = await axiosQGetter('services-intro')
+  const { data: cards } = await axiosQGetter('services-cards')
+  const { data: bg } = await axiosQGetter('testimonail-background')
+  const { data: statistics } = await axiosQGetter('statistics')
+  const { data: contactTitle } = await axiosQGetter('home-contact-title')
+  return {
+    props: {
+      socials,
+      introData,
+      cards,
+      bg,
+      statistics,
+      contactTitle
+    },
+    revalidate: 10
+  }
+}

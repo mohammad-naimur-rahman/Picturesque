@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import Layout from 'components/common/Layout'
 import GridLines from 'components/common/GridLines'
-import { useQuery } from '@tanstack/react-query'
 import PageHeader from 'components/common/PageHeader'
 import PortfollioGrid from 'components/pages/Portfolio/PortfollioGrid'
 import classNames from 'classnames'
+import { axiosQGetter } from 'utils/queryUtils'
+import PropTypes from 'prop-types'
 
-const PortfolioPage = () => {
-  const { data: introData } = useQuery(['portfolio-intro'])
-  const { data: cardsData } = useQuery(['portfolio-cards'])
-  const { data: types } = useQuery(['portfolio-types'])
+const PortfolioPage = ({ socials, introData, cardsData, types }) => {
   const {
     data: {
       attributes: {
@@ -35,7 +33,7 @@ const PortfolioPage = () => {
   }
 
   return (
-    <Layout title='Portfolio'>
+    <Layout title='Portfolio' socials={socials}>
       <GridLines />
       <PageHeader
         introTitle={introTitle}
@@ -76,3 +74,25 @@ const PortfolioPage = () => {
 }
 
 export default PortfolioPage
+PortfolioPage.propTypes = {
+  socials: PropTypes.object,
+  introData: PropTypes.object,
+  cardsData: PropTypes.object,
+  types: PropTypes.object
+}
+
+export async function getStaticProps() {
+  const { data: socials } = await axiosQGetter('social-medias')
+  const { data: introData } = await axiosQGetter('portfolio-intro')
+  const { data: cardsData } = await axiosQGetter('portfolio-cards')
+  const { data: types } = await axiosQGetter('portfolio-types')
+  return {
+    props: {
+      socials,
+      introData,
+      cardsData,
+      types
+    },
+    revalidate: 10
+  }
+}
