@@ -1,0 +1,1 @@
+export const LOAD_SOCIALS = 'LOAD_SOCIALS'
