@@ -38,23 +38,23 @@ NavSocialItems.propTypes = {
   navItems: PropTypes.array
 }
 
-const Navbar = ({ setshowPreLoader }) => {
+const Navbar = ({ socials }) => {
   const router = useRouter()
 
   const [menuOpen, setmenuOpen] = useState(false)
-  const [navItems, setnavItems] = useState([])
-  useEffect(() => {
-    ;(async () => {
-      setshowPreLoader(true)
-      try {
-        const res = await axios.get(`${API_URL}/social-medias?populate=*`)
-        setnavItems(res.data.data)
-        setshowPreLoader(false)
-      } catch (e) {
-        setshowPreLoader(false)
-      }
-    })()
-  }, [setshowPreLoader])
+  //const [navItems, setnavItems] = useState([])
+  // useEffect(() => {
+  //   ;(async () => {
+  //     setshowPreLoader(true)
+  //     try {
+  //       const res = await axios.get(`${API_URL}/social-medias?populate=*`)
+  //       setnavItems(res.data.data)
+  //       setshowPreLoader(false)
+  //     } catch (e) {
+  //       setshowPreLoader(false)
+  //     }
+  //   })()
+  // }, [setshowPreLoader])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -79,7 +79,7 @@ const Navbar = ({ setshowPreLoader }) => {
       >
         <Img src='/logo.png' alt='Picturesque' className='h-full cursor-pointer' onClick={() => router.push('/')} />
         <div className='flex-all'>
-          <NavSocialItems navItems={navItems} newClasses='hidden sm:flex' />
+          <NavSocialItems navItems={socials.data} newClasses='hidden sm:flex' />
           <img
             src='/icons/bars.svg'
             alt='bars'
@@ -117,7 +117,7 @@ const Navbar = ({ setshowPreLoader }) => {
                 onClick={() => setmenuOpen(false)}
               />
             </div>
-            <NavSocialItems navItems={navItems} newClasses='flex sm:hidden mt-5' />
+            <NavSocialItems navItems={socials.data} newClasses='flex sm:hidden mt-5' />
           </div>
           <ul className='flex-col-all'>
             {navLinks?.map(({ id, name, link }) => (
@@ -145,5 +145,5 @@ const Navbar = ({ setshowPreLoader }) => {
 export default Navbar
 
 Navbar.propTypes = {
-  setshowPreLoader: PropTypes.func
+  socials: PropTypes.object
 }

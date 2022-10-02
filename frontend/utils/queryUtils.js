@@ -9,5 +9,5 @@ export const axiosQGetter = async (url, populate = true) => {
     fetchURL = `${API_URL}/${url}`
   }
   const res = await axios.get(fetchURL)
-  return res.data
+  return res
 }

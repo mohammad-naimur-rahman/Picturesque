@@ -4,12 +4,10 @@ import PropTypes from 'prop-types'
 import Navbar from './Navbar'
 import ScrollToTop from 'react-scroll-to-top'
 import Footer from './Footer'
-import PreLoader from './PreLoader'
 import classNames from 'classnames'
 
-const Layout = ({ title, meta, children }) => {
+const Layout = ({ title, meta, socials, children }) => {
   const [loadState, setloadState] = useState(false)
-  const [showPreLoader, setshowPreLoader] = useState(true)
   useEffect(() => {
     if (typeof window !== 'undefined') {
       let timer = null
@@ -33,16 +31,6 @@ const Layout = ({ title, meta, children }) => {
       }
     }
   }, [loadState])
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      if (showPreLoader) {
-        document.querySelector('body').classList.add('overflow-hidden')
-      } else {
-        document.querySelector('body').classList.remove('overflow-hidden')
-      }
-    }
-  }, [showPreLoader])
   return (
     <>
       <Head>
@@ -50,9 +38,8 @@ const Layout = ({ title, meta, children }) => {
         {meta}
       </Head>
       <main className={classNames('relative')}>
-        {showPreLoader && <PreLoader />}
         <ScrollToTop smooth />
-        <Navbar setshowPreLoader={setshowPreLoader} />
+        <Navbar socials={socials} />
         <div id='root-container'>{children}</div>
         <Footer />
       </main>
@@ -68,6 +55,7 @@ Layout.defaultProps = {
 
 Layout.propTypes = {
   title: PropTypes.string,
+  socials: PropTypes.object,
   meta: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 }
