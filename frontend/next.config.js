@@ -1,16 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  webpack: (config, { webpack }) => {
-    config.plugins.push(
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery'
-      })
-    )
-    return config
-  },
   swcMinify: true,
   async redirects() {
     return [
@@ -29,7 +19,7 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com']
   },
-  experimental: { images: { allowFutureImage: true } }
+  experimental: { images: { allowFutureImage: true }, esmExternals: true }
 }
 
 module.exports = nextConfig
