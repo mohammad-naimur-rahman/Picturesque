@@ -5,8 +5,10 @@ import { AsideElement, AsideHeading } from './AsideComponents'
 import getDate, { months, prevMonth } from 'utils/getDate'
 import Img from 'components/common/Img'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
+import { useRouter } from 'next/router'
 
 const BlogAside = ({ categories, latestPosts }) => {
+  const { push } = useRouter()
   const { data: catsArr } = { ...categories }
   const { data: posts } = { ...latestPosts }
   return (
@@ -47,6 +49,7 @@ const BlogAside = ({ categories, latestPosts }) => {
             id,
             attributes: {
               title,
+              slug,
               createdAt,
               cover_image: {
                 data: {
@@ -62,20 +65,22 @@ const BlogAside = ({ categories, latestPosts }) => {
           },
           i
         ) => (
-          <AnimationOnScroll
-            key={id}
-            className='flex items-center my-6 cursor-pointer'
-            animateIn='animate__fadeInRight'
-            delay={i * 200}
-          >
-            <Img src={url} alt={name} sizes='10vw' className='!w-16 !h-16 aspect-square object-cover' />
-            <div className='ml-3'>
-              <p className='font-light text-sm'>{title}</p>
-              <p className='font-light text-[12px] mt-2'>
-                {cats[0].attributes.category} / {getDate(createdAt)}
-              </p>
-            </div>
-          </AnimationOnScroll>
+          <div key={id} onClick={() => push(`/blogs/${slug}`)}>
+            <AnimationOnScroll
+              key={id}
+              className='flex items-center my-6 cursor-pointer'
+              animateIn='animate__fadeInRight'
+              delay={i * 200}
+            >
+              <Img src={url} alt={name} sizes='10vw' className='!w-16 !h-16 aspect-square object-cover' />
+              <div className='ml-3'>
+                <p className='font-light text-sm'>{title}</p>
+                <p className='font-light text-[12px] mt-2'>
+                  {cats[0].attributes.category} / {getDate(createdAt)}
+                </p>
+              </div>
+            </AnimationOnScroll>
+          </div>
         )
       )}
     </aside>

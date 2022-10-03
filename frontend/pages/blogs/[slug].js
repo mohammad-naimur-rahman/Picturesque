@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import Button from 'components/common/Button'
-import GridLines from 'components/common/GridLines'
 import Layout from 'components/common/Layout'
 import PageHeader from 'components/common/PageHeader'
 import CommentForm from 'components/pages/BlogDetails/CommentForm'
@@ -17,7 +16,6 @@ const BlogDetailsPage = ({ socials, posts }) => {
   const { push } = useRouter()
   return (
     <Layout title={blogArr[0]?.attributes?.title || 'Loading...'} socials={socials}>
-      <GridLines />
       <PageHeader
         introTitle={blogArr[0]?.attributes?.title}
         introDesc={blogArr[0]?.attributes?.short_description}
