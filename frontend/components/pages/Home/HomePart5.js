@@ -12,7 +12,7 @@ const HomePart5 = ({ image6, image7 }) => {
       <div className={styles['home-container']}>
         <Img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-6']} />
         <div className='flex flex-col md:flex-row justify-center md:justify-end'>
-          <AnimationOnScroll animateIn='animate__fadeIn'>
+          <AnimationOnScroll animateIn='animate__fadeIn z-10'>
             <div className={classNames(styles['home-img-card'], styles['home-img-card-6'])}>
               <Img
                 src={image6.data.attributes.image.data.attributes.url}
@@ -22,7 +22,7 @@ const HomePart5 = ({ image6, image7 }) => {
               <h3>{image6.data.attributes.title}</h3>
             </div>
           </AnimationOnScroll>
-          <AnimationOnScroll animateIn='animate__fadeIn'>
+          <AnimationOnScroll animateIn='animate__fadeIn z-10'>
             <div className={classNames(styles['home-img-card'], styles['home-img-card-7'])}>
               <Img
                 src={image7.data.attributes.image.data.attributes.url}

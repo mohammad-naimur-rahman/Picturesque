@@ -8,7 +8,7 @@ import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const HomePart3 = ({ bgText3, image4 }) => {
   return (
-    <AnimationOnScroll animateIn='animate__fadeIn'>
+    <AnimationOnScroll animateIn='animate__fadeIn z-10'>
       <div className={classNames(styles['home-container-fluid'], styles['home-container-fluid-3'])}>
         <p className={classNames(styles['big-text'], styles['big-text-3'])}>{bgText3.data.attributes.title}</p>
         <div className={styles['home-container']}>

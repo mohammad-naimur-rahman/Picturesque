@@ -1,16 +1,8 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import dynamic from 'next/dynamic'
-import { useQuery } from '@tanstack/react-query'
-import { axiosQGetter } from 'utils/queryUtils'
-const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
-  ssr: false
-})
+import Swiper from 'react-id-swiper'
 
-const Testimonials = ({ bg }) => {
-  const { data, isLoading } = useQuery(['testimonials'], async () => await axiosQGetter('testimonials'), {
-    suspense: false
-  })
+const Testimonials = ({ bg, testimonials }) => {
   const {
     data: {
       attributes: {
@@ -22,7 +14,7 @@ const Testimonials = ({ bg }) => {
       }
     }
   } = { ...bg }
-  const { data: testimonialsArr } = { ...data }
+  const { data: testimonialsArr } = { ...testimonials }
   const styles = {
     backgroundImage: `url(${url})`,
     backgroundSize: 'cover',
@@ -31,13 +23,20 @@ const Testimonials = ({ bg }) => {
     backgroundAttachment: 'fixed'
   }
   const options = {
+    containerClass: 'swiper-container testimonial-slider h-full',
+    slidesPerView: 1,
     loop: true,
-    dots: true,
-    autoplay: true,
-    items: 1,
-    margin: 0,
-    autoplayTimeout: 5000,
-    smartSpeed: 1000
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: (i, className) => {
+        return `<span class="${className}"><p>${i}</p></span>`
+      }
+    }
   }
 
   useEffect(() => {
@@ -58,21 +57,19 @@ const Testimonials = ({ bg }) => {
         className='min-h-[55vh] md:min-h-[70vh] ml-0 md:ml-20 lg:ml-60 xl:ml-80 flex items-center testimonial-bg'
         style={styles}
       >
-        <div className='min-h-[55vh] -ml-0 md:-ml-20 lg:-ml-60 xl:-ml-80 w-full md:w-3/4 bg-opacity-0 md:bg-opacity-100 bg-white p-8 lg:p-14 pl-20 lg:pl-40 shadow-none md:shadow-xl flex flex-col justify-center'>
-          <div className='dark-line'></div>
-          <h1 className='text-4xl lg:text-5xl font-normal md:font-thin mt-6 lg:mt-10 mb-10 lg:mb-16'>Testimonials</h1>
-          {isLoading ? (
-            <p className='italic font-light text-lg'>Loading...</p>
-          ) : (
-            <OwlCarousel className='owl-theme testimonial-slider' {...options}>
-              {testimonialsArr?.map(({ id, attributes: { testimonial, name } }) => (
-                <div key={id}>
-                  <p className='italic font-normal md:font-light text-lg mb-5'>{testimonial}</p>
-                  <h3 className='font-medium md:font-normal'>{name}</h3>
-                </div>
-              ))}
-            </OwlCarousel>
-          )}
+        <div className='min-h-[55vh] -ml-0 md:-ml-20 lg:-ml-60 xl:-ml-80 w-full md:w-3/4 bg-opacity-0 md:bg-opacity-100 bg-white p-8 lg:p-14 pl-10 md:pl-20 shadow-none md:shadow-xl flex flex-col justify-center'>
+          <div className='dark-line ml-10'></div>
+          <h1 className='text-4xl lg:text-5xl font-normal md:font-thin mt-6 lg:mt-10 mb-10 lg:mb-16 pl-10'>
+            Testimonials
+          </h1>
+          <Swiper className='owl-theme testimonial-slider' {...options}>
+            {testimonialsArr?.map(({ id, attributes: { testimonial, name } }) => (
+              <div key={id}>
+                <p className='italic font-normal md:font-light text-lg mb-5 pl-10'>{testimonial}</p>
+                <h3 className='font-medium md:font-normal pl-10'>{name}</h3>
+              </div>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>
@@ -81,8 +78,7 @@ const Testimonials = ({ bg }) => {
 
 Testimonials.propTypes = {
   bg: PropTypes.object,
-  data: PropTypes.object,
-  isLoading: PropTypes.bool
+  testimonials: PropTypes.object
 }
 
 export default Testimonials

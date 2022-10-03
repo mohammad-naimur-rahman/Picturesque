@@ -195,3 +195,24 @@ h6 {
     }
   }
 }
+
+.testimonial-slider {
+  @apply w-full;
+
+  .swiper-pagination {
+    transform-origin: left;
+    @apply absolute top-0 left-2 z-10 flex rotate-90;
+
+    &-bullet {
+      @apply w-2.5 h-2.5 mx-1 border border-grid-middle rounded-full;
+
+      p {
+        @apply opacity-0;
+      }
+    }
+
+    &-bullet-active {
+      @apply bg-text;
+    }
+  }
+}

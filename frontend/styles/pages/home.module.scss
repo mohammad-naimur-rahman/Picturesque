@@ -152,12 +152,12 @@
   // Image Cards
   .home-img-card-1 {
     flex-basis: 47%;
-    @apply ml-0 md:ml-3 mt-0 md:mt-[-120px] mb-10 md:mb-0;
+    @apply ml-0 md:ml-3 mt-0 md:mt-[-120px] mb-10 md:mb-0 isolate;
   }
 
   .home-img-card-2 {
     flex-basis: 38%;
-    @apply mr-0 md:mr-3 mb-10 md:mb-0;
+    @apply mr-0 md:mr-3 mb-10 md:mb-0 isolate;
   }
 
   .home-img-card-3 {
@@ -166,7 +166,7 @@
       flex-basis: 85%;
     }
 
-    @apply ml-0 md:ml-3 mt-0 md:mt-20 mb-10 md:mb-0;
+    @apply ml-0 md:ml-3 mt-0 md:mt-20 mb-10 md:mb-0 isolate;
   }
 
   .home-img-card-4 {
@@ -176,7 +176,7 @@
       flex-basis: 50%;
     }
 
-    @apply mr-0 md:mr-3 ml-0 md:ml-auto mb-10 md:mb-0;
+    @apply mr-0 md:mr-3 ml-0 md:ml-auto mb-10 md:mb-0 isolate;
   }
 
   .home-img-card-5 {
@@ -186,7 +186,7 @@
       flex-basis: 45%;
     }
 
-    @apply ml-0 md:ml-3 mr-0 md:mr-auto mb-10 md:mb-0;
+    @apply ml-0 md:ml-3 mr-0 md:mr-auto mb-10 md:mb-0 isolate;
   }
 
   .home-img-card-6 {
@@ -196,7 +196,7 @@
       flex-basis: 30%;
     }
 
-    @apply ml-0 md:ml-auto mr-0 md:mr-8 mb-10 md:mb-0;
+    @apply ml-0 md:ml-auto mr-0 md:mr-8 mb-10 md:mb-0 isolate;
   }
 
   .home-img-card-7 {
@@ -206,6 +206,6 @@
       flex-basis: 30%;
     }
 
-    @apply ml-0 md:ml-3 mt-0 md:mt-16;
+    @apply ml-0 md:ml-3 mt-0 md:mt-16 isolate;
   }
 }

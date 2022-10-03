@@ -10,13 +10,13 @@ const HomepageSlider = ({ sliders }) => {
   const params = {
     slidesPerView: 4,
     breakpoints: {
-      1600: {
+      1400: {
         slidesPerView: 4
       },
-      992: {
+      1100: {
         slidesPerView: 3
       },
-      600: {
+      700: {
         slidesPerView: 2
       },
       0: {

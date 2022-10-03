@@ -18,7 +18,7 @@ const HomePart1 = ({ title, bgText1, image1, image2 }) => {
           <Img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-1']} />
           <Img src='/backgrounds/dots.png' alt='dot-image' className={styles['home-dot-img-2']} />
           <div className='flex flex-col md:flex-row justify-between'>
-            <AnimationOnScroll animateIn='animate__fadeIn'>
+            <AnimationOnScroll animateIn='animate__fadeIn z-10'>
               <div className={classNames(styles['home-img-card'], styles['home-img-card-1'])}>
                 <Img
                   src={image1.data.attributes.image.data.attributes.url}
@@ -28,7 +28,7 @@ const HomePart1 = ({ title, bgText1, image1, image2 }) => {
                 <h3>{image1.data.attributes.title}</h3>
               </div>
             </AnimationOnScroll>
-            <AnimationOnScroll animateIn='animate__fadeIn'>
+            <AnimationOnScroll animateIn='animate__fadeIn z-10'>
               <div className={classNames(styles['home-img-card'], styles['home-img-card-2'])}>
                 <Img
                   src={image2.data.attributes.image.data.attributes.url}
