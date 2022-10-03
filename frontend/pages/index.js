@@ -10,9 +10,11 @@ import styles from 'styles/pages/home.module.scss'
 import GridLines from 'components/common/GridLines'
 import { axiosQGetter } from 'utils/queryUtils'
 import PropTypes from 'prop-types'
+import HomepageSlider from 'components/pages/Home/HomepageSlider'
 
 const Home = ({
   socials,
+  sliders,
   title,
   bgText1,
   bgText2,
@@ -31,6 +33,7 @@ const Home = ({
   return (
     <Layout socials={socials}>
       <GridLines />
+      <HomepageSlider sliders={sliders} />
       {/* <HomeSlider /> */}
       <section className={styles['home']}>
         <HomePart1 title={title} bgText1={bgText1} image1={image1} image2={image2} />
@@ -48,6 +51,7 @@ export default Home
 
 Home.propTypes = {
   socials: PropTypes.object,
+  sliders: PropTypes.object,
   title: PropTypes.object,
   bgText1: PropTypes.object,
   bgText2: PropTypes.object,
@@ -66,6 +70,7 @@ Home.propTypes = {
 
 export async function getStaticProps() {
   const { data: socials } = await axiosQGetter('social-medias')
+  const { data: sliders } = await axiosQGetter('homepage-sliders')
   const { data: title } = await axiosQGetter('home-title')
   const { data: bgText1 } = await axiosQGetter('home-bg-text-1')
   const { data: bgText2 } = await axiosQGetter('home-bg-text-2')
@@ -83,6 +88,7 @@ export async function getStaticProps() {
   return {
     props: {
       socials,
+      sliders,
       title,
       bgText1,
       bgText2,

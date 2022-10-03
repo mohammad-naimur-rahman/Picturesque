@@ -1,17 +1,17 @@
 @import '../theme.module';
 
 .slider-card {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   cursor: pointer;
   overflow: hidden;
-  height: 100%;
 
   .text-card {
     color: $white;
-    transform: translateY(20vh);
+    transform: translateY(0);
     transition: transform 0.7s;
+
+    @media #{$sm} {
+      transform: translateY(20vh);
+    }
 
     @include mqm {
       transform: translateY(0);
@@ -30,8 +30,12 @@
   }
 
   .text-card h5 {
-    transform: translateY(100%);
+    transform: translateY(0);
     transition: transform 0.7s;
+
+    @media #{$sm} {
+      transform: translateY(100%);
+    }
 
     @include mqm {
       transform: translateY(0);

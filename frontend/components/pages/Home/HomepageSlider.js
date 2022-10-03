@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { axiosQGetter } from 'utils/queryUtils'
 import Swiper from 'react-id-swiper'
 import classNames from 'classnames'
 import styles from 'styles/pages/home.module.scss'
 import Div100vh from 'react-div-100vh'
 
-const SliderPage = ({ slides }) => {
-  const { data: slidesArr } = { ...slides }
+const HomepageSlider = ({ sliders }) => {
+  const { data: slidesArr } = { ...sliders }
   const params = {
     slidesPerView: 4,
     breakpoints: {
@@ -25,34 +24,40 @@ const SliderPage = ({ slides }) => {
       }
     },
     loop: true,
+    containerClass: 'swiper-container home-slider h-full',
     slidesPerGroup: 1,
     loopFillGroupWithBlank: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-      renderBullet: (index, className) => {
-        return `<span class="${className}">${index + 1}</span>`
+      renderBullet: (i, className) => {
+        return `<span class="${className}"><p>${i}</p></span>`
       }
     }
   }
   return (
-    <Swiper {...params} className='home-slider'>
-      {slidesArr.map(
-        ({
-          id,
-          attributes: {
-            title,
-            description,
-            image: {
-              data: {
-                attributes: { name, url }
+    <Div100vh>
+      <Swiper {...params}>
+        {slidesArr.map(
+          ({
+            id,
+            attributes: {
+              title,
+              description,
+              image: {
+                data: {
+                  attributes: { name, url }
+                }
               }
             }
-          }
-        }) => (
-          <Div100vh key={id}>
-            <div key={id} className='relative min-h-screen flex items-end'>
+          }) => (
+            <div key={id} className={classNames(styles['slider-card'], 'relative min-h-screen flex items-end')}>
               <img src={url} alt={name} className='absolute inset-0 w-full h-full object-cover -z-10' />
+              <div className='absolute inset-0 -z-10 bg-primary bg-opacity-20'></div>
               <div
                 className={classNames(
                   styles['text-card'],
@@ -64,25 +69,15 @@ const SliderPage = ({ slides }) => {
                 <h5 className='text-lg sm:text-xl mt-10 h-[20vh] text-gray'>{description}</h5>
               </div>
             </div>
-          </Div100vh>
-        )
-      )}
-    </Swiper>
+          )
+        )}
+      </Swiper>
+    </Div100vh>
   )
 }
 
-SliderPage.propTypes = {
-  slides: PropTypes.object
+HomepageSlider.propTypes = {
+  sliders: PropTypes.object
 }
 
-export default SliderPage
-
-export async function getStaticProps() {
-  const { data } = await axiosQGetter('homepage-sliders')
-  return {
-    props: {
-      slides: data
-    },
-    revalidate: 10
-  }
-}
+export default HomepageSlider
