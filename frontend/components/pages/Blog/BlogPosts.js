@@ -4,9 +4,9 @@ import BlogCard from './BlogCard'
 import Img from 'components/common/Img'
 import BlogAside from './BlogAside'
 import Button from 'components/common/Button'
+import classNames from 'classnames'
 
-const BlogPosts = ({ posts, categories, latestPosts }) => {
-  const { data: blogs } = { ...posts }
+const BlogPosts = ({ blogs, categories, latestPosts, isLoading, fetchMore, currMeta }) => {
   return (
     <div className='relative overflow-hidden'>
       <Img src='/backgrounds/dots.png' alt='dots' className='absolute top-10 -right-32 -z-10' />
@@ -18,7 +18,15 @@ const BlogPosts = ({ posts, categories, latestPosts }) => {
             ))}
           </div>
           <div className='block lg:hidden w-full text-center mb-12'>
-            <Button>Load More</Button>
+            {currMeta.page !== currMeta.pageCount ? (
+              <Button onClick={fetchMore} className={classNames({ 'cursor-wait': isLoading })}>
+                {isLoading ? 'Loading...' : 'Load More'}
+              </Button>
+            ) : (
+              <Button solid inverted className='cursor-not-allowed'>
+                No more blogs
+              </Button>
+            )}
           </div>
           <BlogAside categories={categories} latestPosts={latestPosts} />
         </div>
@@ -28,9 +36,12 @@ const BlogPosts = ({ posts, categories, latestPosts }) => {
 }
 
 BlogPosts.propTypes = {
-  posts: PropTypes.object,
+  blogs: PropTypes.array,
   categories: PropTypes.object,
-  latestPosts: PropTypes.object
+  latestPosts: PropTypes.object,
+  isLoading: PropTypes.bool,
+  fetchMore: PropTypes.func,
+  currMeta: PropTypes.object
 }
 
 export default BlogPosts

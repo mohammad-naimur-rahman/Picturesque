@@ -25,7 +25,7 @@ const BlogCard = ({ data }) => {
   } = { ...data }
   const { month, day, year } = getDate(createdAt, true)
   return (
-    <AnimationOnScroll className='w-full px-0 lg:px-10 relative mt-5' animateIn='animate__fadeInUp'>
+    <div className='w-full px-0 lg:px-10 relative mt-5'>
       <div className='absolute -top-5 left-6 lg:left-16 bg-black text-gray px-2 md:px-3 py-2 md:py-4 text-center'>
         <p className='text-gray py-1 font-extralight'>{month}</p>
         <p className='text-gray py-1 font-extralight'>{day}</p>
@@ -54,7 +54,7 @@ const BlogCard = ({ data }) => {
           ? short_description.slice(0, BLOG_SHORT_DESC_LENGTH) + '...'
           : short_description}
       </p>
-    </AnimationOnScroll>
+    </div>
   )
 }
 
