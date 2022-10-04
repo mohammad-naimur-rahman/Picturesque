@@ -4,7 +4,6 @@ import Img from 'components/common/Img'
 import { useRouter } from 'next/router'
 import getDate from 'utils/getDate'
 import { BLOG_SHORT_DESC_LENGTH } from 'config/index'
-import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const BlogCard = ({ data }) => {
   const router = useRouter()

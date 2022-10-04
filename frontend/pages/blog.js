@@ -85,7 +85,7 @@ export async function getStaticProps() {
   const { data: socials } = await axiosQGetter('social-medias')
   const { data: introData } = await axiosQGetter('blog-intro')
   const { data: posts } = await axiosQGetter(
-    'blog-posts?populate=*&sort[0]=createdAt%3Adesc&pagination[page]=1&pagination[pageSize]=2',
+    `blog-posts?populate=*&sort[0]=createdAt%3Adesc&pagination[page]=1&pagination[pageSize]=${PAGE_SIZE}`,
     false
   )
   const { data: latestPosts } = await axiosQGetter(

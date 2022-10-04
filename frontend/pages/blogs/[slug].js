@@ -5,7 +5,7 @@ import PageHeader from 'components/common/PageHeader'
 import CommentForm from 'components/pages/BlogDetails/CommentForm'
 import Comments from 'components/pages/BlogDetails/Comments'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styles from 'styles/pages/blog-details.module.scss'
 import { axiosQGetter } from 'utils/queryUtils'
@@ -13,6 +13,7 @@ import PropTypes from 'prop-types'
 
 const BlogDetailsPage = ({ socials, posts }) => {
   const { data: blogArr } = { ...posts }
+  const [comments, setcomments] = useState(blogArr[0]?.attributes?.blog_comments.data)
   const { push } = useRouter()
   return (
     <Layout title={blogArr[0]?.attributes?.title || 'Loading...'} socials={socials}>
@@ -26,8 +27,8 @@ const BlogDetailsPage = ({ socials, posts }) => {
         <div className={classNames(styles['blog-details'], 'py-16')}>
           <ReactMarkdown>{blogArr[0]?.attributes?.post}</ReactMarkdown>
         </div>
-        <Comments data={blogArr[0]?.attributes?.blog_comments} />
-        <CommentForm post={blogArr[0]} />
+        <Comments data={comments} />
+        <CommentForm post={blogArr[0]} comments={comments} setcomments={setcomments} />
         <div className='w-full flex-col-all mt-16 mb-8'>
           <h2 className='text-4xl pb-5'>Liked this blog?</h2>
           <Button solid inverted edge onClick={() => push('/blog')}>

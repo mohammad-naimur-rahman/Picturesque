@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
 import styles from 'styles/pages/contact.module.scss'
 
-const CommentForm = ({ post }) => {
+const CommentForm = ({ post, comments, setcomments }) => {
   const {
     register,
     handleSubmit,
@@ -15,19 +15,22 @@ const CommentForm = ({ post }) => {
   } = useForm()
   const onSubmit = async formData => {
     reset()
-    try {
+    const postComment = async () => {
       const res = await fetch(`${API_URL}/blog-comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ data: { ...formData, blog_post: post } })
       })
-      if (res.status === 200) {
-        toast.success('Comment Posted Successfully!')
-      }
-    } catch (err) {
-      console.log(err)
-      toast.error('Something Went Wrong!')
+      const data = await res.json()
+      setcomments([...comments, data.data])
+      return data
     }
+
+    toast.promise(postComment(), {
+      loading: 'Postig your comment!',
+      success: 'Comment Posted Successfully!',
+      error: 'Something Went Wrong!'
+    })
   }
   return (
     <section>
@@ -70,5 +73,7 @@ const CommentForm = ({ post }) => {
 export default CommentForm
 
 CommentForm.propTypes = {
-  post: PropTypes.object
+  post: PropTypes.object,
+  comments: PropTypes.array,
+  setcomments: PropTypes.func
 }
