@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
+import Img from 'components/common/Img'
 
 const ServicesCardsContainer = ({ data }) => {
   const { data: cardsArr } = { ...data }
@@ -29,7 +30,7 @@ const ServicesCardsContainer = ({ data }) => {
               delay={i * 150}
               key={id}
             >
-              <img src={url} alt={name} className='w-12 h-auto' />
+              <Img width='48' height='48' src={url} alt={name} className='!w-12 h-auto' />
               <h2 className='text-3xl font-light mt-5 mb-8'>{title}</h2>
               <p className='font-light'>{description}</p>
             </AnimationOnScroll>

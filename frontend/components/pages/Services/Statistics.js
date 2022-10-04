@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import CountUp from 'react-countup'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import { Waypoint } from 'react-waypoint'
+import Img from 'components/common/Img'
 
 const Statistics = ({ data }) => {
   const [viewPortEntered, setViewPortEntered] = useState(false)
@@ -36,7 +37,7 @@ const Statistics = ({ data }) => {
               animateIn='animate__fadeInUp'
               delay={i * 150}
             >
-              <img src={url} alt={name} className='w-20 h-auto inline-block opacity-80' />
+              <Img width='80' height='80' src={url} alt={name} className='!w-20 h-auto inline-block opacity-80' />
               <h2 className='text-4xl lg:text-5xl font-light text-black pt-5 pb-6'>
                 <Waypoint onEnter={onVWEnter}>
                   {viewPortEntered ? <CountUp end={value} className='text-primary' /> : null}

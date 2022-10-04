@@ -4,6 +4,7 @@ import Swiper from 'react-id-swiper'
 import classNames from 'classnames'
 import styles from 'styles/pages/home.module.scss'
 import Div100vh from 'react-div-100vh'
+import Img from 'components/common/Img'
 
 const HomepageSlider = ({ sliders }) => {
   const { data: slidesArr } = { ...sliders }
@@ -56,7 +57,7 @@ const HomepageSlider = ({ sliders }) => {
             }
           }) => (
             <div key={id} className={classNames(styles['slider-card'], 'relative min-h-screen flex items-end')}>
-              <img src={url} alt={name} className='absolute inset-0 w-full h-full object-cover -z-10' />
+              <Img src={url} alt={name} className='absolute inset-0 !w-full !h-full object-cover -z-10' />
               <div className='absolute inset-0 -z-10 bg-primary bg-opacity-20'></div>
               <div
                 className={classNames(

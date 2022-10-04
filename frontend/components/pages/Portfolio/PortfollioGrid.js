@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Masonry from 'react-masonry-css'
 import getDate from 'utils/getDate'
 import LightBox from 'components/common/LightBox'
+import Img from 'components/common/Img'
 
 const PortfollioGrid = ({ cards }) => {
   const [lightboxSrc, setlightboxSrc] = useState('')
@@ -42,10 +43,10 @@ const PortfollioGrid = ({ cards }) => {
               }
             }) => (
               <div className='p-3 animate__animated animate__fadeInUp' key={id}>
-                <img
+                <Img
                   src={url}
                   alt={name}
-                  className='w-full h-auto cursor-pointer'
+                  className='!w-full h-auto cursor-pointer'
                   onClick={() => handleLightbox(url)}
                 />
                 <p className='mt-6 mb-4 text-xl font-light'>{title}</p>

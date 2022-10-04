@@ -78,10 +78,12 @@ const Navbar = ({ socials }) => {
         <Img src='/logo.png' alt='Picturesque' className='h-full cursor-pointer' onClick={() => router.push('/')} />
         <div className='flex-all'>
           <NavSocialItems navItems={socials.data} newClasses='hidden sm:flex' />
-          <img
+          <Img
+            width='24'
+            height='24'
             src='/icons/bars.svg'
             alt='bars'
-            className='w-6 h-6 cursor-pointer mb-1 ml-9 mr-0 md:mr-4'
+            className='!w-6 !h-6 cursor-pointer mb-1 ml-9 mr-0 md:mr-4'
             onClick={() => setmenuOpen(true)}
           />
         </div>

@@ -22,7 +22,7 @@ const BlogDetailsPage = ({ socials, posts }) => {
         introImg={blogArr[0]?.attributes?.cover_image?.data?.attributes}
         showButton={false}
       />
-      <div className='px-2 md:px-5 lg:px-8 max-w-[900px] mx-auto'>
+      <div className='px-3 md:px-5 lg:px-8 max-w-[900px] mx-auto'>
         <div className={classNames(styles['blog-details'], 'py-16')}>
           <ReactMarkdown>{blogArr[0]?.attributes?.post}</ReactMarkdown>
         </div>

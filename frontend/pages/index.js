@@ -6,7 +6,6 @@ import HomePart3 from 'components/pages/Home/HomePart3'
 import HomePart4 from 'components/pages/Home/HomePart4'
 import HomePart5 from 'components/pages/Home/HomePart5'
 import styles from 'styles/pages/home.module.scss'
-//import HomeSlider from 'components/pages/Home/HomeSlider'
 import GridLines from 'components/common/GridLines'
 import { axiosQGetter } from 'utils/queryUtils'
 import PropTypes from 'prop-types'
@@ -34,7 +33,6 @@ const Home = ({
     <Layout socials={socials}>
       <GridLines />
       <HomepageSlider sliders={sliders} />
-      {/* <HomeSlider /> */}
       <section className={styles['home']}>
         <HomePart1 title={title} bgText1={bgText1} image1={image1} image2={image2} />
         <HomePart2 bgText2={bgText2} image3={image3} />
