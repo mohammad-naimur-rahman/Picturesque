@@ -24,18 +24,11 @@ const BlogAside = ({ categories, latestPosts }) => {
         </div>
       </div>
       <AsideHeading>Archive</AsideHeading>
-      <AsideElement>
-        {months[prevMonth().getMonth()]} {prevMonth().getFullYear()}
-      </AsideElement>
-      <AsideElement delay={150}>
-        {months[prevMonth(2).getMonth()]} {prevMonth().getFullYear()}
-      </AsideElement>
-      <AsideElement delay={300}>
-        {months[prevMonth(3).getMonth()]} {prevMonth().getFullYear()}
-      </AsideElement>
-      <AsideElement delay={450}>
-        {months[prevMonth(4).getMonth()]} {prevMonth().getFullYear()}
-      </AsideElement>
+      {Array.from(Array(4).keys()).map(el => (
+        <AsideElement key={el} delay={el * 150}>
+          {months[prevMonth(el + 1).getMonth()]} {prevMonth().getFullYear()}
+        </AsideElement>
+      ))}
       <AsideHeading>Categories</AsideHeading>
       {catsArr?.map(({ id, attributes: { category } }, i) => (
         <AsideElement key={id} delay={i * 150}>
