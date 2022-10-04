@@ -29,7 +29,7 @@ const HomepageSlider = ({ sliders }) => {
     slidesPerGroup: 1,
     loopFillGroupWithBlank: true,
     autoplay: {
-      delay: 2500,
+      delay: 3000,
       disableOnInteraction: false
     },
     pagination: {
@@ -57,7 +57,14 @@ const HomepageSlider = ({ sliders }) => {
             }
           }) => (
             <div key={id} className={classNames(styles['slider-card'], 'relative min-h-screen flex items-end')}>
-              <Img src={url} alt={name} className='absolute inset-0 !w-full !h-full object-cover -z-10' />
+              <Img
+                width='400'
+                height='900'
+                sizes='25vw'
+                src={url}
+                alt={name}
+                className='absolute inset-0 !w-full !h-full object-cover -z-10'
+              />
               <div className='absolute inset-0 -z-10 bg-primary bg-opacity-20'></div>
               <div
                 className={classNames(
