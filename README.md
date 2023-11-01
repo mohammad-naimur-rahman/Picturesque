@@ -1,8 +1,10 @@
-## Picturesque Photograhy Theme
+## Picturesque Photography Fullstack Project
 
-#### This is a photograhy fully dynamic website.
+![Picturesque](https://i.ibb.co/t413w7z/epicpen-WQ83-N4dg-Kb.jpg)
 
-This is a monorepo application done by _Yarn Workspaces_. For the frontend I've used _Next JS, Tailwind CSS and many other interactive library_ and for the backend, I've used _Strapi CMS_. For database I've chosen _PostgreSql_ and for aseet library _Cloudinary_. So, we can say it's a **_JAM Stack_** product.
+#### This is a photography fully dynamic website.
+
+This is a monorepo application done by _Yarn Workspaces_. For the frontend I've used _Next JS, Tailwind CSS and many other interactive libraries_ and for the backend, I've used _Strapi CMS_. For database, I've chosen _PostgreSql_ and for asset library _Cloudinary_. So, we can say it's a **_JAM Stack_** product.
 
 Overview: [YouTube](https://youtu.be/yZ8u_p5wu7o)
 
@@ -36,7 +38,7 @@ Install all the dependencies
 yarn install-all
 ```
 
-Configure database and other configuration followed by the `.env.example` in both frontend and the backend.
+Configure database and other configurations followed by the `.env.example` in both frontend and the backend.
 
 To run both of the application together
 
@@ -66,6 +68,6 @@ To learn more about yarn workspaces: https://classic.yarnpkg.com/lang/en/docs/wo
 
 Please, give a star ⭐ if you like the project 😊
 
-It's a open source project, so if you want to contribute to it, you're welcome 😍😊
+It's an open-source project, so if you want to contribute to it, you're welcome 😍😊
 
-To get updates such amazing projects, follow me on github, Thanks 🙏
+To get updates on such amazing projects, follow me on GitHub, Thanks 🙏
