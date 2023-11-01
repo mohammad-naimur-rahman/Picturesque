@@ -1,12 +1,12 @@
 ## Picturesque Photography Fullstack Project
 
-![Picturesque](https://i.ibb.co/t413w7z/epicpen-WQ83-N4dg-Kb.jpg)
+![Picturesque](./picturesque.jpg?raw=true)
 
 #### This is a photography fully dynamic website.
 
 This is a monorepo application done by _Yarn Workspaces_. For the frontend I've used _Next JS, Tailwind CSS and many other interactive libraries_ and for the backend, I've used _Strapi CMS_. For database, I've chosen _PostgreSql_ and for asset library _Cloudinary_. So, we can say it's a **_JAM Stack_** product.
 
-Overview: [YouTube](./picturesque.jpg?raw=true)
+Overview: [YouTube](https://youtu.be/yZ8u_p5wu7o)
 
 ### Features:
 
